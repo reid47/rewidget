@@ -1,0 +1,85 @@
+@import '../shared/_variables.scss';
+
+@mixin button-style($style: 'primary') {
+  $bg: map-get($button-colors, $style);
+  $fg: $dark;
+
+  @if (lightness($bg) < 50) {
+    $fg: $light;
+  }
+
+  background-color: $bg;
+  color: $fg;
+
+  &.plain {
+    background-color: transparent;
+    color: $bg;
+  }
+
+  &.alt {
+    background-color: transparent;
+    color: $bg;
+    border-color: $bg;
+  }
+}
+
+button.#{$namespace},
+input[type="button"].#{$namespace},
+input[type="submit"].#{$namespace},
+input[type="reset"].#{$namespace},
+input[type="file"].#{$namespace} {
+  background: transparent;
+  font-size: inherit;
+  font-weight: bold;
+  font-family: inherit;
+  border: none;
+  cursor: pointer;
+  text-transform: uppercase;
+  letter-spacing: 0.1rem;
+  padding: (1.2 * $unit) (2 * $unit);
+  transition: transform 0.1s ease-in-out;
+  border-radius: $unit / 4;
+
+  &:not([disabled]) {
+    &:focus, &:hover {
+      transform: scale(1.02);
+    }
+  }
+
+  &:focus {
+    outline: none;
+    box-shadow: $shadow;
+  }
+
+  &[disabled] {
+    opacity: 0.5;
+    cursor: auto;
+  }
+
+  &.alt {
+    $border-width: $unit / 2.75;
+    border-style: solid;
+    border-width: $border-width;
+    padding: (1.2 * $unit - $border-width) (2 * $unit - $border-width);
+  }
+
+  &.primary { @include button-style('primary'); }
+  &.secondary { @include button-style('secondary'); }
+  &.success { @include button-style('success'); }
+  &.alert { @include button-style('alert'); }
+  &.warning { @include button-style('warning'); }
+
+  &.icon-only {
+    width: 4.5 * $unit;
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  > .icon {
+    margin-right: $unit / 2;
+
+    &:only-child {
+      margin-right: 0;
+    }
+  }
+}

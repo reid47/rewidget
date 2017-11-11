@@ -1,0 +1,32 @@
+$namespace: 'rmcl';
+$default-font-family: Raleway, Helvetica, Arial, sans-serif;
+// $default-font-family: Asap, Helvetica, Arial, sans-serif;
+$font-size: 16px;
+$unit: 0.5rem;
+
+$light: #fff;
+$dark: #000;
+
+$shadow-color: rgb(100, 200, 250);
+$shadow: 0 0 10px $shadow-color;
+$shadow-big: 0 0 16px $shadow-color;
+
+$focus-color: rgb(100, 200, 250);
+
+$primary: rgb(80, 120, 150);
+$secondary: rgb(80, 80, 80);
+$button-colors: (
+  primary: $primary,
+  secondary: $secondary,
+  success: rgb(60, 170, 80),
+  alert: rgb(200, 50, 0),
+  warning: rgb(235, 160, 0)
+);
+
+$input-border-radius: 1em / 8;
+$input-border: 0.05em solid $dark;
+$input-mark-color: $dark;
+$input-disabled-background-color: #bbb;
+$input-disabled-foreground-color: #222;
+
+$progress-foreground-color: rgb(100, 150, 150);
