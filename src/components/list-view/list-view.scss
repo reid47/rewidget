@@ -1,4 +1,4 @@
-@import '../shared/_variables';
+@import '../common/_variables';
 
 ul.list-view.#{$namespace} {
   margin: 0;
@@ -8,7 +8,7 @@ ul.list-view.#{$namespace} {
   .list-view-item {
     list-style-type: none;
     padding: 0.5rem;
-    border-bottom: 1px solid $dark;
+    border-bottom: 1px solid $color-dark;
     cursor: pointer;
 
     &.selected {

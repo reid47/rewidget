@@ -1,6 +1,6 @@
 import React from 'react';
 import { clsNs, uniqueId, keyEventMatches } from '../../util';
-import './ListView.css';
+import './list-view.css';
 
 export default class ListView extends React.Component {
   static defaultProps = {
@@ -9,7 +9,7 @@ export default class ListView extends React.Component {
     getValueFromItem: item => JSON.stringify(item),
     multiselect: false,
     className: ''
-  }
+  };
 
   constructor(props) {
     super(props);
@@ -33,7 +33,7 @@ export default class ListView extends React.Component {
 
     if (currentIndex === -1) {
       if (Object.keys(selectedIndexes).length === 0 && data.length > 0) {
-        this.updateSelection(0, multiselect ? null : {0: true});
+        this.updateSelection(0, multiselect ? null : { 0: true });
       } else {
         this.updateSelection(Number(Object.keys(selectedIndexes)[0]));
       }
@@ -62,7 +62,7 @@ export default class ListView extends React.Component {
       const { multiselect } = this.props;
 
       if (evt.shiftKey) {
-        console.log('shifty')
+        console.log('shifty');
         evt.preventDefault();
         evt.stopPropagation();
       }
@@ -74,7 +74,7 @@ export default class ListView extends React.Component {
       } else {
         this.selectSingleItem(index);
       }
-    }
+    };
   }
 
   selectSingleItem(index) {
@@ -89,7 +89,7 @@ export default class ListView extends React.Component {
     } else {
       this.setState({
         currentIndex: index,
-        selectedIndexes: {[index]: true}
+        selectedIndexes: { [index]: true }
       });
     }
   }
@@ -134,7 +134,7 @@ export default class ListView extends React.Component {
 
     if (newSelection) {
       if (multiselect) {
-        changedState.selectedIndexes = {...selectedIndexes};
+        changedState.selectedIndexes = { ...selectedIndexes };
         Object.keys(newSelection).forEach(key => {
           if (newSelection[key]) {
             changedState.selectedIndexes[key] = newSelection[key];
@@ -150,14 +150,16 @@ export default class ListView extends React.Component {
     this.setState(changedState);
 
     if (newSelection && onChange) {
-      const newValues = Object.keys(changedState.selectedIndexes).map(index => getValueFromItem(data[index]));
+      const newValues = Object.keys(changedState.selectedIndexes).map(index =>
+        getValueFromItem(data[index])
+      );
       onChange(newValues);
     }
   }
 
   onKeyDown(evt) {
     const { multiselect } = this.props;
-    if (multiselect) this.handleKeyDownMultiSelect(evt)
+    if (multiselect) this.handleKeyDownMultiSelect(evt);
     else this.handleKeyDownSingleSelect(evt);
   }
 
@@ -207,8 +209,14 @@ export default class ListView extends React.Component {
   }
 
   render() {
-    const { data, displayItem, getValueFromItem, multiselect,
-      className, ...props } = this.props;
+    const {
+      data,
+      displayItem,
+      getValueFromItem,
+      multiselect,
+      className,
+      ...props
+    } = this.props;
     const { selectedIndexes = {}, currentIndex = -1 } = this.state;
 
     const itemIds = {};
@@ -216,29 +224,40 @@ export default class ListView extends React.Component {
       const itemId = `${this.id}_${index}`;
       itemIds[index] = itemId;
 
-      return <li {...{
-        key: index,
-        id: itemId,
-        role: 'option',
-        onClick: this.onItemClick(index),
-        'aria-selected': String(!!selectedIndexes[index]),
-        className: clsNs(
-          'list-view-item',
-          currentIndex === index && 'current',
-          selectedIndexes[index] && 'selected')
-      }}>{displayItem(item)}</li>
+      return (
+        <li
+          {...{
+            key: index,
+            id: itemId,
+            role: 'option',
+            onClick: this.onItemClick(index),
+            'aria-selected': String(!!selectedIndexes[index]),
+            className: clsNs(
+              'list-view-item',
+              currentIndex === index && 'current',
+              selectedIndexes[index] && 'selected'
+            )
+          }}>
+          {displayItem(item)}
+        </li>
+      );
     });
 
-    return <ul {...{
-      ...props,
-      id: this.id,
-      role: 'listbox',
-      'aria-multiselectable': multiselect || undefined,
-      'aria-activedescendant': itemIds[currentIndex] || undefined,
-      tabIndex: 0,
-      onFocus: this.onFocus,
-      onKeyDown: this.onKeyDown,
-      className: clsNs('list-view', className)
-    }}>{items}</ul>;
+    return (
+      <ul
+        {...{
+          ...props,
+          id: this.id,
+          role: 'listbox',
+          'aria-multiselectable': multiselect || undefined,
+          'aria-activedescendant': itemIds[currentIndex] || undefined,
+          tabIndex: 0,
+          onFocus: this.onFocus,
+          onKeyDown: this.onKeyDown,
+          className: clsNs('list-view', className)
+        }}>
+        {items}
+      </ul>
+    );
   }
 }

@@ -1,33 +1,48 @@
 # simple widgets
-- checkbox
 - radio button
-- toggle
-- button
 - textbox
 - textarea
 - password box
 - number input
 - date input
+- icon
+- range input
+- select
+
+## first pass complete
+- checkbox
+- toggle
+- button
 - progress bar
 - progress circle
-- icon
+
+--------------------
 
 # layout widgets
-- flexbox/flexrow/flexcol
 - grid/gridrow/gridcol
 
+## first pass complete
+- flex/box
+
+--------------------
+
 # higher-order widgets
-- key handler
 - tooltip
+
+## first pass complete
+- key handler
+
+--------------------
 
 # composite widgets
 - radio group
 - checkbox group
+- button group
 - autocomplete textbox
 - autocomplete textarea
 - list view
 - tree view
 - table
-- expander
+- collapsible
 - form
 - form field

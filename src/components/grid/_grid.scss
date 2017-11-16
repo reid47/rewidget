@@ -1,0 +1,66 @@
+@include component(grid) {
+  display: grid;
+  grid-gap: $size-default;
+
+  @each $sizeName, $size in $sizesIncludingZero {
+    &.has-gap-#{$sizeName} {
+      grid-gap: $size;
+    }
+
+    &.has-row-gap-#{$sizeName} {
+      grid-row-gap: $size;
+    }
+
+    &.has-column-gap-#{$sizeName} {
+      grid-column-gap: $size;
+    }
+  }
+
+  @include subcomponent(cell) {
+    @for $i from 1 through $grid-columns {
+      &.in-cell-#{$i} {
+        grid-row: $i / span 1;
+        grid-column: $i / span 1;
+      }
+
+      @for $j from 1 through $grid-columns {
+        &.span-rows-#{$j} {
+          grid-row: 1 / span $j;
+        }
+      }
+
+      &.in-row-#{$i} {
+        grid-row: $i / span 1;
+
+        @for $j from 1 through $grid-columns {
+          &.span-rows-#{$j} {
+            grid-row: $i / span $j;
+          }
+        }
+      }
+
+      @for $j from 1 through $grid-columns {
+        &.span-cols-#{$j} {
+          grid-column: 1 / span $j;
+        }
+      }
+
+      &.in-col-#{$i} {
+        grid-column: $i / span 1;
+
+        @for $j from 1 through $grid-columns {
+          &.span-cols-#{$j} {
+            grid-column: $i / span $j;
+          }
+        }
+      }
+    }
+  }
+}
+
+// TEMP:
+// .grid > * {
+//   background: $color-primary;
+//   color: $color-light;
+//   padding: 1rem;
+// }

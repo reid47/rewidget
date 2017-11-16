@@ -1,65 +1,65 @@
-@import '../shared/_variables.scss';
+@import '../common/_variables.scss';
 
-.text-input-wrapper.#{$namespace} {
-  width: 100%;
-  position: relative;
-  box-sizing: border-box;
-}
+// .text-input-wrapper.#{$namespace} {
+//   width: 100%;
+//   position: relative;
+//   box-sizing: border-box;
+// }
 
-.text-input.#{$namespace} {
-  width: 100%;
-  font-size: inherit;
-  font-family: inherit;
-  padding: $unit;
-  border-radius: $unit / 4;
-  border: 1px solid $dark;
-  box-sizing: border-box;
+// .text-input.#{$namespace} {
+//   width: 100%;
+//   font-size: inherit;
+//   font-family: inherit;
+//   padding: $unit;
+//   border-radius: $unit / 4;
+//   border: 1px solid $color-dark;
+//   box-sizing: border-box;
 
-  &.multiline {
-    resize: none;
-  }
+//   &.multiline {
+//     resize: none;
+//   }
 
-  &.has-suggestions {
-    z-index: 200;
-    border-bottom-left-radius: 0;
-    border-bottom-right-radius: 0;
-  }
+//   &.has-suggestions {
+//     z-index: 200;
+//     border-bottom-left-radius: 0;
+//     border-bottom-right-radius: 0;
+//   }
 
-  &:focus {
-    outline: 0;
-    border: 1px solid $focus-color;
-    box-shadow: $shadow;
-  }
-}
+//   &:focus {
+//     outline: 0;
+//     border: 1px solid $focus-color;
+//     box-shadow: $shadow;
+//   }
+// }
 
-.text-input-suggestions.#{$namespace} {
-  background: $light;
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-  text-align: initial;
-  border-left: 1px solid $focus-color;
-  border-right: 1px solid $focus-color;
-  border-bottom: 1px solid $focus-color;
-  border-bottom-left-radius: $unit / 4;
-  border-bottom-right-radius: $unit / 4;
-  box-shadow: $shadow;
-  width: 100%;
-  box-sizing: border-box;
-  position: absolute;
-  top: -1;
-  z-index: 100;
-}
+// .text-input-suggestions.#{$namespace} {
+//   background: $color-light;
+//   list-style-type: none;
+//   margin: 0;
+//   padding: 0;
+//   text-align: initial;
+//   border-left: 1px solid $focus-color;
+//   border-right: 1px solid $focus-color;
+//   border-bottom: 1px solid $focus-color;
+//   border-bottom-left-radius: $unit / 4;
+//   border-bottom-right-radius: $unit / 4;
+//   box-shadow: $shadow;
+//   width: 100%;
+//   box-sizing: border-box;
+//   position: absolute;
+//   top: -1;
+//   z-index: 100;
+// }
 
-.text-input-suggestion.#{$namespace} {
-  padding: $unit;
+// .text-input-suggestion.#{$namespace} {
+//   padding: $unit;
 
-  &.selected {
-    background: $dark;
-    color: $light;
-  }
+//   &.selected {
+//     background: $color-dark;
+//     color: $color-light;
+//   }
 
-  .match {
-    text-decoration: underline;
-  }
-}
+//   .match {
+//     text-decoration: underline;
+//   }
+// }

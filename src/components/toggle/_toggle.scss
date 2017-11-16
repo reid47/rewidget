@@ -1,0 +1,85 @@
+@include component(toggle) {
+  font-family: initial;
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+  width: 2em;
+  height: 1em;
+
+  @each $sizeName, $size in $sizes {
+    &.is-size-#{$sizeName} {
+      font-size: $size;
+    }
+  }
+
+  &:focus {
+    outline: 0;
+
+    .toggle-slider {
+      box-shadow: $focus-shadow;
+    }
+  }
+
+  @include subcomponent(slider) {
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    cursor: pointer;
+    background-color: $color-secondary;
+
+    &:before {
+      position: absolute;
+      content: '';
+      left: 0.1em;
+      top: 0.1em;
+      background-color: $color-light;
+      width: 0.8em;
+      height: 0.8em;
+    }
+
+    &.is-animated {
+      &:before {
+        transition: transform 0.075s ease-in-out;
+      }
+    }
+
+    &.is-rounded {
+      border-radius: 4rem;
+
+      &:before {
+        border-radius: 50%;
+      }
+    }
+
+    &.is-checked {
+      background-color: $color-success;
+      &:before {
+        transform: translateX(125%);
+      }
+    }
+  }
+
+  @include subcomponent(label) {
+    font-family: monospace;
+    position: absolute;
+    color: $color-light;
+    font-size: 0.5em;
+    line-height: 2.4em;
+    top: 0;
+    bottom: 0;
+
+    &.toggle-label-off {
+      right: 0.6em;
+    }
+
+    &.toggle-label-on {
+      left: 0.9em;
+    }
+  }
+
+  @include subcomponent(checkbox) {
+    display: none;
+  }
+}

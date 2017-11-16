@@ -1,0 +1,83 @@
+.#{$namespace} {
+  &.scroll-x {
+    overflow-y: hidden !important;
+    overflow-x: auto !important;
+  }
+
+  &.scroll-y {
+    overflow-x: hidden !important;
+    overflow-y: auto !important;
+  }
+
+  &.scroll-both {
+    overflow: auto !important;
+  }
+
+  &.scroll-none {
+    overflow: hidden !important;
+  }
+
+  @each $colorName, $color in $colors {
+    &.text-color-#{$colorName} {
+      color: $color !important;
+    }
+
+    &.bg-color-#{$colorName} {
+      background-color: $color !important;
+    }
+  }
+
+  @each $sizeName, $size in $sizes {
+    &.font-size-#{$sizeName} {
+      font-size: $size;
+    }
+
+    &.is-width-#{$sizeName} {
+      width: $size;
+    }
+
+    &.is-height-#{$sizeName} {
+      height: $size;
+    }
+
+    &.has-ma-#{$sizeName} {
+      margin: $size !important;
+    }
+
+    &.has-ml-#{$sizeName} {
+      margin-left: $size !important;
+    }
+
+    &.has-mr-#{$sizeName} {
+      margin-right: $size !important;
+    }
+
+    &.has-mt-#{$sizeName} {
+      margin-top: $size !important;
+    }
+
+    &.has-mb-#{$sizeName} {
+      margin-bottom: $size !important;
+    }
+
+    &.has-pa-#{$sizeName} {
+      padding: $size !important;
+    }
+
+    &.has-pl-#{$sizeName} {
+      padding-left: $size !important;
+    }
+
+    &.has-pr-#{$sizeName} {
+      padding-right: $size !important;
+    }
+
+    &.has-pt-#{$sizeName} {
+      padding-top: $size !important;
+    }
+
+    &.has-pb-#{$sizeName} {
+      padding-bottom: $size !important;
+    }
+  }
+}

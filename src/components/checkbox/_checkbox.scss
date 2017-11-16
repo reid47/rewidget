@@ -1,0 +1,43 @@
+@include component(checkbox) {
+  display: inline-block;
+  cursor: pointer;
+  width: 1em;
+  height: 1em;
+
+  @each $sizeName, $size in $sizes {
+    &.is-size-#{$sizeName} {
+      font-size: $size;
+    }
+  }
+
+  &:focus {
+    outline: 0;
+
+    .checkbox-icon {
+      box-shadow: $focus-shadow;
+    }
+  }
+ 
+  @include subcomponent(icon) {
+    display: inline-block;
+    width: 1em;
+    height: 1em;
+    border: $input-border;
+    border-radius: $input-border-radius;
+    box-sizing: border-box;
+    position: relative;
+  }
+
+  @include subcomponent(mark) {
+    display: inline-block;
+    width: 0.25em;
+    height: 0.5em;
+    border-color: $input-mark-color;
+    border-width: 0 0.2em 0.2em 0;
+    border-style: solid;
+    transform: rotate(45deg);
+    position: absolute;
+    left: 0.22em;
+    top: 0.03em;
+  }
+}

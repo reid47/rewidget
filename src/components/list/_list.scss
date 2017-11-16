@@ -1,0 +1,8 @@
+@include component(list) {
+  padding: initial;
+  margin: initial;
+
+  @include subcomponent(item) {
+    list-style-type: none;
+  }
+}

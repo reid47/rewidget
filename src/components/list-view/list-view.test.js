@@ -21,12 +21,16 @@ describe('ListView', () => {
     ];
     onChange = jest.fn();
 
-    wrapper = shallow(<ListView {...{
-      data,
-      displayItem: item => item.name,
-      getValueFromItem: item => item.age,
-      onChange
-    }}/>);
+    wrapper = shallow(
+      <ListView
+        {...{
+          data,
+          displayItem: item => item.name,
+          getValueFromItem: item => item.age,
+          onChange
+        }}
+      />
+    );
   });
 
   it('renders a ul element', () => {
@@ -91,7 +95,7 @@ describe('ListView', () => {
       });
 
       it('selects the clicked element', () => {
-        expect(state().selectedIndexes).toEqual({2: true});
+        expect(state().selectedIndexes).toEqual({ 2: true });
       });
 
       it('adds the "selected" CSS class correctly', () => {
@@ -123,7 +127,7 @@ describe('ListView', () => {
         });
 
         it('does not deselect that element', () => {
-          expect(state().selectedIndexes).toEqual({2: true});
+          expect(state().selectedIndexes).toEqual({ 2: true });
           expect(li(2)).toHaveClassName('selected');
           expect(li(2).is('[aria-selected="true"]')).toBe(true);
         });
@@ -132,7 +136,7 @@ describe('ListView', () => {
 
     fdescribe('when multiselect is true', () => {
       beforeEach(() => {
-        wrapper.setProps({multiselect: true});
+        wrapper.setProps({ multiselect: true });
         li(1).simulate('click', {});
         li(2).simulate('click', {});
       });
@@ -193,7 +197,7 @@ describe('ListView', () => {
         });
 
         it('deselects the clicked item', () => {
-          expect(state().selectedIndexes).toEqual({1: true});
+          expect(state().selectedIndexes).toEqual({ 1: true });
         });
 
         it('sets the "selected" CSS class accordingly', () => {
@@ -221,7 +225,7 @@ describe('ListView', () => {
         });
 
         it('selects the first item', () => {
-          expect(state().selectedIndexes).toEqual({0: true});
+          expect(state().selectedIndexes).toEqual({ 0: true });
         });
 
         describe('when the down arrow is pressed', () => {
@@ -234,7 +238,7 @@ describe('ListView', () => {
           });
 
           it('updates the selection', () => {
-            expect(state().selectedIndexes).toEqual({1: true});
+            expect(state().selectedIndexes).toEqual({ 1: true });
           });
 
           it('sets the aria-activedescendant to the id of the selected item', () => {
@@ -253,7 +257,7 @@ describe('ListView', () => {
             });
 
             it('selects the first item', () => {
-              expect(state().selectedIndexes).toEqual({0: true});
+              expect(state().selectedIndexes).toEqual({ 0: true });
             });
 
             it('sets the aria-activedescendant to the id of the selected item', () => {
@@ -273,7 +277,7 @@ describe('ListView', () => {
           });
 
           it('updates the selection', () => {
-            expect(state().selectedIndexes).toEqual({2: true});
+            expect(state().selectedIndexes).toEqual({ 2: true });
           });
 
           it('sets the aria-activedescendant to the id of the selected item', () => {
@@ -291,7 +295,7 @@ describe('ListView', () => {
             });
 
             it('updates the selection', () => {
-              expect(state().selectedIndexes).toEqual({0: true});
+              expect(state().selectedIndexes).toEqual({ 0: true });
             });
 
             it('sets the aria-activedescendant to the id of the selected item', () => {
@@ -304,7 +308,7 @@ describe('ListView', () => {
 
       describe('when there is a current item', () => {
         beforeEach(() => {
-          wrapper.setState({currentIndex: 1, selectedIndexes: {1: true}});
+          wrapper.setState({ currentIndex: 1, selectedIndexes: { 1: true } });
           wrapper.simulate('focus');
         });
 
@@ -313,7 +317,7 @@ describe('ListView', () => {
         });
 
         it('does not change the selection', () => {
-          expect(state().selectedIndexes).toEqual({1: true});
+          expect(state().selectedIndexes).toEqual({ 1: true });
         });
       });
     });
@@ -321,7 +325,7 @@ describe('ListView', () => {
     describe('when multiselect is true', () => {
       describe('when there is no current item', () => {
         beforeEach(() => {
-          wrapper.setProps({multiselect: true});
+          wrapper.setProps({ multiselect: true });
           wrapper.simulate('focus');
         });
 
@@ -367,7 +371,7 @@ describe('ListView', () => {
             });
 
             it('selects the current item', () => {
-              expect(state().selectedIndexes).toEqual({1: true});
+              expect(state().selectedIndexes).toEqual({ 1: true });
             });
 
             describe('when the Space key is pressed again', () => {
@@ -396,14 +400,14 @@ describe('ListView', () => {
           });
 
           it('selects the new current item', () => {
-            expect(state().selectedIndexes).toEqual({1: true});
+            expect(state().selectedIndexes).toEqual({ 1: true });
           });
         });
       });
 
       describe('when there is a current item', () => {
         beforeEach(() => {
-          wrapper.setState({currentIndex: 1, selectedIndexes: {2: true}});
+          wrapper.setState({ currentIndex: 1, selectedIndexes: { 2: true } });
           wrapper.simulate('focus');
         });
 
@@ -412,7 +416,7 @@ describe('ListView', () => {
         });
 
         it('does not change the selection', () => {
-          expect(state().selectedIndexes).toEqual({2: true});
+          expect(state().selectedIndexes).toEqual({ 2: true });
         });
       });
     });

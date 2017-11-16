@@ -1,19 +1,19 @@
 import React from 'react';
 
 const predicates = {
-  onArrowDown: ({key, shiftKey}) => key === 'ArrowDown' && !shiftKey,
-  onArrowUp: ({key, shiftKey}) => key === 'ArrowUp' && !shiftKey,
-  onEnter: ({key, shiftKey}) => key === 'Enter' && !shiftKey,
-  onEscape: ({key, shiftKey}) => key === 'Escape' && !shiftKey,
-  onSpace: ({key, shiftKey}) => key === ' ' && !shiftKey,
-  onTab: ({key, shiftKey}) => key === 'Tab' && !shiftKey
+  onArrowDown: ({ key, shiftKey }) => key === 'ArrowDown' && !shiftKey,
+  onArrowUp: ({ key, shiftKey }) => key === 'ArrowUp' && !shiftKey,
+  onEnter: ({ key, shiftKey }) => key === 'Enter' && !shiftKey,
+  onEscape: ({ key, shiftKey }) => key === 'Escape' && !shiftKey,
+  onSpace: ({ key, shiftKey }) => key === ' ' && !shiftKey,
+  onTab: ({ key, shiftKey }) => key === 'Tab' && !shiftKey
 };
 
 export default function withKeyHandlers(Component) {
   return class WrappedComponent extends React.Component {
     buildKeyDownHandler(handlers) {
       const handlerNames = Object.keys(handlers).filter(h => h);
-      const handlersToAdd = []
+      const handlersToAdd = [];
       handlerNames.forEach(name => {
         if (predicates[name]) {
           handlersToAdd.push({
@@ -26,7 +26,7 @@ export default function withKeyHandlers(Component) {
       if (!handlersToAdd.length) return;
 
       return evt => {
-        for (const {predicate, handler} of handlersToAdd) {
+        for (const { predicate, handler } of handlersToAdd) {
           if (predicate(evt)) {
             return handler(evt);
           }
@@ -36,7 +36,12 @@ export default function withKeyHandlers(Component) {
 
     render() {
       const {
-        onArrowDown, onArrowUp, onEnter, onEscape, onSpace, onTab,
+        onArrowDown,
+        onArrowUp,
+        onEnter,
+        onEscape,
+        onSpace,
+        onTab,
         ...props
       } = this.props;
 
@@ -46,8 +51,9 @@ export default function withKeyHandlers(Component) {
           Object.keys(predicates).reduce((acc, curr) => {
             this.props[curr] && (acc[curr] = this.props[curr]);
             return acc;
-          }, {}))
+          }, {})
+        )
       });
     }
-  }
+  };
 }

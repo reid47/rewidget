@@ -1,0 +1,101 @@
+@import '../common/_variables.scss';
+
+@include component(tooltip-container) {
+  position: relative;
+}
+
+@include component(tooltip-parent) {
+  &:focus, &:hover {
+    + #{ns(tooltip)} {
+      visibility: visible;
+      opacity: 1;
+    }
+  }
+}
+
+@include component(tooltip) {
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity 0.15s ease-in-out;
+  font-size: 0.8em;
+  position: absolute;
+  // max-width: 200px;
+  background: $color-dark;
+  color: $color-light;
+  padding: $unit;
+  border-radius: $input-border-radius;
+  display: inline-block;
+  box-shadow: $tooltip-shadow;
+  box-sizing: border-box;
+  z-index: 100;
+
+  &:before {
+    content: '';
+    width: 0;
+    height: 0;
+    position: absolute;
+    border: 0 solid transparent;
+    box-sizing: border-box;
+  }
+
+  &.tooltip-is-open {
+    visibility: visible;
+    opacity: 1;
+  }
+}
+
+@include component(tooltip-position-right) {
+  left: calc(100% + #{$unit} + 2px);
+  top: 50%;
+  transform: translateY(-50%);
+
+  &:before {
+    left: -#{$unit};
+    top: calc(50% - #{$unit});
+    border-top-width: $unit;
+    border-bottom-width: $unit;
+    border-right: $unit solid $color-dark;
+  }
+}
+
+@include component(tooltip-position-left) {
+  right: calc(100% + #{$unit} + 2px);
+  top: 50%;
+  transform: translateY(-50%);
+
+  &:before {
+    right: -#{$unit};
+    top: calc(50% - #{$unit});
+    border-top-width: $unit;
+    border-bottom-width: $unit;
+    border-left: $unit solid $color-dark;
+  }
+}
+
+@include component(tooltip-position-top) {
+  bottom: calc(100% + #{$unit} + 2px);
+  left: 50%;
+  transform: translateX(-50%);
+
+  &:before {
+    left: calc(50% - #{$unit});
+    top: 100%;
+    border-right-width: $unit;
+    border-left-width: $unit;
+    border-top: $unit solid $color-dark;
+  }
+}
+
+@include component(tooltip-position-bottom) {
+  top: calc(100% + #{$unit} + 2px);
+  left: 50%;
+  transform: translateX(-50%);
+
+  &:before {
+    left: calc(50% - #{$unit});
+    top: -#{$unit};
+    border-right-width: $unit;
+    border-left-width: $unit;
+    border-bottom: $unit solid $color-dark;
+  }
+}

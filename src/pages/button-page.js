@@ -1,46 +1,81 @@
 import React from 'react';
-import Button from '../components/buttons/Button';
+import Button from '../components/button/button';
+import ButtonGroup from '../components/button/button-group';
+import { Flex, Box } from '../components/flex';
 
 const ButtonPage = () => {
   return (
-    <div className="page">
-      <div>
+    <Flex col mt="large" mb="large">
+      <Box>
         <Button primary>primary</Button>
-        <Button primary alt>primary</Button>
-        <Button primary plain>primary</Button>
-        <Button primary disabled>primary</Button>
-        <Button primary alt disabled>primary</Button>
-      </div>
-      <div>
+      </Box>
+      <Box>
         <Button secondary>secondary</Button>
-        <Button secondary alt>secondary</Button>
-        <Button secondary plain>secondary</Button>
-        <Button secondary disabled>secondary</Button>
-        <Button secondary alt disabled>secondary</Button>
-      </div>
-      <div>
+      </Box>
+      <Box>
         <Button success>success</Button>
-        <Button success alt>success</Button>
-        <Button success plain>success</Button>
-        <Button success disabled>success</Button>
-        <Button success alt disabled>success</Button>
-      </div>
-      <div>
+      </Box>
+      <Box>
         <Button alert>alert</Button>
-        <Button alert alt>alert</Button>
-        <Button alert plain>alert</Button>
-        <Button alert disabled>alert</Button>
-        <Button alert alt disabled>alert</Button>
-      </div>
-      <div>
+      </Box>
+      <Box>
         <Button warning>warning</Button>
-        <Button warning alt>warning</Button>
-        <Button warning plain>warning</Button>
-        <Button warning disabled>warning</Button>
-        <Button warning alt disabled>warning</Button>
-      </div>
-    </div>
+      </Box>
+      <Box>
+        <Button alt primary>primary</Button>
+      </Box>
+      <Box>
+        <Button alt secondary>secondary</Button>
+      </Box>
+      <Box>
+        <Button alt success>success</Button>
+      </Box>
+      <Box>
+        <Button alt alert>alert</Button>
+      </Box>
+      <Box>
+        <Button alt warning>warning</Button>
+      </Box>
+      <Box>
+        <Button plain primary>primary</Button>
+      </Box>
+      <Box>
+        <Button plain secondary>secondary</Button>
+      </Box>
+      <Box>
+        <Button plain success>success</Button>
+      </Box>
+      <Box>
+        <Button plain alert>alert</Button>
+      </Box>
+      <Box>
+        <Button plain warning>warning</Button>
+      </Box>
+      <Box>
+        <ButtonGroup>
+          <Button>first</Button>
+          <Button alt>second</Button>
+          <Button>third</Button>
+          <Button>fourth</Button>
+        </ButtonGroup>
+      </Box>
+      <Box>
+        <Button size="tiny">tiny</Button>
+      </Box>
+      <Box>
+        <Button size="small">small</Button>
+      </Box>
+      <Box>
+        <Button size="default">default</Button>
+      </Box>
+      <Box>
+        <Button size="large">large</Button>
+      </Box>
+      <Box>
+        <Button size="huge">huge</Button>
+      </Box>
+    </Flex>
   );
-}
+};
 
 export default ButtonPage;

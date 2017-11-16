@@ -1,0 +1,17 @@
+@mixin component($name) {
+  @if ($namespace) {
+    &.#{$namespace}.#{$name} {
+      @content;
+    }
+  } @else {
+    .#{$name} {
+      @content;
+    }
+  }
+}
+
+@mixin subcomponent($name) {
+  &-#{$name} {
+    @content;
+  }
+}

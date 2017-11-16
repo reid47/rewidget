@@ -1,0 +1,112 @@
+@mixin button-style($style: 'primary') {
+  $bg: map-get($colors, $style);
+  $fg: $color-dark;
+
+  @if (lightness($bg) < 50) {
+    $fg: $color-light;
+  }
+
+  background-color: $bg;
+  color: $fg;
+
+  &.is-plain {
+    background-color: $fg;
+    color: $bg;
+  }
+
+  &.is-alt {
+    background-color: $fg;
+    color: $bg;
+    border-color: $bg;
+  }
+}
+
+@include component(button) {
+  background: transparent;
+  font-size: $size-default;
+  font-weight: bold;
+  font-family: inherit;
+  border: none;
+  cursor: pointer;
+  text-transform: uppercase;
+  line-height: 1em;
+  letter-spacing: 0.1em;
+  padding: 0.75em 1em;
+  transition: transform 0.1s ease-in-out;
+  border-radius: $input-border-radius;
+
+  &:focus {
+    outline: none;
+    border: none;
+    box-shadow: $focus-shadow;
+  }
+
+  &[disabled] {
+    opacity: 0.5;
+    cursor: auto;
+  }
+
+  &.is-alt {
+    $border-width: 0.25em;
+    border-style: solid;
+    border-width: $border-width;
+    padding: (0.75em - $border-width) (1em - $border-width);
+  }
+
+  &.is-primary { @include button-style('primary'); }
+  &.is-secondary { @include button-style('secondary'); }
+  &.is-success { @include button-style('success'); }
+  &.is-alert { @include button-style('alert'); }
+  &.is-warning { @include button-style('warning'); }
+
+  &.is-icon-only {
+    width: 4.5 * 1em;
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  > .icon {
+    margin-right: 1em / 2;
+
+    &:only-child {
+      margin-right: 0;
+    }
+  }
+
+  &.is-grouped {
+    position: relative;
+    z-index: 5;
+
+    &:focus {
+      z-index: 10;
+    }
+  }
+
+  &.is-grouped-first {
+    margin-right: 0;
+    border-top-left-radius: $input-border-radius;
+    border-bottom-left-radius: $input-border-radius;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+  }
+
+  &.is-grouped-middle {
+    margin-left: 0;
+    margin-right: 0;
+    border-radius: 0;
+  }
+
+  &.is-grouped-last {
+    margin-left: 0;
+    border-top-right-radius: $input-border-radius;
+    border-bottom-right-radius: $input-border-radius;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+  }
+
+  @each $sizeName, $size in $sizes {
+    &.is-size-#{$sizeName} {
+      font-size: $size;
+    }
+  }
+}

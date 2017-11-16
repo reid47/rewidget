@@ -1,26 +1,113 @@
 import React from 'react';
-import { BrowserRouter, Route } from 'react-router-dom';
+import { BrowserRouter, Route, Link } from 'react-router-dom';
+import { Grid, Cell } from './components/grid/grid';
+import { Flex, Box } from './components/flex';
+import { List, Item } from './components/list';
 
 import App from './App';
-import ButtonPage from './pages/ButtonPage';
-import CheckboxPage from './pages/CheckboxPage';
-import ListViewPage from './pages/ListViewPage';
-import ProgressPage from './pages/ProgressPage';
-import TextInputPage from './pages/TextInputPage';
+import ButtonPage from './pages/button-page';
+import CheckboxPage from './pages/checkbox-page';
+import TogglePage from './pages/toggle-page';
+import ListViewPage from './pages/list-view-page';
+import ProgressPage from './pages/progress-page';
+import TextInputPage from './pages/text-input-page';
+import TooltipPage from './pages/tooltip-page';
 import FlexPage from './pages/flex-page';
+import GridPage from './pages/grid-page';
+import PlaceholderPage from './pages/placeholder-page';
 
-const Routes = (props) => (
+const pages = [
+  {
+    path: '/',
+    component: App,
+    linkText: 'home'
+  },
+  {
+    path: '/button',
+    component: ButtonPage,
+    linkText: 'button'
+  },
+  {
+    path: '/checkbox',
+    component: CheckboxPage,
+    linkText: 'checkbox'
+  },
+  {
+    path: '/flex',
+    component: FlexPage,
+    linkText: 'flex'
+  },
+  {
+    path: '/grid',
+    component: GridPage,
+    linkText: 'grid'
+  },
+  {
+    path: '/listview',
+    component: ListViewPage,
+    linkText: 'list view'
+  },
+  {
+    path: '/textinput',
+    component: TextInputPage,
+    linkText: 'text input'
+  },
+  {
+    path: '/toggle',
+    component: TogglePage,
+    linkText: 'toggle'
+  },
+  {
+    path: '/tooltip',
+    component: TooltipPage,
+    linkText: 'tooltip'
+  },
+  {
+    path: '/placeholder',
+    component: PlaceholderPage,
+    linkText: 'placeholder'
+  },
+  {
+    path: '/progress',
+    component: ProgressPage,
+    linkText: 'progress'
+  }
+];
+
+const Routes = props => (
   <BrowserRouter>
-    <div id="routes">
-    {/* use Switch here? */}
-      <Route exact path="/" component={App} />
-      <Route exact path="/button" component={ButtonPage} />
-      <Route exact path="/checkbox" component={CheckboxPage} />
-      <Route exact path="/listview" component={ListViewPage} />
-      <Route exact path="/progress" component={ProgressPage} />
-      <Route exact path="/textinput" component={TextInputPage} />
-      <Route exact path="/flex" component={FlexPage} />
-    </div>
+    <Grid
+      {...{
+        gap: 'zero',
+        template: {
+          cols: ['auto', '1fr'],
+          rows: ['100vh'],
+          areas: ['sidebar main'],
+          breakpoints: {
+            '(max-width: 600px)': {
+              cols: ['100vw'],
+              rows: ['3rem', 'calc(100vh - 3rem)'],
+              areas: ['sidebar', 'main']
+            }
+          }
+        }
+      }}>
+      <Cell area="sidebar" is={Flex} scroll="none" bgColor="secondary" textColor="light">
+        <Box vAlign="top" hAlign="left">
+          <List>
+            {pages.map((page, key) => <Item key={key} pa>
+              <Link to={page.path}>{page.linkText}</Link>
+              </Item>)}
+          </List>
+        </Box>
+      </Cell>
+      <Cell area="main" is="main" scroll="y">
+        <div id="routes">
+          {pages.map((page, key) => 
+            <Route key={key} exact path={page.path} component={page.component} />)}
+        </div>
+      </Cell>
+    </Grid>
   </BrowserRouter>
 );
 

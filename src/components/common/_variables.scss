@@ -1,32 +1,71 @@
-$namespace: 'rmcl';
+$namespace: null;
+
+@function ns($selector) {
+  @return '.#{$namespace}.#{$selector}';
+}
+
+$unit: 1rem;
+
+$size-tiny: $unit / 4;
+$size-small: $unit / 2;
+$size-default: $unit;
+$size-large: $unit * 2;
+$size-huge: $unit * 4;
+
+$sizes: (
+  tiny: $size-tiny,
+  small: $size-small,
+  default: $size-default,
+  large: $size-large,
+  huge: $size-huge
+);
+
+$sizesIncludingZero: (
+  zero: 0,
+  tiny: $size-tiny,
+  small: $size-small,
+  default: $size-default,
+  large: $size-large,
+  huge: $size-huge
+);
+
+$color-primary: rgb(80, 120, 150);
+$color-secondary: rgb(80, 80, 80);
+$color-success: rgb(60, 170, 80);
+$color-alert: rgb(200, 50, 0);
+$color-warning: rgb(235, 160, 0);
+$color-light: #fff;
+$color-dark: #000;
+
+$colors: (
+  primary: $color-primary,
+  secondary: $color-secondary,
+  success: $color-success,
+  alert: $color-alert,
+  warning: $color-warning,
+  light: $color-light,
+  dark: $color-dark
+);
+
+$grid-columns: 12;
+
 $default-font-family: Raleway, Helvetica, Arial, sans-serif;
 // $default-font-family: Asap, Helvetica, Arial, sans-serif;
 $font-size: 16px;
-$unit: 0.5rem;
-
-$light: #fff;
-$dark: #000;
 
 $shadow-color: rgb(100, 200, 250);
 $shadow: 0 0 10px $shadow-color;
 $shadow-big: 0 0 16px $shadow-color;
 
 $focus-color: rgb(100, 200, 250);
-
-$primary: rgb(80, 120, 150);
-$secondary: rgb(80, 80, 80);
-$button-colors: (
-  primary: $primary,
-  secondary: $secondary,
-  success: rgb(60, 170, 80),
-  alert: rgb(200, 50, 0),
-  warning: rgb(235, 160, 0)
-);
+$focus-shadow: 0 0 0 4px $focus-color;
 
 $input-border-radius: 1em / 8;
-$input-border: 0.05em solid $dark;
-$input-mark-color: $dark;
+$input-border: 0.05em solid $color-dark;
+$input-mark-color: $color-dark;
 $input-disabled-background-color: #bbb;
 $input-disabled-foreground-color: #222;
 
 $progress-foreground-color: rgb(100, 150, 150);
+
+$tooltip-shadow: 0 1px 8px #777;
