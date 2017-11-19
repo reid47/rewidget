@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { clsNs } from '../../util';
-import { formatSize, sizeVariants } from '../../sizes';
+import { sizeVariants } from '../../sizes';
 import withKeyHandler from '../key-handler/key-handler';
 
 const EnhancedDiv = withKeyHandler('div');

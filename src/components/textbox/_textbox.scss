@@ -1,0 +1,25 @@
+@include component(textbox) {
+  width: 100%;
+  font-size: inherit;
+  font-family: inherit;
+  padding: 0.5em;
+  border-radius: $unit / 4;
+  border: 1px solid $color-dark;
+  box-sizing: border-box;
+
+  &.multiline {
+    resize: vertical;
+    min-height: 2em;
+  }
+
+  &.autoresize {
+    resize: none;
+    overflow: hidden;
+  }
+
+  &:focus {
+    outline: 0;
+    border: 1px solid $focus-color;
+    box-shadow: 0 0 0 4px $focus-color;
+  }
+}

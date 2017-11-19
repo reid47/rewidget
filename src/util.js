@@ -4,6 +4,8 @@ export const cls = (...classNames) => classNames.filter(name => name).join(' ');
 
 export const clsNs = (...classNames) => 'rw ' + cls(...classNames);
 
+export const noop = () => {}
+
 export const uniqueId = (prefix = '') =>
   prefix +
   '_' +

@@ -1,13 +1,14 @@
 # simple widgets
 - radio button
-- textbox
-- textarea
 - password box
 - number input
 - date input
 - icon
 - range input
+- color input
 - select
+- code
+- codeblock
 
 ## first pass complete
 - checkbox
@@ -15,6 +16,7 @@
 - button
 - progress bar
 - progress circle
+- textbox (incl. multiline)
 
 --------------------
 

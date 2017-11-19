@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { clsNs } from '../../util';
 import { withLayoutHelper } from '../layout-helper';
-import { formatSize, sizeVariants } from '../../sizes';
+import { sizeVariants } from '../../sizes';
 
 const Flex = ({
   className = '',

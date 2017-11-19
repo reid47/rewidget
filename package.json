@@ -101,10 +101,6 @@
     "presets": ["react-app"]
   },
   "eslintConfig": {
-    "extends": "react-app"
-  },
-  "prettier": {
-    "singleQuote": true,
-    "jsxBracketSameLine": true
+    "extends": ["react-app", "plugin:jsx-a11y/recommended"]
   }
 }

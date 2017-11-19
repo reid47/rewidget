@@ -10,7 +10,7 @@ import CheckboxPage from './pages/checkbox-page';
 import TogglePage from './pages/toggle-page';
 import ListViewPage from './pages/list-view-page';
 import ProgressPage from './pages/progress-page';
-import TextInputPage from './pages/text-input-page';
+import TextBoxPage from './pages/textbox-page';
 import TooltipPage from './pages/tooltip-page';
 import FlexPage from './pages/flex-page';
 import GridPage from './pages/grid-page';
@@ -48,9 +48,9 @@ const pages = [
     linkText: 'list view'
   },
   {
-    path: '/textinput',
-    component: TextInputPage,
-    linkText: 'text input'
+    path: '/textbox',
+    component: TextBoxPage,
+    linkText: 'textbox'
   },
   {
     path: '/toggle',
