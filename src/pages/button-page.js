@@ -1,6 +1,5 @@
 import React from 'react';
-import Button from '../components/button/button';
-import ButtonGroup from '../components/button/button-group';
+import { Button, ButtonGroup } from '../components/button';
 import { Flex, Box } from '../components/flex';
 
 const ButtonPage = () => {

@@ -1,6 +1,6 @@
 import React from 'react';
 import { clsNs, allChildrenOfType } from '../../util';
-import Button from './button';
+import { Button } from './button';
 
 const ButtonGroup = ({ children = [] }) => {
   return children.map((child, i) =>

@@ -1,7 +1,6 @@
 import React from 'react';
 import { Flex, Box } from '../components/flex';
-import Button from '../components/button/button';
-import ButtonGroup from '../components/button/button-group';
+import { Button, ButtonGroup } from '../components/button';
 
 class FlexPage extends React.Component {
   constructor(props) {

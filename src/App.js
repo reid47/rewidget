@@ -1,8 +1,8 @@
-import React, { Component } from 'react';
+import React from 'react';
 import './App.css';
-import Button from './components/button/button';
+import { Button } from './components/button/button';
 
-class App extends Component {
+class App extends React.Component {
   render() {
     return (
       <div>

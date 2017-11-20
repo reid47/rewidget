@@ -1,6 +1,6 @@
 import React from 'react';
 import { Flex, Box } from '../components/flex';
-import Button from '../components/button/button';
+import { Button } from '../components/button';
 import withTooltip from '../components/tooltip/tooltip';
 import Icon from '../components/icon/icon';
 

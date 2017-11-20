@@ -1,7 +1,7 @@
 import React from 'react';
 import { clsNs } from '../../util';
 
-const Button = ({
+export const Button = ({
   primary = true,
   secondary = false,
   success = false,
@@ -33,5 +33,3 @@ const Button = ({
     </button>
   );
 };
-
-export default Button;

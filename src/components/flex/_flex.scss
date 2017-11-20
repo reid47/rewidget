@@ -90,6 +90,10 @@ $spacings: (
     flex-basis: calc(50% - #{$unit * 2 / 2});
   }
 
+  &.space-between {
+    justify-content: space-between;
+  }
+
   &.ac-top-left {
     align-items: flex-start;
     justify-content: flex-start;

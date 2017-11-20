@@ -10,6 +10,7 @@ const Flex = ({
   col = false,
   reverse = false,
   spacing = 'default',
+  spaceBetween = false,
   ...props
 }) => (
   <div
@@ -19,6 +20,7 @@ const Flex = ({
         col ? 'flex-col' : 'flex-row',
         reverse && 'reverse',
         spacing && `spacing-${spacing}`,
+        spaceBetween && 'space-between',
         className
       )
     }}

@@ -7,6 +7,7 @@ import { List, Item } from './components/list';
 import App from './App';
 import ButtonPage from './pages/button-page';
 import CheckboxPage from './pages/checkbox-page';
+import ColorPickerPage from './pages/colorpicker-page';
 import TogglePage from './pages/toggle-page';
 import ListViewPage from './pages/list-view-page';
 import ProgressPage from './pages/progress-page';
@@ -31,6 +32,11 @@ const pages = [
     path: '/checkbox',
     component: CheckboxPage,
     linkText: 'checkbox'
+  },
+  {
+    path: '/colorpicker',
+    component: ColorPickerPage,
+    linkText: 'colorpicker'
   },
   {
     path: '/flex',
