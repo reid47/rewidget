@@ -1,6 +1,6 @@
 @include component(grid) {
   display: grid;
-  grid-gap: $size-default;
+  grid-gap: $size-m;
 
   @each $sizeName, $size in $sizesIncludingZero {
     &.has-gap-#{$sizeName} {

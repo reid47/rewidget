@@ -1,6 +1,6 @@
 import React from 'react';
 import { clsNs } from '../../util';
-import { withLayoutHelper } from '../layout-helper';
+import { withModifiers } from '../modifiers';
 
 const normalizeTemplateValues = (templateValues) => {
   if (!templateValues) return;
@@ -144,8 +144,8 @@ const Cell = ({
   });
 };
 
-const wrappedGrid = withLayoutHelper(Grid);
-const wrappedCell = withLayoutHelper(Cell);
+const wrappedGrid = withModifiers(Grid);
+const wrappedCell = withModifiers(Cell);
 
 export {
   wrappedGrid as Grid, 

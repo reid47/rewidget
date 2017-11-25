@@ -1,8 +1,8 @@
 import React from 'react';
 import { clsNs } from '../../util';
-import { withLayoutHelper } from '../layout-helper';
+import { withModifiers } from '../modifiers';
 
-export const List = withLayoutHelper(({
+export const List = withModifiers(({
   ordered = false,
   className,
   ...props

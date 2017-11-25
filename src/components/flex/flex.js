@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { clsNs } from '../../util';
-import { withLayoutHelper } from '../layout-helper';
+import { withModifiers } from '../modifiers';
 import { sizeVariants } from '../../sizes';
 
 const Flex = ({
@@ -9,7 +9,7 @@ const Flex = ({
   row = true,
   col = false,
   reverse = false,
-  spacing = 'default',
+  spacing,
   spaceBetween = false,
   ...props
 }) => (
@@ -34,5 +34,5 @@ Flex.propTypes = {
   spacing: PropTypes.oneOf(['zero', ...sizeVariants])
 }
 
-const wrappedFlex = withLayoutHelper(Flex);
+const wrappedFlex = withModifiers(Flex);
 export { wrappedFlex as Flex };

@@ -11,8 +11,10 @@ import ColorPickerPage from './pages/colorpicker-page';
 import TogglePage from './pages/toggle-page';
 import ListViewPage from './pages/list-view-page';
 import ProgressPage from './pages/progress-page';
+import SwipeHandlerPage from './pages/swipe-handler-page';
 import TextBoxPage from './pages/textbox-page';
 import TooltipPage from './pages/tooltip-page';
+import TreeViewPage from './pages/treeview-page';
 import FlexPage from './pages/flex-page';
 import GridPage from './pages/grid-page';
 import PlaceholderPage from './pages/placeholder-page';
@@ -54,6 +56,21 @@ const pages = [
     linkText: 'list view'
   },
   {
+    path: '/placeholder',
+    component: PlaceholderPage,
+    linkText: 'placeholder'
+  },
+  {
+    path: '/progress',
+    component: ProgressPage,
+    linkText: 'progress'
+  },
+  {
+    path: '/swipe-handler',
+    component: SwipeHandlerPage,
+    linkText: 'swipe handler'
+  },
+  {
     path: '/textbox',
     component: TextBoxPage,
     linkText: 'textbox'
@@ -69,14 +86,9 @@ const pages = [
     linkText: 'tooltip'
   },
   {
-    path: '/placeholder',
-    component: PlaceholderPage,
-    linkText: 'placeholder'
-  },
-  {
-    path: '/progress',
-    component: ProgressPage,
-    linkText: 'progress'
+    path: '/treeview',
+    component: TreeViewPage,
+    linkText: 'tree view'
   }
 ];
 
@@ -98,16 +110,16 @@ const Routes = props => (
           }
         }
       }}>
-      <Cell area="sidebar" is={Flex} scroll="none" bgColor="secondary" textColor="light">
+      <Cell area="sidebar" is={Flex} o="hidden" bg="secondary" color="light">
         <Box vAlign="top" hAlign="left">
           <List>
-            {pages.map((page, key) => <Item key={key} pa>
+            {pages.map((page, key) => <Item key={key} pa={1}>
               <Link to={page.path}>{page.linkText}</Link>
               </Item>)}
           </List>
         </Box>
       </Cell>
-      <Cell area="main" is="main" scroll="y">
+      <Cell area="main" is="main" o="scroll-y">
         <div id="routes">
           {pages.map((page, key) => 
             <Route key={key} exact path={page.path} component={page.component} />)}

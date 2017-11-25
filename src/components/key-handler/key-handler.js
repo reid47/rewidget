@@ -11,6 +11,8 @@ const predicates = {
 
 export default function withKeyHandlers(Component) {
   return class WrappedComponent extends React.Component {
+    static displayName = `withKeyHandlers(${Component.name || Component})`;
+
     buildKeyDownHandler(handlers) {
       const handlerNames = Object.keys(handlers).filter(h => h);
       const handlersToAdd = [];

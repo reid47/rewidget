@@ -4,7 +4,7 @@ import { Flex, Box } from '../components/flex';
 
 const ButtonPage = () => {
   return (
-    <Flex col mt="large" mb="large">
+    <Flex col mt="l" mb="l">
       <Box>
         <Button primary>primary</Button>
       </Box>

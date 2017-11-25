@@ -1,5 +1,5 @@
 import React from 'react';
-import { clsNs, uniqueId, keyEventMatches } from '../../util';
+import { clsNs, uniqueId } from '../../util';
 import './list-view.css';
 
 export default class ListView extends React.Component {
@@ -164,48 +164,48 @@ export default class ListView extends React.Component {
   }
 
   handleKeyDownSingleSelect(evt) {
-    if (keyEventMatches(evt, 'ArrowDown')) {
-      this.changeCurrentIndex(i => i + 1, true);
-      evt.preventDefault();
-    } else if (keyEventMatches(evt, 'ArrowUp')) {
-      this.changeCurrentIndex(i => i - 1, true);
-      evt.preventDefault();
-    } else if (keyEventMatches(evt, 'Home')) {
-      this.changeCurrentIndex(() => 0, true);
-      evt.preventDefault();
-    } else if (keyEventMatches(evt, 'End')) {
-      const { data } = this.props;
-      this.changeCurrentIndex(() => data.length - 1, true);
-      evt.preventDefault();
-    }
+    // if (keyEventMatches(evt, 'ArrowDown')) {
+    //   this.changeCurrentIndex(i => i + 1, true);
+    //   evt.preventDefault();
+    // } else if (keyEventMatches(evt, 'ArrowUp')) {
+    //   this.changeCurrentIndex(i => i - 1, true);
+    //   evt.preventDefault();
+    // } else if (keyEventMatches(evt, 'Home')) {
+    //   this.changeCurrentIndex(() => 0, true);
+    //   evt.preventDefault();
+    // } else if (keyEventMatches(evt, 'End')) {
+    //   const { data } = this.props;
+    //   this.changeCurrentIndex(() => data.length - 1, true);
+    //   evt.preventDefault();
+    // }
   }
 
   handleKeyDownMultiSelect(evt) {
-    if (keyEventMatches(evt, 'Shift+ArrowDown')) {
-      this.changeCurrentIndex(i => i + 1, true);
-      evt.preventDefault();
-    } else if (keyEventMatches(evt, 'Shift+ArrowUp')) {
-      this.changeCurrentIndex(i => i - 1, true);
-      evt.preventDefault();
-    } else if (keyEventMatches(evt, 'ArrowDown')) {
-      this.changeCurrentIndex(i => i + 1, false);
-      evt.preventDefault();
-    } else if (keyEventMatches(evt, 'ArrowUp')) {
-      this.changeCurrentIndex(i => i - 1, false);
-      evt.preventDefault();
-    } else if (keyEventMatches(evt, 'Home')) {
-      this.changeCurrentIndex(() => 0, false);
-      evt.preventDefault();
-    } else if (keyEventMatches(evt, 'End')) {
-      const { data } = this.props;
-      this.changeCurrentIndex(() => data.length - 1, false);
-      evt.preventDefault();
-    } else if (keyEventMatches(evt, ' ')) {
-      const { currentIndex, selectedIndexes } = this.state;
-      this.updateSelection(null, {
-        [currentIndex]: !selectedIndexes[currentIndex] || undefined
-      });
-    }
+    // if (keyEventMatches(evt, 'Shift+ArrowDown')) {
+    //   this.changeCurrentIndex(i => i + 1, true);
+    //   evt.preventDefault();
+    // } else if (keyEventMatches(evt, 'Shift+ArrowUp')) {
+    //   this.changeCurrentIndex(i => i - 1, true);
+    //   evt.preventDefault();
+    // } else if (keyEventMatches(evt, 'ArrowDown')) {
+    //   this.changeCurrentIndex(i => i + 1, false);
+    //   evt.preventDefault();
+    // } else if (keyEventMatches(evt, 'ArrowUp')) {
+    //   this.changeCurrentIndex(i => i - 1, false);
+    //   evt.preventDefault();
+    // } else if (keyEventMatches(evt, 'Home')) {
+    //   this.changeCurrentIndex(() => 0, false);
+    //   evt.preventDefault();
+    // } else if (keyEventMatches(evt, 'End')) {
+    //   const { data } = this.props;
+    //   this.changeCurrentIndex(() => data.length - 1, false);
+    //   evt.preventDefault();
+    // } else if (keyEventMatches(evt, ' ')) {
+    //   const { currentIndex, selectedIndexes } = this.state;
+    //   this.updateSelection(null, {
+    //     [currentIndex]: !selectedIndexes[currentIndex] || undefined
+    //   });
+    // }
   }
 
   render() {

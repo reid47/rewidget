@@ -1,6 +1,6 @@
 import React from 'react';
 import { clsNs } from '../../util';
-import { withLayoutHelper } from '../layout-helper';
+import { withModifiers } from '../modifiers';
 
 const Box = ({
   className = '',
@@ -27,5 +27,5 @@ const Box = ({
   );
 };
 
-const wrappedBox = withLayoutHelper(Box);
+const wrappedBox = withModifiers(Box);
 export { wrappedBox as Box };

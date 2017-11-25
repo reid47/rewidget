@@ -19,7 +19,7 @@ class Checkbox extends React.Component {
     value: false,
     onChange: null,
     className: '',
-    size: 'default',
+    size: 'm',
     threeState: false
   };
 

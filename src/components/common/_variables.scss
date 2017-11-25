@@ -6,27 +6,31 @@ $namespace: null;
 
 $unit: 1rem;
 
-$size-tiny: $unit / 4;
-$size-small: $unit / 2;
-$size-default: $unit;
-$size-large: $unit * 2;
-$size-huge: $unit * 4;
+$size-z: 0;
+$size-xs: $unit / 4;
+$size-s: $unit / 2;
+$size-m: $unit;
+$size-l: $unit * 2;
+$size-xl: $unit * 3;
+$size-xxl: $unit * 4;
 
 $sizes: (
-  tiny: $size-tiny,
-  small: $size-small,
-  default: $size-default,
-  large: $size-large,
-  huge: $size-huge
+  xs: $size-xs,
+  s: $size-s,
+  m: $size-m,
+  l: $size-l,
+  xl: $size-xl,
+  xxl: $size-xxl,
 );
 
 $sizesIncludingZero: (
-  zero: 0,
-  tiny: $size-tiny,
-  small: $size-small,
-  default: $size-default,
-  large: $size-large,
-  huge: $size-huge
+  z: $size-z,
+  xs: $size-xs,
+  s: $size-s,
+  m: $size-m,
+  l: $size-l,
+  xl: $size-xl,
+  xxl: $size-xxl,
 );
 
 $color-primary: rgb(80, 120, 150);
@@ -34,8 +38,10 @@ $color-secondary: rgb(80, 80, 80);
 $color-success: rgb(60, 170, 80);
 $color-alert: rgb(200, 50, 0);
 $color-warning: rgb(235, 160, 0);
-$color-light: #fff;
-$color-dark: #000;
+$color-light: #eeeeee;
+$color-dark: #222222;
+$color-white: #fff;
+$color-black: #000;
 
 $colors: (
   primary: $color-primary,
@@ -44,14 +50,15 @@ $colors: (
   alert: $color-alert,
   warning: $color-warning,
   light: $color-light,
-  dark: $color-dark
+  dark: $color-dark,
+  white: $color-white,
+  black: $color-black
 );
 
 $grid-columns: 12;
 
-$default-font-family: Raleway, Helvetica, Arial, sans-serif;
-// $default-font-family: Asap, Helvetica, Arial, sans-serif;
-$font-size: 16px;
+$font-sans: Barlow, Raleway, Helvetica, Arial, sans-serif;
+$font-mono: monospace;
 
 $shadow-color: rgb(100, 200, 250);
 $shadow: 0 0 10px $shadow-color;

@@ -1,6 +1,6 @@
 # simple widgets
 - radio button
-- password box
+- password box?
 - number input
 - date input
 - icon

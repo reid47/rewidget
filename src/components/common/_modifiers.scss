@@ -1,83 +1,41 @@
 .#{$namespace} {
-  &.scroll-x {
-    overflow-y: hidden !important;
-    overflow-x: auto !important;
-  }
+  &.mod-d-block { display: block !important; }
+  &.mod-d-inline { display: inline !important; }
+  &.mod-d-inline-block { display: inline-block !important; }
+  &.mod-d-table { display: table !important; }
+  &.mod-d-flex { display: flex !important; }
+  &.mod-d-table { display: table !important; }
+  &.mod-d-none { display: none !important; }
 
-  &.scroll-y {
-    overflow-x: hidden !important;
-    overflow-y: auto !important;
-  }
-
-  &.scroll-both {
-    overflow: auto !important;
-  }
-
-  &.scroll-none {
-    overflow: hidden !important;
-  }
+  &.mod-o-scroll-x { overflow-y: hidden !important; overflow-x: auto !important; }
+  &.mod-o-scroll-y { overflow-x: hidden !important; overflow-y: auto !important; }
+  &.mod-o-scroll { overflow: auto !important; }
+  &.mod-o-hidden { overflow: hidden !important; }
 
   @each $colorName, $color in $colors {
-    &.text-color-#{$colorName} {
-      color: $color !important;
-    }
-
-    &.bg-color-#{$colorName} {
-      background-color: $color !important;
-    }
+    &.mod-c-#{$colorName} { color: $color !important; }
+    &.mod-bg-#{$colorName} { background-color: $color !important; }
   }
 
   @each $sizeName, $size in $sizes {
-    &.font-size-#{$sizeName} {
-      font-size: $size;
-    }
+    &.mod-size-#{$sizeName} { font-size: $size !important; }
+    &.mod-w-#{$sizeName} { width: $size !important; }
+    &.mod-h-#{$sizeName} { height: $size !important; }
 
-    &.is-width-#{$sizeName} {
-      width: $size;
-    }
-
-    &.is-height-#{$sizeName} {
-      height: $size;
-    }
-
-    &.has-ma-#{$sizeName} {
-      margin: $size !important;
-    }
-
-    &.has-ml-#{$sizeName} {
-      margin-left: $size !important;
-    }
-
-    &.has-mr-#{$sizeName} {
-      margin-right: $size !important;
-    }
-
-    &.has-mt-#{$sizeName} {
-      margin-top: $size !important;
-    }
-
-    &.has-mb-#{$sizeName} {
-      margin-bottom: $size !important;
-    }
-
-    &.has-pa-#{$sizeName} {
-      padding: $size !important;
-    }
-
-    &.has-pl-#{$sizeName} {
-      padding-left: $size !important;
-    }
-
-    &.has-pr-#{$sizeName} {
-      padding-right: $size !important;
-    }
-
-    &.has-pt-#{$sizeName} {
-      padding-top: $size !important;
-    }
-
-    &.has-pb-#{$sizeName} {
-      padding-bottom: $size !important;
-    }
+    &.mod-ma-#{$sizeName} { margin: $size !important; }
+    &.mod-ml-#{$sizeName} { margin-left: $size !important; }
+    &.mod-mr-#{$sizeName} { margin-right: $size !important; }
+    &.mod-mt-#{$sizeName} { margin-top: $size !important; }
+    &.mod-mb-#{$sizeName} { margin-bottom: $size !important; }
+    &.mod-mv-#{$sizeName} { margin-top: $size !important; margin-bottom: $size !important; }
+    &.mod-mh-#{$sizeName} { margin-left: $size !important; margin-right: $size !important; }
+    
+    &.mod-pa-#{$sizeName} { padding: $size !important; }
+    &.mod-pl-#{$sizeName} { padding-left: $size !important; }
+    &.mod-pr-#{$sizeName} { padding-right: $size !important; }
+    &.mod-pt-#{$sizeName} { padding-top: $size !important; }
+    &.mod-pb-#{$sizeName} { padding-bottom: $size !important; }
+    &.mod-pv-#{$sizeName} { padding-top: $size !important; padding-bottom: $size !important; }
+    &.mod-ph-#{$sizeName} { padding-left: $size !important; padding-right: $size !important; }
   }
 }

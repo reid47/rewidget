@@ -1,8 +1,8 @@
 import React from 'react';
 import { clsNs } from '../../util';
-import { withLayoutHelper } from '../layout-helper';
+import { withModifiers } from '../modifiers';
 
-export const Item = withLayoutHelper(({
+export const Item = withModifiers(({
   decorated = false,
   className,
   ...props
