@@ -1,119 +1,158 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { withKeyHandler } from '../key-handler';
-// import { clsNs } from '../../util';
+import { TreeViewNode } from './treeviewnode';
+import { clsNs } from '../../util';
+
+const Div = withKeyHandler('div');
 
 const keyToFirstChild = key => key + '_0';
 
-const keyToNextSibling = key => {
-  const prefix = key.substring(0, key.length - 2);
+const keyToNextSibling = (key, siblingCount) => {
   const currentIndex = +key.substring(key.length - 1);
-  console.log({prefix, currentIndex}, prefix + '_' + (currentIndex + 1));
+  if (currentIndex + 1 >= siblingCount) return;
+  const prefix = key.substring(0, key.length - 2);
   return prefix + '_' + (currentIndex + 1);
 };
 
-const TreeViewItem = withKeyHandler('li');
+const keyToPreviousSibling = (key, siblingCount) => {
+  const currentIndex = +key.substring(key.length - 1);
+  if (currentIndex - 1 < 0) return;
+  const prefix = key.substring(0, key.length - 2);
+  return prefix + '_' + (currentIndex - 1);
+};
+
+const keyToParent = key => {
+  const parent = key.substring(0, key.length - 2);
+  console.log(key, 'parent:', parent)
+  return parent;
+}
+
+const flattenItemKeys = (data, getItemChildren) => {
+  const keys = [];
+  data.forEach((item, i) => {
+    keys.push(i);
+    const children = getItemChildren(item);
+    if (children && children.length > 0) {
+      keys.push(flattenItemKeys(children, getItemChildren))
+    }
+  });
+  return keys;
+}
+
+const flatten = arr => arr.reduce((flattened, item) =>
+  flattened.concat(Array.isArray(item) ? flatten(item) : [item]), []);
 
 export class TreeView extends React.Component {
   static propTypes = {
     data: PropTypes.array,
     getItemText: PropTypes.func,
-    getItemChildren: PropTypes.func,
-    isRoot: PropTypes.bool
+    getItemChildren: PropTypes.func
   };
 
   static defaultProps = {
     data: [],
     getItemText: i => `${i}`,
-    getItemChildren: () => null,
-    isRoot: true
+    getItemChildren: () => null
   };
 
   constructor(props) {
     super(props);
-    this.onArrowUp = this.onArrowUp.bind(this);
-    this.onArrowDown = this.onArrowDown.bind(this);
+    // this.onArrowUp = this.onArrowUp.bind(this);
+    // this.onArrowDown = this.onArrowDown.bind(this);
+    this.moveFocusUpFrom = this.moveFocusUpFrom.bind(this);
+    this.moveFocusDownFrom = this.moveFocusDownFrom.bind(this);
+    this.setState = this.setState.bind(this);
 
-    this.state = props.isRoot ? {
-      focusedItemKey: '_0'
-    } : {};
+    this.state = {
+      focusedItemKey: '0'
+    };
   }
 
-  onArrowUp(evt) {
-    const setState = this.props.treeViewSetState || this.setState;
-    console.log('up', evt.target.dataset.itemId);
-    const id = evt.target.dataset.itemId;
-    const idx = this.itemKeys.indexOf(id);
-    this.setState({
-      focusedItemKey: this.itemKeys[(idx - 1) >= 0 ? (idx - 1) : this.itemKeys.length - 1]
-    });
+  moveFocusUpFrom(itemKey, indexInGroup, groupCount, hasChildren) {
+    console.log({itemKey, indexInGroup, groupCount, hasChildren})
+    let nextFocusedItemKey;
+
+    if (hasChildren) {
+
+    }
+
+    if (nextFocusedItemKey) {
+      this.setState({focusedItemKey: nextFocusedItemKey}, () => {
+        const el = this.treeElement && this.treeElement.querySelector('[tabindex="0"]');
+        el && el.focus();
+      });
+    }
   }
 
-  onArrowDown(evt) {
-    const setState = this.props.treeViewSetState || this.setState;
-    console.log('down', evt.target.dataset.itemId);
-    const id = evt.target.dataset.itemId;
-    const idx = this.itemKeys.indexOf(id);
-    console.log({id, idx, next: this.itemKeys[(idx + 1) % this.itemKeys.length]})
-    this.setState({
-      focusedItemKey: this.itemKeys[(idx + 1) % this.itemKeys.length]
-    });
+  moveFocusDownFrom(itemKey, indexInGroup, groupCount, hasChildren) {
+    console.log({itemKey, indexInGroup, groupCount, hasChildren})
+    let nextFocusedItemKey;
+
+    if (hasChildren) {
+      nextFocusedItemKey = keyToFirstChild(itemKey);
+    } else if (indexInGroup === groupCount - 1) {
+      nextFocusedItemKey = keyToFirstChild(keyToParent(itemKey));
+      console.log(itemKey, keyToParent(itemKey), keyToNextSibling(keyToParent(itemKey)))
+    } else {
+      nextFocusedItemKey = keyToNextSibling(itemKey, groupCount);
+    }
+
+    if (nextFocusedItemKey) {
+      this.setState({focusedItemKey: nextFocusedItemKey}, () => {
+        const el = this.treeElement && this.treeElement.querySelector('[tabindex="0"]');
+        el && el.focus();
+      });
+    }
   }
 
   render() {
-    const { data, getItemText, getItemChildren, itemKey = '', isRoot } = this.props;
-    const state = this.props.treeViewState || this.state;
-    const setState = this.props.treeViewSetState || this.setState.bind(this);
-    const { focusedItemKey } = state;
+    const { data, getItemText, getItemChildren } = this.props;
 
-    this.itemKeys = [];
-    console.log('render', focusedItemKey)
+    // FLATTEN ALL ITEM KEYS INTO ONE LIST
+        // actually maybe we can just use the array of nested arrays?
+    // THEN WE CAN JUST GO UP AND DOWN (eventually also checking isExpanded)
+    const flatKeyList = flattenItemKeys(data, getItemChildren);
+    console.log({flatKeyList});
+    console.log({superflat: flatten(flatKeyList)})
 
-    const nodes = <ul {...{
-        role: 'tree',
-        ref: el => this.treeElement = el
-      }}>
-        {data.map((item, i) => {
-          const key = itemKey + '_' + i;
-          this.itemKeys.push(key);
-          const itemChildren = getItemChildren(item);
-          const isFocused = key === focusedItemKey;
-
-          return (
-            <TreeViewItem {...{
-              'data-item-id': key,
-              role: 'treeitem',
-              key,
-              tabIndex: isFocused ? 0 : -1,
-              onArrowUp: this.onArrowUp,
-              onArrowDown: () => {
-                if (itemChildren) {
-                  setState({focusedItemKey: key + '_0'}, () => {
-                    this.treeElement.querySelector('[tabindex="0"]').focus();
-                  });
-                } else {
-                  console.log('here', keyToNextSibling(key))
-                  setState({focusedItemKey: keyToNextSibling(key)}, () => {
-                    this.treeElement.querySelector('[tabindex="0"]').focus();
-                  });
-                }
-              }
-            }}>
-              {getItemText(item)}
-              {itemChildren && <TreeView {...{
-                data: itemChildren,
-                getItemText,
-                getItemChildren,
-                isRoot: false,
-                itemKey: key,
-                treeViewState: this.state,
-                treeViewSetState: this.setState.bind(this)
-              }}/>}
-            </TreeViewItem>
-          );
-        })}
+    const nodes = <ul ref={el => this.treeElement = el}>
+        {data.map((itemData, key) => <TreeViewNode {...{
+          key,
+          itemKey: '' + key,
+          itemData,
+          getItemText,
+          getItemChildren,
+          indexInGroup: key,
+          groupCount: data.length,
+          moveFocusUp: this.moveFocusUpFrom,
+          moveFocusDown: this.moveFocusDownFrom,
+          treeViewState: this.state,
+          treeViewSetState: this.setState
+        }}/>)}
       </ul>;
 
-    return nodes;
+    return (
+      <Div {...{
+        className: clsNs('treeview'),
+        role: 'tree',
+        onArrowDown: evt => {
+          this.moveFocusDownFrom(
+            evt.target.dataset.itemKey,
+            +evt.target.dataset.indexInGroup,
+            +evt.target.dataset.groupCount,
+            evt.target.dataset.hasChildren);
+        },
+        onArrowUp: evt => {
+          this.moveFocusUpFrom(
+            evt.target.dataset.itemKey,
+            +evt.target.dataset.indexInGroup,
+            +evt.target.dataset.groupCount,
+            evt.target.dataset.hasChildren);
+        }
+      }}>
+        {nodes}
+      </Div>
+    );
   }
 }

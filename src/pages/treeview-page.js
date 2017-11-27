@@ -24,7 +24,7 @@ const data = [
       { name: 'Three Child A' },
       { name: 'Three Child B' },
       { name: 'Three Child C' },
-      { name: 'Three Child D' },
+      { name: 'Three Child D', items: [{name: 'Tree Child D1'}] },
       { name: 'Three Child E' },
       { name: 'Three Child F' },
     ]

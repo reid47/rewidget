@@ -1,0 +1,7 @@
+@include component(treeview) {
+  @include subcomponent(treeview-node) {
+    &.is-focused {
+      background-color: yellow;
+    }
+  }
+}
