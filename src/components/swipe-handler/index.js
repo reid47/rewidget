@@ -1,1 +1,0 @@
-export { withSwipeHandlers } from './swipe-handler';
