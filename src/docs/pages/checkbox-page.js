@@ -1,7 +1,7 @@
 import React from 'react';
 import Checkbox from '../components/checkbox/checkbox';
 
-class CheckboxPage extends React.Component {
+export default class extends React.Component {
   constructor(props) {
     super(props);
 
@@ -103,5 +103,3 @@ class CheckboxPage extends React.Component {
     );
   }
 }
-
-export default CheckboxPage;

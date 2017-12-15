@@ -1,5 +1,5 @@
 import React from 'react';
-import { clsNs } from '../../util';
+import { cls } from '../../util';
 
 export const Button = ({
   primary = true,
@@ -14,16 +14,16 @@ export const Button = ({
   children,
   ...props
 }) => {
-  const cn = clsNs(
-    'button',
-    primary && 'is-primary',
-    secondary && 'is-secondary',
-    success && 'is-success',
-    alert && 'is-alert',
-    warning && 'is-warning',
-    alt && 'is-alt',
-    plain && 'is-plain',
-    `is-size-${size}`,
+  const cn = cls(
+    'rw-Button',
+    primary && 'rw-Button-primary',
+    secondary && 'rw-Button-secondary',
+    success && 'rw-Button-success',
+    alert && 'rw-Button-alert',
+    warning && 'rw-Button-warning',
+    alt && 'rw-Button-alt',
+    plain && 'rw-Button-plain',
+    `rw-Button-size-${size}`,
     className
   );
 

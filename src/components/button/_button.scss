@@ -73,37 +73,6 @@
     }
   }
 
-  &.is-grouped {
-    position: relative;
-    z-index: 5;
-
-    &:focus {
-      z-index: 10;
-    }
-  }
-
-  &.is-grouped-first {
-    margin-right: 0;
-    border-top-left-radius: $input-border-radius;
-    border-bottom-left-radius: $input-border-radius;
-    border-top-right-radius: 0;
-    border-bottom-right-radius: 0;
-  }
-
-  &.is-grouped-middle {
-    margin-left: 0;
-    margin-right: 0;
-    border-radius: 0;
-  }
-
-  &.is-grouped-last {
-    margin-left: 0;
-    border-top-right-radius: $input-border-radius;
-    border-bottom-right-radius: $input-border-radius;
-    border-top-left-radius: 0;
-    border-bottom-left-radius: 0;
-  }
-
   @each $sizeName, $size in $sizes {
     &.is-size-#{$sizeName} {
       font-size: $size;
