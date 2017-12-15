@@ -20,6 +20,6 @@
   &:focus {
     outline: 0;
     border: 1px solid $focus-color;
-    box-shadow: 0 0 0 4px $focus-color;
+    box-shadow: $focus-shadow;
   }
 }

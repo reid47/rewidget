@@ -1,7 +1,8 @@
 import React from 'react';
 
 export const cls = (...classNames) => classNames.filter(name => name).join(' ');
-export const clsNs = (...classNames) => 'rw ' + cls(...classNames);
+export const pfx = str => 'rw-' + str;
+
 export const truthyOrZero = val => val || val === 0;
 export const noop = () => {};
 

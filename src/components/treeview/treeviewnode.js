@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { clsNs } from '../../util';
+import { cls, pfx } from '../../util';
 
 export class TreeViewNode extends React.Component {
   static propTypes = {
@@ -17,7 +17,7 @@ export class TreeViewNode extends React.Component {
   };
 
   render() {
-    const { 
+    const {
       itemKey, itemData, getItemText, getItemChildren, getItemIcon,
       moveFocusTo, toggleCollapsedState, treeViewState
     } = this.props;
@@ -31,10 +31,12 @@ export class TreeViewNode extends React.Component {
 
     return (
       <li {...{
-        className: clsNs('treeview-node', isFocused && 'is-focused')
+        className: cls(
+          'rw-treeview-node',
+          isFocused && 'rw-treeview-node--focused')
       }}>
         <div {...{
-          className: clsNs('treeview-item'),
+          className: cls(pfx('treeview-item')),
           tabIndex: isFocused ? 0 : -1,
           'data-item-key': itemKey,
           onFocus: evt => {
@@ -50,7 +52,7 @@ export class TreeViewNode extends React.Component {
             }
           }
         }}>
-          {icon && <span 
+          {icon && <span
             role="presentation"
             className={clsNs('treeview-item-icon')}>{icon}</span>}
           <span className={clsNs('treeview-item-text')}>{getItemText({itemData})}</span>
