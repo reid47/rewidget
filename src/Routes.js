@@ -12,6 +12,7 @@ import TogglePage from './pages/toggle-page';
 import ListViewPage from './pages/list-view-page';
 import ProgressPage from './pages/progress-page';
 import SwipeHandlerPage from './pages/swipe-handler-page';
+import TablePage from './pages/table-page';
 import TextBoxPage from './pages/textbox-page';
 import TooltipPage from './pages/tooltip-page';
 import TreeViewPage from './pages/treeview-page';
@@ -69,6 +70,11 @@ const pages = [
     path: '/swipe-handler',
     component: SwipeHandlerPage,
     linkText: 'swipe handler'
+  },
+  {
+    path: '/table',
+    component: TablePage,
+    linkText: 'table'
   },
   {
     path: '/textbox',

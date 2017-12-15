@@ -7,54 +7,66 @@ export class TreeViewNode extends React.Component {
     itemKey: PropTypes.string.isRequired,
     getItemText: PropTypes.func,
     getItemChildren: PropTypes.func,
-    isCollapsed: PropTypes.bool,
-    moveFocusUp: PropTypes.func.isRequired,
-    moveFocusDown: PropTypes.func.isRequired,
-    treeViewState: PropTypes.object.isRequired,
-    treeViewSetState: PropTypes.func.isRequired
+    getItemIcon: PropTypes.func,
+    moveFocusTo: PropTypes.func.isRequired,
+    treeViewState: PropTypes.object.isRequired
   };
 
   static defaultProps = {
-    itemData: {},
-    isCollapsed: false
+    itemData: {}
   };
 
   render() {
     const { 
-      itemKey, itemData, getItemText, getItemChildren,
-      indexInGroup, groupCount,
-      moveFocusUp, moveFocusDown, treeViewState, treeViewSetState
+      itemKey, itemData, getItemText, getItemChildren, getItemIcon,
+      moveFocusTo, toggleCollapsedState, treeViewState
     } = this.props;
-    const { focusedItemKey } = treeViewState;
+    const { focusedItemKey, itemStates } = treeViewState;
 
     const isFocused = focusedItemKey === itemKey;
-    const itemChildren = getItemChildren(itemData);
+    const isCollapsed = itemStates[itemKey].isCollapsed;
+    const itemChildren = getItemChildren({itemData});
     const hasChildren = itemChildren && itemChildren.length > 0;
+    const icon = getItemIcon({itemData, isCollapsed, hasChildren});
 
     return (
       <li {...{
-        className: clsNs('treeview-node', isFocused && 'is-focused'),
-        tabIndex: isFocused ? 0 : -1,
-        'data-item-key': itemKey,
-        'data-index-in-group': indexInGroup,
-        'data-group-count': groupCount,
-        'data-has-children': hasChildren || undefined
+        className: clsNs('treeview-node', isFocused && 'is-focused')
       }}>
-        {getItemText(itemData)}
-        {hasChildren &&
-          <ul>
+        <div {...{
+          className: clsNs('treeview-item'),
+          tabIndex: isFocused ? 0 : -1,
+          'data-item-key': itemKey,
+          onFocus: evt => {
+            evt.stopPropagation();
+            evt.preventDefault();
+            moveFocusTo(itemKey);
+          },
+          onClick: evt => {
+            evt.stopPropagation();
+            evt.preventDefault();
+            if (isFocused) {
+              toggleCollapsedState(itemKey);
+            }
+          }
+        }}>
+          {icon && <span 
+            role="presentation"
+            className={clsNs('treeview-item-icon')}>{icon}</span>}
+          <span className={clsNs('treeview-item-text')}>{getItemText({itemData})}</span>
+        </div>
+        {hasChildren && !isCollapsed &&
+          <ul className={clsNs('treeview-list')}>
             {itemChildren.map((childData, key) => <TreeViewNode {...{
               key,
               itemKey: itemKey + '_' + key,
               itemData: childData,
               getItemText,
               getItemChildren,
-              indexInGroup: key,
-              groupCount: itemChildren.length,
-              moveFocusUp,
-              moveFocusDown,
-              treeViewState,
-              treeViewSetState
+              getItemIcon,
+              moveFocusTo,
+              toggleCollapsedState,
+              treeViewState
             }}/>)}
           </ul>}
       </li>

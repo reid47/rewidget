@@ -44,6 +44,10 @@ export default class TextBoxPage extends React.Component {
         <TextBox
           onChange={this.onChange('text4')}
           value={this.state.text4}/>
+        <br/><br/><br/>
+        <TextBox placeholder="uncontrolled input"/>
+        <br/><br/><br/>
+        <TextBox password placeholder="Enter password..."/>
         <br />
         <br />
         <br />

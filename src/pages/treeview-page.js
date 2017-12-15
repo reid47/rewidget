@@ -55,8 +55,8 @@ export default class TreeViewPage extends React.Component {
         
         <TreeView {...{
           data,
-          getItemText: item => item.name,
-          getItemChildren: item => item.items
+          getItemText: ({itemData}) => itemData.name,
+          getItemChildren: ({itemData}) => itemData.items
         }}/>
         
         <Div><a href="#something">some other link</a></Div>

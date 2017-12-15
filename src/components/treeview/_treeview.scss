@@ -1,7 +1,22 @@
 @include component(treeview) {
-  @include subcomponent(treeview-node) {
+  @include subcomponent(node) {
+    list-style-type: none;
+    padding: 0;
+
     &.is-focused {
       background-color: yellow;
     }
+  }
+
+  @include subcomponent(list) {
+    &.is-top-level {
+      padding: 0;
+    }
+  }
+
+  @include subcomponent(item-icon) {
+    display: inline-block;
+    width: 1rem;
+    text-align: center;
   }
 }

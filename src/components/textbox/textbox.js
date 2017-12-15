@@ -8,7 +8,8 @@ export class TextBox extends React.Component {
     onChange: PropTypes.func,
     multiline: PropTypes.bool,
     autoresize: PropTypes.bool,
-    rows: PropTypes.number
+    rows: PropTypes.number,
+    password: PropTypes.bool
   };
 
   static defaultProps = {
@@ -16,7 +17,8 @@ export class TextBox extends React.Component {
     onChange: noop,
     multiline: false,
     autoresize: false,
-    rows: 2
+    rows: 2,
+    password: false
   };
 
   constructor(props) {
@@ -46,8 +48,8 @@ export class TextBox extends React.Component {
   }
 
   render() {
-    const { value, multiline, autoresize, rows, ...props } = this.props;
- 
+    const { value, onChange, multiline, autoresize, rows, password, ...props } = this.props;
+
     if (multiline) {
       return <textarea {...{
         ref: textarea => this.textarea = textarea,
@@ -62,7 +64,7 @@ export class TextBox extends React.Component {
       <input {...{
         ...props,
         className: clsNs('textbox'),
-        type: 'text',
+        type: password ? 'password' : 'text',
         value,
         onChange: this.onChange
       }}/>

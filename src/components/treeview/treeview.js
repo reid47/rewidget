@@ -4,131 +4,220 @@ import { withKeyHandler } from '../key-handler';
 import { TreeViewNode } from './treeviewnode';
 import { clsNs } from '../../util';
 
+const o = console.log
+
 const Div = withKeyHandler('div');
 
-const keyToFirstChild = key => key + '_0';
-
-const keyToNextSibling = (key, siblingCount) => {
-  const currentIndex = +key.substring(key.length - 1);
-  if (currentIndex + 1 >= siblingCount) return;
-  const prefix = key.substring(0, key.length - 2);
-  return prefix + '_' + (currentIndex + 1);
-};
-
-const keyToPreviousSibling = (key, siblingCount) => {
-  const currentIndex = +key.substring(key.length - 1);
-  if (currentIndex - 1 < 0) return;
-  const prefix = key.substring(0, key.length - 2);
-  return prefix + '_' + (currentIndex - 1);
-};
-
-const keyToParent = key => {
-  const parent = key.substring(0, key.length - 2);
-  console.log(key, 'parent:', parent)
-  return parent;
-}
-
-const flattenItemKeys = (data, getItemChildren) => {
-  const keys = [];
+const flattenItemKeys = (data, getItemChildren, prefix = '') => {
+  let keys = [];
   data.forEach((item, i) => {
-    keys.push(i);
-    const children = getItemChildren(item);
+    const itemKey = prefix ? prefix + '_' + i : '' + i;
+    keys.push(itemKey);
+    const children = getItemChildren({itemData: item});
     if (children && children.length > 0) {
-      keys.push(flattenItemKeys(children, getItemChildren))
+      keys = keys.concat(flattenItemKeys(children, getItemChildren, itemKey));
     }
   });
   return keys;
 }
 
-const flatten = arr => arr.reduce((flattened, item) =>
-  flattened.concat(Array.isArray(item) ? flatten(item) : [item]), []);
+const setInitialItemStates = (itemStates, data, getItemChildren, getInitialCollapsedState, prefix, parentCollapsed) => {
+  data.forEach((item, i) => {
+    const itemKey = prefix ? prefix + '_' + i : '' + i;
+    const isCollapsed = getInitialCollapsedState && getInitialCollapsedState(item);
+    const children = getItemChildren({itemData: item});
+    const hasChildren = children && children.length > 0;
+
+    itemStates[itemKey] = {
+      isCollapsed,
+      isSelected: false,
+      isHidden: parentCollapsed,
+      hasChildren
+    };
+
+    if (hasChildren) {
+      setInitialItemStates(
+        itemStates, 
+        children, 
+        getItemChildren, 
+        getInitialCollapsedState, 
+        itemKey,
+        isCollapsed);
+    }
+  });
+}
 
 export class TreeView extends React.Component {
   static propTypes = {
     data: PropTypes.array,
     getItemText: PropTypes.func,
-    getItemChildren: PropTypes.func
+    getItemChildren: PropTypes.func,
+    getInitialCollapsedState: PropTypes.func,
+    getItemIcon: PropTypes.func
   };
 
   static defaultProps = {
     data: [],
-    getItemText: i => `${i}`,
-    getItemChildren: () => null
+    getItemText: ({itemData}) => `${itemData}`,
+    getItemChildren: () => null,
+    getInitialCollapsedState: null,
+    getItemIcon: ({hasChildren, isCollapsed}) => {
+      if (!hasChildren) return null;
+      if (isCollapsed) return '+';
+      return '-';
+    }
   };
 
   constructor(props) {
     super(props);
-    // this.onArrowUp = this.onArrowUp.bind(this);
-    // this.onArrowDown = this.onArrowDown.bind(this);
     this.moveFocusUpFrom = this.moveFocusUpFrom.bind(this);
     this.moveFocusDownFrom = this.moveFocusDownFrom.bind(this);
+    this.moveFocusRightFrom = this.moveFocusRightFrom.bind(this);
+    this.moveFocusLeftFrom = this.moveFocusLeftFrom.bind(this);
+    this.onArrowUp = this.onArrowUp.bind(this);
+    this.onArrowDown = this.onArrowDown.bind(this);
+    this.onArrowRight = this.onArrowRight.bind(this);
+    this.onArrowLeft = this.onArrowLeft.bind(this);
+    this.moveFocusTo = this.moveFocusTo.bind(this);
+    this.toggleCollapsedState = this.toggleCollapsedState.bind(this);
     this.setState = this.setState.bind(this);
 
     this.state = {
-      focusedItemKey: '0'
+      focusedItemKey: '0',
+      collapsedItems: {},
+      itemStates: {}
     };
+
+    setInitialItemStates(
+      this.state.itemStates, 
+      props.data, 
+      props.getItemChildren,
+      props.getInitialCollapsedState,
+      '',
+      false);
+
+    this.flatKeyList = flattenItemKeys(props.data, props.getItemChildren);
   }
 
-  moveFocusUpFrom(itemKey, indexInGroup, groupCount, hasChildren) {
-    console.log({itemKey, indexInGroup, groupCount, hasChildren})
-    let nextFocusedItemKey;
+  onArrowDown(evt) {
+    this.moveFocusDownFrom(evt.target.dataset.itemKey);
+  }
 
-    if (hasChildren) {
+  onArrowUp(evt) {
+    this.moveFocusUpFrom(evt.target.dataset.itemKey);
+  }
 
+  onArrowRight(evt) {
+    this.moveFocusRightFrom(evt.target.dataset.itemKey);
+  }
+
+  onArrowLeft(evt) {
+    this.moveFocusLeftFrom(evt.target.dataset.itemKey);
+  }
+
+  moveFocusUpFrom(itemKey) {
+    if (!this.flatKeyList) return;
+
+    const { itemStates } = this.state;
+
+    let currentIndex = this.flatKeyList.indexOf(itemKey) - 1;
+    let newFocusedKey = this.flatKeyList[currentIndex];
+    while (currentIndex >= 0 && itemStates[newFocusedKey].isHidden) {
+      newFocusedKey = this.flatKeyList[currentIndex];
+      currentIndex--;
     }
-
-    if (nextFocusedItemKey) {
-      this.setState({focusedItemKey: nextFocusedItemKey}, () => {
-        const el = this.treeElement && this.treeElement.querySelector('[tabindex="0"]');
-        el && el.focus();
-      });
+    
+    if (newFocusedKey && !itemStates[newFocusedKey].isHidden) {
+      this.moveFocusTo(newFocusedKey);
     }
   }
 
-  moveFocusDownFrom(itemKey, indexInGroup, groupCount, hasChildren) {
-    console.log({itemKey, indexInGroup, groupCount, hasChildren})
-    let nextFocusedItemKey;
+  moveFocusDownFrom(itemKey) {
+    if (!this.flatKeyList) return;
+
+    const { itemStates } = this.state;
+
+    let currentIndex = this.flatKeyList.indexOf(itemKey) + 1;
+    let newFocusedKey = this.flatKeyList[currentIndex];
+    while (currentIndex < this.flatKeyList.length && itemStates[newFocusedKey].isHidden) {
+      newFocusedKey = this.flatKeyList[currentIndex];
+      currentIndex++;
+    }
+    
+    if (newFocusedKey && !itemStates[newFocusedKey].isHidden) {
+      this.moveFocusTo(newFocusedKey);
+    }
+  }
+
+  moveFocusRightFrom(itemKey) {
+    const { itemStates } = this.state;
+
+    const { hasChildren, isCollapsed } = itemStates[itemKey];
 
     if (hasChildren) {
-      nextFocusedItemKey = keyToFirstChild(itemKey);
-    } else if (indexInGroup === groupCount - 1) {
-      nextFocusedItemKey = keyToFirstChild(keyToParent(itemKey));
-      console.log(itemKey, keyToParent(itemKey), keyToNextSibling(keyToParent(itemKey)))
+      if (!isCollapsed) {
+        this.moveFocusTo(itemKey + '_0');
+      } else {
+        this.toggleCollapsedState(itemKey);
+      }
+    }
+  }
+
+  moveFocusLeftFrom(itemKey) {
+    const { itemStates } = this.state;
+
+    const { hasChildren, isCollapsed } = itemStates[itemKey];
+
+    if (hasChildren && !isCollapsed) {
+      this.toggleCollapsedState(itemKey);
     } else {
-      nextFocusedItemKey = keyToNextSibling(itemKey, groupCount);
+      const parentKey = itemKey.substring(0, itemKey.length - 2);
+      if (itemStates[parentKey]) {
+        this.moveFocusTo(parentKey);
+      }
     }
+  }
 
-    if (nextFocusedItemKey) {
-      this.setState({focusedItemKey: nextFocusedItemKey}, () => {
-        const el = this.treeElement && this.treeElement.querySelector('[tabindex="0"]');
-        el && el.focus();
-      });
-    }
+  moveFocusTo(itemKey) {
+    if (!itemKey || itemKey === this.state.focusedItemKey) return;
+
+    this.setState({focusedItemKey: itemKey}, () => {
+      const el = this.treeElement && this.treeElement.querySelector('[tabindex="0"]');
+      el && el.focus();
+    });
+  }
+
+  toggleCollapsedState(itemKey) {
+    const { itemStates } = this.state;
+    const newCollapsedState = !itemStates[itemKey].isCollapsed;
+    const newItemStates = { ...itemStates };
+
+    newItemStates[itemKey].isCollapsed = newCollapsedState;
+    const keysToHide = Object.keys(itemStates).filter(key => 
+      key.startsWith(itemKey) && key.length !== itemKey.length);
+    keysToHide.forEach(key => {
+      newItemStates[key].isHidden = newCollapsedState
+    });
+
+    this.setState({ itemStates: newItemStates });
   }
 
   render() {
-    const { data, getItemText, getItemChildren } = this.props;
+    const { data, getItemText, getItemChildren, getItemIcon } = this.props;
 
-    // FLATTEN ALL ITEM KEYS INTO ONE LIST
-        // actually maybe we can just use the array of nested arrays?
-    // THEN WE CAN JUST GO UP AND DOWN (eventually also checking isExpanded)
-    const flatKeyList = flattenItemKeys(data, getItemChildren);
-    console.log({flatKeyList});
-    console.log({superflat: flatten(flatKeyList)})
-
-    const nodes = <ul ref={el => this.treeElement = el}>
+    const nodes = <ul 
+        ref={el => this.treeElement = el}
+        className={clsNs('treeview-list is-top-level')}>
         {data.map((itemData, key) => <TreeViewNode {...{
           key,
           itemKey: '' + key,
           itemData,
           getItemText,
           getItemChildren,
-          indexInGroup: key,
-          groupCount: data.length,
-          moveFocusUp: this.moveFocusUpFrom,
-          moveFocusDown: this.moveFocusDownFrom,
-          treeViewState: this.state,
-          treeViewSetState: this.setState
+          getItemIcon,
+          moveFocusTo: this.moveFocusTo,
+          toggleCollapsedState: this.toggleCollapsedState,
+          treeViewState: this.state
         }}/>)}
       </ul>;
 
@@ -136,19 +225,12 @@ export class TreeView extends React.Component {
       <Div {...{
         className: clsNs('treeview'),
         role: 'tree',
-        onArrowDown: evt => {
-          this.moveFocusDownFrom(
-            evt.target.dataset.itemKey,
-            +evt.target.dataset.indexInGroup,
-            +evt.target.dataset.groupCount,
-            evt.target.dataset.hasChildren);
-        },
-        onArrowUp: evt => {
-          this.moveFocusUpFrom(
-            evt.target.dataset.itemKey,
-            +evt.target.dataset.indexInGroup,
-            +evt.target.dataset.groupCount,
-            evt.target.dataset.hasChildren);
+        onArrowDown: this.onArrowDown,
+        onArrowUp: this.onArrowUp,
+        onArrowRight: this.onArrowRight,
+        onArrowLeft: this.onArrowLeft,
+        onSpace: evt => {
+          this.toggleCollapsedState(evt.target.dataset.itemKey);
         }
       }}>
         {nodes}

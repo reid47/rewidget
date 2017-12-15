@@ -3,6 +3,8 @@ import React from 'react';
 const predicates = {
   onArrowDown: ({ key, shiftKey }) => key === 'ArrowDown' && !shiftKey,
   onArrowUp: ({ key, shiftKey }) => key === 'ArrowUp' && !shiftKey,
+  onArrowRight: ({ key, shiftKey }) => key === 'ArrowRight' && !shiftKey,
+  onArrowLeft: ({ key, shiftKey }) => key === 'ArrowLeft' && !shiftKey,
   onEnter: ({ key, shiftKey }) => key === 'Enter' && !shiftKey,
   onEscape: ({ key, shiftKey }) => key === 'Escape' && !shiftKey,
   onSpace: ({ key, shiftKey }) => key === ' ' && !shiftKey,
@@ -40,6 +42,8 @@ export default function withKeyHandlers(Component) {
       const {
         onArrowDown,
         onArrowUp,
+        onArrowRight,
+        onArrowLeft,
         onEnter,
         onEscape,
         onSpace,
