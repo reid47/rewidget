@@ -28,6 +28,10 @@ export const TogglePage = () => {
           type: 'string',
           description: 'Class to put on the outer `div` element'
         }, {
+          name: 'onChange',
+          type: 'function',
+          description: 'Callback that will be called with the new `checked` value whenever the `checked` state changes'
+        }, {
           name: 'children',
           type: 'node',
           description: 'Contents to put within the inner `label` element'
@@ -46,14 +50,14 @@ export const TogglePage = () => {
         <Example {...{title: 'Toggle sizes'}}>
           <div>
             <Toggle size="sm">I am a label within a toggle</Toggle>
-            <Toggle size="md">I am a label within a toggle</Toggle>
-            <Toggle size="lg">I am a label within a toggle</Toggle>
+            <Toggle size="md" className="mt-1">I am a label within a toggle</Toggle>
+            <Toggle size="lg" className="mt-1">I am a label within a toggle</Toggle>
           </div>
         </Example>
         <Example {...{title: 'Disabled toggle'}}>
           <div>
-            <Toggle disabled>I cannot be checked</Toggle>
-            <Toggle defaultChecked disabled>I cannot be unchecked</Toggle>
+            <Toggle disabled className="mt-1">I cannot be checked</Toggle>
+            <Toggle defaultChecked disabled className="mt-1">I cannot be unchecked</Toggle>
           </div>
         </Example>
       </div>)

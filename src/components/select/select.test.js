@@ -49,16 +49,29 @@ describe('Select', () => {
 
   describe('when given additional props', () => {
     const onClick = () => 47;
-    const onChange = () => 23;
+    const onFocus = () => 23;
 
     beforeEach(() => {
-      root.setProps({onClick, onChange});
+      root.setProps({onClick, onFocus});
     });
 
     it('puts the additional props on the inner input', () => {
       const el = root.find('select');
       expect(el.prop('onClick')).toBe(onClick);
-      expect(el.prop('onChange')).toBe(onChange);
+      expect(el.prop('onFocus')).toBe(onFocus);
+    });
+  });
+
+  describe('when changing selection', () => {
+    const onChange = jest.fn();
+
+    beforeEach(() => {
+      root.setProps({onChange});
+      root.find('select').simulate('change', {target: {value: '3'}});
+    });
+
+    it('calls the onChange callback correctly', () => {
+      expect(onChange).toBeCalledWith('3');
     });
   });
 });

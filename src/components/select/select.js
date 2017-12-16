@@ -5,6 +5,7 @@ export const Select = ({
   size,
   className,
   children,
+  onChange,
   ...props
 }) => {
   const selectClasses = classify(
@@ -13,7 +14,11 @@ export const Select = ({
     className);
 
   return (
-    <select className={selectClasses} {...props}>
+    <select {...{
+      ...props,
+      className: selectClasses,
+      onChange: evt => onChange && onChange(evt.target.value)
+    }}>
       {children}
     </select>
   );

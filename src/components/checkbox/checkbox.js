@@ -8,6 +8,7 @@ export const Checkbox = ({
   labelClassName,
   widgetClassName,
   children,
+  onChange,
   id = uniqueId('checkbox'),
   ...props
 }) => {
@@ -30,7 +31,13 @@ export const Checkbox = ({
 
   return (
     <div className={checkboxClasses}>
-      <input type="checkbox" id={id} className={inputClasses} {...props} />
+      <input {...{
+        ...props,
+        type: 'checkbox',
+        id,
+        className: inputClasses,
+        onChange: evt => onChange && onChange(evt.target.checked)
+      }}/>
       <label htmlFor={id} className={labelClasses}>
         <span className={widgetClasses}/>
         {children}

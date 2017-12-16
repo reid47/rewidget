@@ -1,10 +1,12 @@
 .#{prefix(Textbox)} {
-  width: 100%;
+  display: block;
+  width: $Textbox-width;
   font-size: $size-md;
-  font-family: $font-sans;
+  font-family: $Textbox-font-family;
   padding: 0.5em;
-  border-radius: $input-border-radius;
-  border: 1px solid $color-dark;
+  background-color: $Textbox-background-color;
+  border-radius: $Textbox-border-radius;
+  border: 1px solid $Textbox-border-color;
   box-sizing: border-box;
 
   &.is-size-sm {
@@ -27,6 +29,6 @@
 
   &:focus {
     outline: 0;
-    box-shadow: $focus-shadow;
+    box-shadow: $Textbox-focus-shadow;
   }
 }

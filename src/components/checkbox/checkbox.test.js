@@ -107,16 +107,29 @@ describe('Checkbox', () => {
 
   describe('when given additional props', () => {
     const onClick = () => 47;
-    const onChange = () => 23;
+    const onFocus = () => 23;
 
     beforeEach(() => {
-      root.setProps({onClick, onChange});
+      root.setProps({onClick, onFocus});
     });
 
     it('puts the additional props on the inner input', () => {
       const btn = root.find('input[type="checkbox"]');
       expect(btn.prop('onClick')).toBe(onClick);
-      expect(btn.prop('onChange')).toBe(onChange);
+      expect(btn.prop('onFocus')).toBe(onFocus);
+    });
+  });
+
+  describe('when the value is changed', () => {
+    const onChange = jest.fn();
+
+    beforeEach(() => {
+      root.setProps({onChange});
+      root.find('input').simulate('change', {target: {checked: true}});
+    });
+
+    it('calls the onChange callback with the new value', () => {
+      expect(onChange).toBeCalledWith(true);
     });
   });
 });

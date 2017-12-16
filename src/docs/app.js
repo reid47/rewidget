@@ -8,6 +8,7 @@ import { RadioPage } from '../components/radio/radio.docs';
 import { RadioGroupPage } from '../components/radio-group/radio-group.docs';
 import { SelectPage } from '../components/select/select.docs';
 import '../components/main.css';
+import './docs.css';
 
 const pages = [
   {

@@ -8,6 +8,7 @@ export const Toggle = ({
   labelClassName,
   widgetClassName,
   children,
+  onChange,
   id = uniqueId('toggle'),
   ...props
 }) => {
@@ -30,7 +31,13 @@ export const Toggle = ({
 
   return (
     <div className={toggleClasses}>
-      <input type="checkbox" id={id} className={inputClasses} {...props} />
+      <input {...{
+        ...props,
+        type: 'checkbox',
+        id,
+        className: inputClasses,
+        onChange: evt => onChange && onChange(evt.target.checked)
+      }}/>
       <label htmlFor={id} className={labelClasses}>
         <span className={widgetClasses}/>
         {children}

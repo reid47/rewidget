@@ -28,6 +28,10 @@ export const RadioPage = () => {
           type: 'string',
           description: 'Class to put on the outer `div` element'
         }, {
+          name: 'onChange',
+          type: 'function',
+          description: 'Callback that will be called with the new `checked` value whenever the `checked` state changes'
+        }, {
           name: 'children',
           type: 'node',
           description: 'Contents to put within the inner `label` element'
@@ -45,15 +49,15 @@ export const RadioPage = () => {
         </Example>
         <Example {...{title: 'Radio sizes'}}>
           <div>
-            <Radio size="sm">I am a label within a radio</Radio>
-            <Radio size="md">I am a label within a radio</Radio>
-            <Radio size="lg">I am a label within a radio</Radio>
+            <Radio size="sm" name="ex3" className="mt-1">I am a label within a radio</Radio>
+            <Radio size="md" name="ex3" className="mt-1">I am a label within a radio</Radio>
+            <Radio size="lg" name="ex3" className="mt-1">I am a label within a radio</Radio>
           </div>
         </Example>
         <Example {...{title: 'Disabled radio'}}>
           <div>
-            <Radio disabled>I cannot be checked</Radio>
-            <Radio defaultChecked disabled>I cannot be unchecked</Radio>
+            <Radio disabled className="mt-1">I cannot be checked</Radio>
+            <Radio defaultChecked disabled className="mt-1">I cannot be unchecked</Radio>
           </div>
         </Example>
       </div>)

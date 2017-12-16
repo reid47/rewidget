@@ -73,3 +73,19 @@ $Toggle-margin-right: $unit / 4 !default;
 $Toggle-border-radius: 10rem !default;
 $Toggle-focus-shadow: $focus-shadow !default;
 $Toggle-transition: transform 0.05s ease-out !default;
+
+// Select
+$Select-background-color: $color-light !default;
+$Select-border-radius: $input-border-radius !default;
+$Select-focus-shadow: $focus-shadow !default;
+$Select-font-family: $font-sans !default;
+$Select-width: 100% !default;
+$Select-border-color: $color-dark !default;
+
+// Textbox
+$Textbox-background-color: $color-light !default;
+$Textbox-border-radius: $input-border-radius !default;
+$Textbox-focus-shadow: $focus-shadow !default;
+$Textbox-font-family: $font-sans !default;
+$Textbox-width: 100% !default;
+$Textbox-border-color: $color-dark !default;

@@ -8,6 +8,7 @@ export const Radio = ({
   labelClassName,
   widgetClassName,
   children,
+  onChange,
   id = uniqueId('radio'),
   ...props
 }) => {
@@ -30,7 +31,13 @@ export const Radio = ({
 
   return (
     <div className={radioClasses}>
-      <input type="radio" id={id} className={inputClasses} {...props} />
+      <input {...{
+        ...props,
+        type: 'radio',
+        id,
+        className: inputClasses,
+        onChange: evt => onChange && onChange(evt.target.checked)
+      }}/>
       <label htmlFor={id} className={labelClasses}>
         <span className={widgetClasses}/>
         {children}

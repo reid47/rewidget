@@ -1,81 +1,66 @@
 import React from 'react';
 import { Textbox } from '../../components/textbox';
+import { DocPage, Example } from '../../docs/docs-components';
 
-export class TextboxPage extends React.Component {
-  constructor(props) {
-    super(props);
-
-    this.onChange = this.onChange.bind(this);
-
-    this.state = {
-      text1: '',
-      text2: '',
-      text3: '',
-      text4: ''
-    };
-  }
-
-  onChange(field) {
-    return newValue =>
-      this.setState({
-        [field]: newValue
-      });
-  }
-
-  render() {
-    return (
-      <div
-        style={{
-          margin: '1rem auto',
-          padding: '1rem',
-          textAlign: 'center'
-        }}>
-        <Textbox onChange={this.onChange('text1')} value={this.state.text1} />
-        <br />
-        <br />
-        <br />
-        <Textbox
-          onChange={this.onChange('text2')}
-          value={this.state.text2}
-        />
-        <br />
-        <br />
-        <br />
-        <Textbox
-          onChange={this.onChange('text4')}
-          value={this.state.text4}/>
-        <br/><br/><br/>
-        <Textbox placeholder="uncontrolled input"/>
-        <br/><br/><br/>
-        <Textbox password placeholder="Enter password..."/>
-        <br />
-        <br />
-        <br />
-        <Textbox
-          multiline
-          onChange={this.onChange('text3')}
-          value={this.state.text3}
-          placeholder="Enter multiple lines..."/>
-        <br />
-        <br />
-        <br />
-        <Textbox
-          multiline
-          autoresize
-          onChange={this.onChange('text3')}
-          value={this.state.text3}
-          placeholder="Enter multiple lines..."/>
-        <br />
-        <br />
-        <br />
-        <Textbox
-          multiline
-          autoresize
-          rows={1}
-          onChange={this.onChange('text3')}
-          value={this.state.text3}
-          placeholder="Enter multiple lines..."/>
-      </div>
-    );
-  }
+export const TextboxPage = () => {
+  return (
+    <DocPage {...{
+      componentName: 'Textbox',
+      propList: [
+        {
+          name: 'size',
+          type: 'string (possible values: "sm", "md", "lg")',
+          description: 'Size of the textbox (adds the `is-size-{size}` class)'
+        }, {
+          name: 'password',
+          type: 'boolean',
+          description: 'Whether or not this is a password input'
+        }, {
+          name: 'multiline',
+          type: 'boolean',
+          description: 'Whether or not this textbox supports multiple lines'
+        }, {
+          name: 'rows',
+          type: 'number',
+          description: 'When `multiline`, the number of text rows to display without needing to scroll down'
+        }, {
+          name: 'className',
+          type: 'string',
+          description: 'Class to put on the `input`/`textarea` element'
+        }, {
+          name: 'onChange',
+          type: 'function',
+          description: 'Callback that will be called with the new `value` whenever the value changes'
+        }, {
+          name: '...props',
+          description: 'All other props will be passed to the `input`/`textarea` element'
+        }
+      ],
+      examples: (<div>
+        <Example {...{title: 'Single-line textbox'}}>
+          <Textbox/>
+        </Example>
+        <Example {...{title: 'Multi-line textbox'}}>
+          <Textbox multiline/>
+        </Example>
+        <Example {...{title: 'Textbox with placeholder'}}>
+          <Textbox placeholder="Enter something..."/>
+        </Example>
+        <Example {...{title: 'Single-line textbox sizes'}}>
+          <div>
+            <Textbox size="sm"/>
+            <Textbox size="md" className="mt-1"/>
+            <Textbox size="lg" className="mt-1"/>
+          </div>
+        </Example>
+        <Example {...{title: 'Multi-line textbox sizes'}}>
+          <div>
+            <Textbox multiline size="sm"/>
+            <Textbox multiline size="md" className="mt-1"/>
+            <Textbox multiline size="lg" className="mt-1"/>
+          </div>
+        </Example>
+      </div>)
+    }}/>
+  );
 }

@@ -28,6 +28,10 @@ export const CheckboxPage = () => {
           type: 'string',
           description: 'Class to put on the outer `div` element'
         }, {
+          name: 'onChange',
+          type: 'function',
+          description: 'Callback that will be called with the new `checked` value whenever the `checked` state changes'
+        }, {
           name: 'children',
           type: 'node',
           description: 'Contents to put within the inner `label` element'
@@ -46,14 +50,14 @@ export const CheckboxPage = () => {
         <Example {...{title: 'Checkbox sizes'}}>
           <div>
             <Checkbox size="sm">I am a label within a checkbox</Checkbox>
-            <Checkbox size="md">I am a label within a checkbox</Checkbox>
-            <Checkbox size="lg">I am a label within a checkbox</Checkbox>
+            <Checkbox size="md" className="mt-1">I am a label within a checkbox</Checkbox>
+            <Checkbox size="lg" className="mt-1">I am a label within a checkbox</Checkbox>
           </div>
         </Example>
         <Example {...{title: 'Disabled checkbox'}}>
           <div>
-            <Checkbox disabled>I cannot be checked</Checkbox>
-            <Checkbox defaultChecked disabled>I cannot be unchecked</Checkbox>
+            <Checkbox disabled className="mt-1">I cannot be checked</Checkbox>
+            <Checkbox defaultChecked disabled className="mt-1">I cannot be unchecked</Checkbox>
           </div>
         </Example>
       </div>)

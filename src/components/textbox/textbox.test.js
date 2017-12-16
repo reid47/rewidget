@@ -127,20 +127,5 @@ describe('Textbox', () => {
         expect(textarea.prop('onFocus')).toBe(onFocus);
       });
     });
-
-    xdescribe('when autoresize is true', () => {
-      const onChange = jest.fn();
-
-      beforeEach(() => {
-        root.setProps({autoresize: true, onChange});
-        root.find('textarea').simulate('change', {
-          target: {value: 'line 1\nline 2\nline 3\nline 4'}});
-      });
-
-      it('sets textarea height with the style prop', () => {
-        const textarea = root.find('textarea');
-        expect(textarea.getElement()).toBe({height: '72px'});
-      });
-    });
   });
 });
