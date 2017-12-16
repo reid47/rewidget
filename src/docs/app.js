@@ -5,6 +5,7 @@ import {
   CheckboxPage,
   RadioPage,
   RadioGroupPage,
+  SelectPage,
   TextboxPage,
   TogglePage
 } from './pages';
@@ -29,6 +30,11 @@ const pages = [
     path: '/radio-group',
     component: RadioGroupPage,
     linkText: 'radio group'
+  },
+  {
+    path: '/select',
+    component: SelectPage,
+    linkText: 'select'
   },
   {
     path: '/textbox',

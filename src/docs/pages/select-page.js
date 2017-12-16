@@ -1,6 +1,6 @@
 import React from 'react';
 
-export class RadioGroupPage extends React.Component {
+export class SelectPage extends React.Component {
   constructor(props) {
     super(props);
   }

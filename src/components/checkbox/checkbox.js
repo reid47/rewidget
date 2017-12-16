@@ -1,12 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { clsNs } from '../../util';
+import { cls } from '../../util';
 import { sizeVariants } from '../../sizes';
-import withKeyHandler from '../key-handler/key-handler';
+import { withKeyHandler } from '../key-handler';
 
 const EnhancedDiv = withKeyHandler('div');
 
-class Checkbox extends React.Component {
+export class Checkbox extends React.Component {
   static propTypes = {
     value: PropTypes.bool,
     onChange: PropTypes.func,
@@ -55,7 +55,7 @@ class Checkbox extends React.Component {
         {...{
           ...props,
           role: 'checkbox',
-          className: clsNs(
+          className: cls(
             'checkbox',
             className,
             disabled && 'is-disabled',
@@ -69,12 +69,10 @@ class Checkbox extends React.Component {
           onClick: this.onChange,
           onSpace: this.onChange
         }}>
-        <span className={clsNs('checkbox-icon')}>
-          {checked && <span className={clsNs('checkbox-mark')} />}
+        <span className={cls('checkbox-icon')}>
+          {checked && <span className={cls('checkbox-mark')} />}
         </span>
       </EnhancedDiv>
     );
   }
 }
-
-export default Checkbox;

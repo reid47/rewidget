@@ -1,6 +1,7 @@
-export { default as ButtonPage } from './button-page';
-export { default as CheckboxPage } from './checkbox-page';
-export { default as TextboxPage } from './textbox-page';
-export { default as TogglePage } from './toggle-page';
-export { default as RadioPage } from './radio-page';
-export { default as RadioGroupPage } from './radio-group-page';
+export { ButtonPage } from './button-page';
+export { CheckboxPage } from './checkbox-page';
+export { TextboxPage } from './textbox-page';
+export { TogglePage } from './toggle-page';
+export { RadioPage } from './radio-page';
+export { RadioGroupPage } from './radio-group-page';
+export { SelectPage } from './select-page';

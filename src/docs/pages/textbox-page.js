@@ -1,7 +1,7 @@
 import React from 'react';
-import {TextBox} from '../components/textbox';
+import { Textbox } from '../../components/textbox';
 
-export default class TextBoxPage extends React.Component {
+export class TextboxPage extends React.Component {
   constructor(props) {
     super(props);
 
@@ -30,28 +30,28 @@ export default class TextBoxPage extends React.Component {
           padding: '1rem',
           textAlign: 'center'
         }}>
-        <TextBox onChange={this.onChange('text1')} value={this.state.text1} />
+        <Textbox onChange={this.onChange('text1')} value={this.state.text1} />
         <br />
         <br />
         <br />
-        <TextBox
+        <Textbox
           onChange={this.onChange('text2')}
           value={this.state.text2}
         />
         <br />
         <br />
         <br />
-        <TextBox
+        <Textbox
           onChange={this.onChange('text4')}
           value={this.state.text4}/>
         <br/><br/><br/>
-        <TextBox placeholder="uncontrolled input"/>
+        <Textbox placeholder="uncontrolled input"/>
         <br/><br/><br/>
-        <TextBox password placeholder="Enter password..."/>
+        <Textbox password placeholder="Enter password..."/>
         <br />
         <br />
         <br />
-        <TextBox
+        <Textbox
           multiline
           onChange={this.onChange('text3')}
           value={this.state.text3}
@@ -59,7 +59,7 @@ export default class TextBoxPage extends React.Component {
         <br />
         <br />
         <br />
-        <TextBox
+        <Textbox
           multiline
           autoresize
           onChange={this.onChange('text3')}
@@ -68,7 +68,7 @@ export default class TextBoxPage extends React.Component {
         <br />
         <br />
         <br />
-        <TextBox
+        <Textbox
           multiline
           autoresize
           rows={1}

@@ -11,7 +11,7 @@ const predicates = {
   onTab: ({ key, shiftKey }) => key === 'Tab' && !shiftKey
 };
 
-export default function withKeyHandlers(Component) {
+export function withKeyHandlers(Component) {
   return class WrappedComponent extends React.Component {
     static displayName = `withKeyHandlers(${Component.name || Component})`;
 

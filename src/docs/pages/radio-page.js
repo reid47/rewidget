@@ -1,6 +1,6 @@
 import React from 'react';
 
-export default class extends React.Component {
+export class RadioPage extends React.Component {
   constructor(props) {
     super(props);
   }

@@ -1,1 +1,1 @@
-export { default as withKeyHandler } from './key-handler';
+export { withKeyHandler } from './key-handler';

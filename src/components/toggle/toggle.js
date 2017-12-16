@@ -1,10 +1,10 @@
 import React from 'react';
-import withKeyHandler from '../key-handler/key-handler';
-import { clsNs } from '../../util';
+import { withKeyHandler } from '../key-handler';
+import { cls } from '../../util';
 
 const EnhancedLabel = withKeyHandler('label');
 
-const Toggle = ({
+export const Toggle = ({
   value = false,
   onChange = null,
   rounded = true,
@@ -16,7 +16,7 @@ const Toggle = ({
 }) => {
   return (
     <EnhancedLabel
-      className={clsNs('toggle', `is-size-${size}`)}
+      className={cls('toggle', `is-size-${size}`)}
       tabIndex="0"
       role="switch"
       aria-checked={String(value)}
@@ -28,14 +28,14 @@ const Toggle = ({
       <input
         {...{
           type: 'checkbox',
-          className: clsNs('toggle-checkbox'),
+          className: cls('toggle-checkbox'),
           checked: value,
           value: value ? 'on' : 'off',
           onChange: evt => onChange && onChange(evt.target.checked)
         }}
       />
       <div
-        className={clsNs(
+        className={cls(
           'toggle-slider',
           rounded && 'is-rounded',
           animated && 'is-animated',
@@ -43,15 +43,13 @@ const Toggle = ({
         )}>
         {showLabels &&
           !value && (
-            <div className={clsNs('toggle-label', 'toggle-label-off')}>OFF</div>
+            <div className={cls('toggle-label', 'toggle-label-off')}>OFF</div>
           )}
         {showLabels &&
           value && (
-            <div className={clsNs('toggle-label', 'toggle-label-on')}>ON</div>
+            <div className={cls('toggle-label', 'toggle-label-on')}>ON</div>
           )}
       </div>
     </EnhancedLabel>
   );
 };
-
-export default Toggle;

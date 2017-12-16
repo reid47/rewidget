@@ -1,8 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { clsNs, noop } from '../../util';
+import { cls, noop } from '../../util';
 
-export class TextBox extends React.Component {
+export class Textbox extends React.Component {
   static propTypes = {
     value: PropTypes.string,
     onChange: PropTypes.func,
@@ -42,7 +42,7 @@ export class TextBox extends React.Component {
 
     if (multiline && autoresize && this.textarea) {
       this.textarea.style.height = 0;
-      this.textarea.style.height = 
+      this.textarea.style.height =
         Math.max(this.textareaInitialHeight, this.textarea.scrollHeight) + 'px';
     }
   }
@@ -54,7 +54,7 @@ export class TextBox extends React.Component {
       return <textarea {...{
         ref: textarea => this.textarea = textarea,
         ...props,
-        className: clsNs('textbox', 'multiline', autoresize && 'autoresize'),
+        className: cls('textbox', 'multiline', autoresize && 'autoresize'),
         onChange: this.onChange,
         rows
       }}/>;
@@ -63,7 +63,7 @@ export class TextBox extends React.Component {
     return (
       <input {...{
         ...props,
-        className: clsNs('textbox'),
+        className: cls('textbox'),
         type: password ? 'password' : 'text',
         value,
         onChange: this.onChange
