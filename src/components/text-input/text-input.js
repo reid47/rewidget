@@ -1,7 +1,7 @@
 import React from 'react';
 import { classify, prefix } from '../../util';
 
-export const Textbox = ({
+export const TextInput = ({
   size,
   onChange,
   multiline,
@@ -10,8 +10,8 @@ export const Textbox = ({
   className,
   ...props
 }) => {
-  const textboxClasses = classify(
-    prefix('Textbox'),
+  const inputClasses = classify(
+    prefix('TextInput'),
     multiline && 'is-multiline',
     size && `is-size-${size}`,
     className);
@@ -19,7 +19,7 @@ export const Textbox = ({
   if (multiline) {
     return <textarea {...{
       ...props,
-      className: textboxClasses,
+      className: inputClasses,
       onChange: evt => onChange && onChange(evt.target.value),
       rows
     }}/>;
@@ -28,7 +28,7 @@ export const Textbox = ({
   return (
     <input {...{
       ...props,
-      className: textboxClasses,
+      className: inputClasses,
       type: password ? 'password' : 'text',
       onChange: evt => onChange && onChange(evt.target.value)
     }}/>

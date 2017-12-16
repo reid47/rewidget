@@ -2,7 +2,7 @@ import React from 'react';
 import { BrowserRouter, Route, Link } from 'react-router-dom';
 import { ButtonPage } from '../components/button/button.docs';
 import { CheckboxPage } from '../components/checkbox/checkbox.docs';
-import { TextboxPage } from '../components/textbox/textbox.docs';
+import { TextInputPage } from '../components/text-input/text-input.docs';
 import { TogglePage } from '../components/toggle/toggle.docs';
 import { RadioPage } from '../components/radio/radio.docs';
 import { RadioGroupPage } from '../components/radio-group/radio-group.docs';
@@ -37,9 +37,9 @@ const pages = [
     linkText: 'select'
   },
   {
-    path: '/textbox',
-    component: TextboxPage,
-    linkText: 'textbox'
+    path: '/text-input',
+    component: TextInputPage,
+    linkText: 'text input'
   },
   {
     path: '/toggle',

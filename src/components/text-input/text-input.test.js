@@ -1,17 +1,17 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { mount } from 'enzyme';
-import { Textbox } from './textbox';
+import { TextInput } from './text-input';
 
-describe('Textbox', () => {
+describe('TextInput', () => {
   let root;
 
   beforeEach(() => {
-    root = mount(<Textbox />);
+    root = mount(<TextInput />);
   });
 
-  it('renders a basic textbox by default', () => {
-    const input = root.find('input.rw-Textbox');
+  it('renders a basic text input by default', () => {
+    const input = root.find('input.rw-TextInput');
     expect(input.exists()).toBe(true);
     expect(input.is('[type="text"]')).toBe(true);
   });
@@ -22,7 +22,7 @@ describe('Textbox', () => {
     });
 
     it('renders a password input', () => {
-      const input = root.find('input.rw-Textbox');
+      const input = root.find('input.rw-TextInput');
       expect(input.is('[type="password"]')).toBe(true);
     });
   });
@@ -33,7 +33,7 @@ describe('Textbox', () => {
     });
 
     it('puts the className on the input', () => {
-      const input = root.find('input.rw-Textbox');
+      const input = root.find('input.rw-TextInput');
       expect(input.hasClass('some-class')).toBe(true);
     });
   });
@@ -44,7 +44,7 @@ describe('Textbox', () => {
     });
 
     it('gives the outer element the is-size-sm class', () => {
-      const el = root.find('input.rw-Textbox');
+      const el = root.find('input.rw-TextInput');
       expect(el.hasClass('is-size-sm')).toBe(true);
     });
   });
@@ -83,7 +83,7 @@ describe('Textbox', () => {
     });
 
     it('renders a textarea', () => {
-      const textarea = root.find('textarea.rw-Textbox');
+      const textarea = root.find('textarea.rw-TextInput');
       expect(textarea.exists()).toBe(true);
       expect(textarea.hasClass('is-multiline')).toBe(true);
       expect(textarea.prop('rows')).toBe(2);
@@ -95,7 +95,7 @@ describe('Textbox', () => {
       });
 
       it('sets the rows prop on the textarea', () => {
-        const textarea = root.find('textarea.rw-Textbox');
+        const textarea = root.find('textarea.rw-TextInput');
         expect(textarea.prop('rows')).toBe(5);
       });
     });

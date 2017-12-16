@@ -1,16 +1,16 @@
 import React from 'react';
-import { Textbox } from '../../components/textbox';
+import { TextInput } from '../../components/text-input';
 import { DocPage, Example } from '../../docs/docs-components';
 
-export const TextboxPage = () => {
+export const TextInputPage = () => {
   return (
     <DocPage {...{
-      componentName: 'Textbox',
+      componentName: 'TextInput',
       propList: [
         {
           name: 'size',
           type: 'string (possible values: "sm", "md", "lg")',
-          description: 'Size of the textbox (adds the `is-size-{size}` class)'
+          description: 'Size of the text input (adds the `is-size-{size}` class)'
         }, {
           name: 'password',
           type: 'boolean',
@@ -18,7 +18,7 @@ export const TextboxPage = () => {
         }, {
           name: 'multiline',
           type: 'boolean',
-          description: 'Whether or not this textbox supports multiple lines'
+          description: 'Whether or not this text input supports multiple lines'
         }, {
           name: 'rows',
           type: 'number',
@@ -37,27 +37,27 @@ export const TextboxPage = () => {
         }
       ],
       examples: (<div>
-        <Example {...{title: 'Single-line textbox'}}>
-          <Textbox/>
+        <Example {...{title: 'Single-line text input'}}>
+          <TextInput/>
         </Example>
-        <Example {...{title: 'Multi-line textbox'}}>
-          <Textbox multiline/>
+        <Example {...{title: 'Multi-line text input'}}>
+          <TextInput multiline/>
         </Example>
-        <Example {...{title: 'Textbox with placeholder'}}>
-          <Textbox placeholder="Enter something..."/>
+        <Example {...{title: 'text input with placeholder'}}>
+          <TextInput placeholder="Enter something..."/>
         </Example>
-        <Example {...{title: 'Single-line textbox sizes'}}>
+        <Example {...{title: 'Single-line text input sizes'}}>
           <div>
-            <Textbox size="sm"/>
-            <Textbox size="md" className="mt-1"/>
-            <Textbox size="lg" className="mt-1"/>
+            <TextInput size="sm"/>
+            <TextInput size="md" className="mt-1"/>
+            <TextInput size="lg" className="mt-1"/>
           </div>
         </Example>
-        <Example {...{title: 'Multi-line textbox sizes'}}>
+        <Example {...{title: 'Multi-line text input sizes'}}>
           <div>
-            <Textbox multiline size="sm"/>
-            <Textbox multiline size="md" className="mt-1"/>
-            <Textbox multiline size="lg" className="mt-1"/>
+            <TextInput multiline size="sm"/>
+            <TextInput multiline size="md" className="mt-1"/>
+            <TextInput multiline size="lg" className="mt-1"/>
           </div>
         </Example>
       </div>)

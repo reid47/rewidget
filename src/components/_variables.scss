@@ -82,10 +82,10 @@ $Select-font-family: $font-sans !default;
 $Select-width: 100% !default;
 $Select-border-color: $color-dark !default;
 
-// Textbox
-$Textbox-background-color: $color-light !default;
-$Textbox-border-radius: $input-border-radius !default;
-$Textbox-focus-shadow: $focus-shadow !default;
-$Textbox-font-family: $font-sans !default;
-$Textbox-width: 100% !default;
-$Textbox-border-color: $color-dark !default;
+// TextInput
+$TextInput-background-color: $color-light !default;
+$TextInput-border-radius: $input-border-radius !default;
+$TextInput-focus-shadow: $focus-shadow !default;
+$TextInput-font-family: $font-sans !default;
+$TextInput-width: 100% !default;
+$TextInput-border-color: $color-dark !default;

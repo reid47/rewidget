@@ -1,12 +1,12 @@
-.#{prefix(Textbox)} {
+.#{prefix(TextInput)} {
   display: block;
-  width: $Textbox-width;
+  width: $TextInput-width;
   font-size: $size-md;
-  font-family: $Textbox-font-family;
+  font-family: $TextInput-font-family;
   padding: 0.5em;
-  background-color: $Textbox-background-color;
-  border-radius: $Textbox-border-radius;
-  border: 1px solid $Textbox-border-color;
+  background-color: $TextInput-background-color;
+  border-radius: $TextInput-border-radius;
+  border: 1px solid $TextInput-border-color;
   box-sizing: border-box;
 
   &.is-size-sm {
@@ -29,6 +29,6 @@
 
   &:focus {
     outline: 0;
-    box-shadow: $Textbox-focus-shadow;
+    box-shadow: $TextInput-focus-shadow;
   }
 }
