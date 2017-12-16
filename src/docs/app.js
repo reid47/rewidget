@@ -1,14 +1,13 @@
 import React from 'react';
 import { BrowserRouter, Route, Link } from 'react-router-dom';
-import {
-  ButtonPage,
-  CheckboxPage,
-  RadioPage,
-  RadioGroupPage,
-  SelectPage,
-  TextboxPage,
-  TogglePage
-} from './pages';
+import { ButtonPage } from './pages/button-page';
+import { CheckboxPage } from './pages/checkbox-page';
+import { TextboxPage } from './pages/textbox-page';
+import { TogglePage } from './pages/toggle-page';
+import { RadioPage } from './pages/radio-page';
+import { RadioGroupPage } from './pages/radio-group-page';
+import { SelectPage } from './pages/select-page';
+import '../components/main.css';
 
 const pages = [
   {

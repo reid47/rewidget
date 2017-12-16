@@ -1,30 +1,17 @@
-$prefix: null;
+$prefix: 'rw-';
 
 $unit: 1rem;
 
-$size-z: 0;
-$size-xs: $unit / 4;
-$size-s: $unit / 2;
-$size-m: $unit;
-$size-l: $unit * 2;
-$size-xl: $unit * 3;
-$size-xxl: $unit * 4;
-
-$sizes: (
-  xs: $size-xs,
-  s: $size-s,
-  m: $size-m,
-  l: $size-l,
-  xl: $size-xl,
-  xxl: $size-xxl,
-);
+$size-sm: $unit * 0.75;
+$size-md: $unit;
+$size-lg: $unit * 1.5;
 
 $color-primary: rgb(80, 120, 150);
 $color-secondary: rgb(80, 80, 80);
 $color-success: rgb(60, 170, 80);
 $color-alert: rgb(200, 50, 0);
 $color-warning: rgb(235, 160, 0);
-$color-light: #eeeeee;
+$color-light: #fafafa;
 $color-dark: #222222;
 $color-white: #fff;
 $color-black: #000;
@@ -41,6 +28,7 @@ $colors: (
   black: $color-black
 );
 
+$font-serif: serif;
 $font-sans: Barlow, Raleway, Helvetica, Arial, sans-serif;
 $font-mono: monospace;
 

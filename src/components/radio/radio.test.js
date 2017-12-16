@@ -27,6 +27,28 @@ describe('Radio', () => {
     expect(label.text()).toBe('Check me');
   });
 
+  describe('when a className prop is given', () => {
+    beforeEach(() => {
+      root.setProps({className: 'some-class'});
+    });
+
+    it('sets the className on the outer element', () => {
+      const outerEl = root.find('span.rw-Radio');
+      expect(outerEl.hasClass('some-class')).toBe(true);
+    });
+  });
+
+  describe('when given the size prop', () => {
+    beforeEach(() => {
+      root.setProps({size: 'sm'});
+    });
+
+    it('gives the outer element the is-size-sm class', () => {
+      const el = root.find('span.rw-Radio');
+      expect(el.hasClass('is-size-sm')).toBe(true);
+    });
+  });
+
   describe('when an id prop is given', () => {
     beforeEach(() => {
       root.setProps({id: 'some-id'});
@@ -65,15 +87,17 @@ describe('Radio', () => {
   describe('when given additional props', () => {
     const onClick = () => 47;
     const onChange = () => 23;
+    const value = 'some-value';
 
     beforeEach(() => {
-      root.setProps({onClick, onChange});
+      root.setProps({onClick, onChange, value});
     });
 
     it('puts the additional props on the inner input', () => {
-      const btn = root.find('input[type="radio"]');
-      expect(btn.prop('onClick')).toBe(onClick);
-      expect(btn.prop('onChange')).toBe(onChange);
+      const el = root.find('input[type="radio"]');
+      expect(el.prop('onClick')).toBe(onClick);
+      expect(el.prop('onChange')).toBe(onChange);
+      expect(el.prop('value')).toBe(value);
     });
   });
 });

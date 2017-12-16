@@ -6,11 +6,11 @@
   width: 2em;
   height: 1em;
 
-  @each $sizeName, $size in $sizes {
-    &.is-size-#{$sizeName} {
-      font-size: $size;
-    }
-  }
+  // @each $sizeName, $size in $sizes {
+  //   &.is-size-#{$sizeName} {
+  //     font-size: $size;
+  //   }
+  // }
 
   &:focus {
     outline: 0;

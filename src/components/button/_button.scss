@@ -1,4 +1,4 @@
-@mixin button-style($style: 'primary') {
+@mixin button-style($style) {
   $bg: map-get($colors, $style);
   $fg: $color-dark;
 
@@ -23,9 +23,9 @@
 
 .#{prefix(Button)} {
   background: transparent;
-  font-size: $size-m;
+  font-size: $size-md;
   font-weight: bold;
-  font-family: inherit;
+  font-family: $font-sans;
   border: none;
   cursor: pointer;
   text-transform: uppercase;
@@ -59,23 +59,11 @@
   &.is-alert { @include button-style('alert'); }
   &.is-warning { @include button-style('warning'); }
 
-  &.is-icon-only {
-    width: 4.5 * 1em;
-    padding-left: 0;
-    padding-right: 0;
+  &.is-size-sm {
+    font-size: $size-sm;
   }
 
-  > .icon {
-    margin-right: 1em / 2;
-
-    &:only-child {
-      margin-right: 0;
-    }
-  }
-
-  @each $sizeName, $size in $sizes {
-    &.is-size-#{$sizeName} {
-      font-size: $size;
-    }
+  &.is-size-lg {
+    font-size: $size-lg;
   }
 }

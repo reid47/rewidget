@@ -4,6 +4,7 @@ import { classify, prefix } from '../../util';
 
 export class Textbox extends React.Component {
   static propTypes = {
+    size: PropTypes.string,
     value: PropTypes.string,
     onChange: PropTypes.func,
     multiline: PropTypes.bool,
@@ -13,12 +14,7 @@ export class Textbox extends React.Component {
   };
 
   static defaultProps = {
-    value: '',
-    onChange: () => null,
-    multiline: false,
-    autoresize: false,
-    rows: 2,
-    password: false
+    rows: 2
   };
 
   constructor(props) {
@@ -49,6 +45,7 @@ export class Textbox extends React.Component {
 
   render() {
     const {
+      size,
       value,
       onChange,
       multiline,
@@ -62,6 +59,7 @@ export class Textbox extends React.Component {
     const textboxClasses = classify(
       prefix('Textbox'),
       multiline && 'is-multiline',
+      size && `is-size-${size}`,
       className);
 
     if (multiline) {

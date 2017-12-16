@@ -12,7 +12,8 @@ export const Toggle = ({
 }) => {
   const toggleClasses = classify(
     prefix('Toggle'),
-    size && `is-size-${size}`);
+    size && `is-size-${size}`,
+    className);
 
   const inputClasses = classify(
     prefix('Toggle-input'),

@@ -12,7 +12,8 @@ export const Checkbox = ({
 }) => {
   const checkboxClasses = classify(
     prefix('Checkbox'),
-    size && `is-size-${size}`);
+    size && `is-size-${size}`,
+    className);
 
   const inputClasses = classify(
     prefix('Checkbox-input'),

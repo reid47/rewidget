@@ -27,6 +27,28 @@ describe('Checkbox', () => {
     expect(label.text()).toBe('Check me');
   });
 
+  describe('when a className prop is given', () => {
+    beforeEach(() => {
+      root.setProps({className: 'some-class'});
+    });
+
+    it('sets the className on the outer element', () => {
+      const outerEl = root.find('span.rw-Checkbox');
+      expect(outerEl.hasClass('some-class')).toBe(true);
+    });
+  });
+
+  describe('when given the size prop', () => {
+    beforeEach(() => {
+      root.setProps({size: 'sm'});
+    });
+
+    it('gives the outer element the is-size-sm class', () => {
+      const el = root.find('span.rw-Checkbox');
+      expect(el.hasClass('is-size-sm')).toBe(true);
+    });
+  });
+
   describe('when an id prop is given', () => {
     beforeEach(() => {
       root.setProps({id: 'some-id'});

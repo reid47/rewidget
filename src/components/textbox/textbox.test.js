@@ -38,6 +38,17 @@ describe('Textbox', () => {
     });
   });
 
+  describe('when given the size prop', () => {
+    beforeEach(() => {
+      root.setProps({size: 'sm'});
+    });
+
+    it('gives the outer element the is-size-sm class', () => {
+      const el = root.find('input.rw-Textbox');
+      expect(el.hasClass('is-size-sm')).toBe(true);
+    });
+  });
+
   describe('when given an onChange', () => {
     const onChange = jest.fn();
 

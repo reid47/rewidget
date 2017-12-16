@@ -12,7 +12,8 @@ export const Radio = ({
 }) => {
   const radioClasses = classify(
     prefix('Radio'),
-    size && `is-size-${size}`);
+    size && `is-size-${size}`,
+    className);
 
   const inputClasses = classify(
     prefix('Radio-input'),

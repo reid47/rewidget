@@ -27,6 +27,28 @@ describe('Toggle', () => {
     expect(label.text()).toBe('Check me');
   });
 
+  describe('when a className prop is given', () => {
+    beforeEach(() => {
+      root.setProps({className: 'some-class'});
+    });
+
+    it('sets the className on the outer element', () => {
+      const outerEl = root.find('span.rw-Toggle');
+      expect(outerEl.hasClass('some-class')).toBe(true);
+    });
+  });
+
+  describe('when given the size prop', () => {
+    beforeEach(() => {
+      root.setProps({size: 'sm'});
+    });
+
+    it('gives the outer element the is-size-sm class', () => {
+      const el = root.find('span.rw-Toggle');
+      expect(el.hasClass('is-size-sm')).toBe(true);
+    });
+  });
+
   describe('when an id prop is given', () => {
     beforeEach(() => {
       root.setProps({id: 'some-id'});
@@ -45,7 +67,7 @@ describe('Toggle', () => {
       root.setProps({inputClassName: 'some-input-class'});
     });
 
-    it('sets the className on the inner Toggle', () => {
+    it('sets the className on the inner checkbox', () => {
       const innerCb = root.find('input[type="checkbox"]');
       expect(innerCb.hasClass('rw-Toggle-input some-input-class')).toBe(true);
     });
