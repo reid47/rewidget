@@ -14,7 +14,11 @@ export const SelectPage = () => {
         }, {
           name: 'className',
           type: 'string',
-          description: 'Class to put on the `select` element'
+          description: 'Class to put on the outer `div` element'
+        }, {
+          name: 'inputClassName',
+          type: 'string',
+          description: 'Class to put on the inner `select` element'
         }, {
           name: 'children',
           type: 'node',
@@ -31,7 +35,7 @@ export const SelectPage = () => {
       examples: (<div>
         <Example {...{title: 'Simple select'}}>
           <Select>
-            <option value="1">Option One</option>
+            <option value="1">Option One. This is some additional text to make the text extend past the right end of the select element.</option>
             <option value="2">Option Two</option>
             <option value="3">Option Three</option>
           </Select>

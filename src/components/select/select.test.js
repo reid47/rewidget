@@ -15,8 +15,11 @@ describe('Select', () => {
   });
 
   it('renders a simple select by default', () => {
-    const outerEl = root.find('select.rw-Select');
+    const outerEl = root.find('div.rw-Select');
     expect(outerEl.exists()).toBe(true);
+
+    const input = root.find('select.rw-Select-input');
+    expect(input.exists()).toBe(true);
 
     const options = root.find('option');
     expect(options.length).toBe(3);
@@ -31,8 +34,19 @@ describe('Select', () => {
     });
 
     it('sets the className on the outer element', () => {
-      const outerEl = root.find('select.rw-Select');
+      const outerEl = root.find('div.rw-Select');
       expect(outerEl.hasClass('some-class')).toBe(true);
+    });
+  });
+
+  describe('when an inputClassName prop is given', () => {
+    beforeEach(() => {
+      root.setProps({inputClassName: 'some-input-class'});
+    });
+
+    it('sets the className on the inner input element', () => {
+      const outerEl = root.find('select.rw-Select-input');
+      expect(outerEl.hasClass('some-input-class')).toBe(true);
     });
   });
 
@@ -41,8 +55,8 @@ describe('Select', () => {
       root.setProps({size: 'sm'});
     });
 
-    it('gives the outer element the is-size-sm class', () => {
-      const el = root.find('select.rw-Select');
+    it('gives the inner element the is-size-sm class', () => {
+      const el = root.find('select.rw-Select-input');
       expect(el.hasClass('is-size-sm')).toBe(true);
     });
   });

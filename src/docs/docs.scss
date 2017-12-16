@@ -7,3 +7,89 @@ $unit: 0.5rem;
 .ml-1 {
   margin-left: $unit;
 }
+
+html, body {
+  padding: 0;
+  margin: 0;
+}
+
+main, nav {
+  padding: $unit * 2;
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+nav {
+  font-family: sans-serif;
+
+  ul, li {
+    padding: 0;
+    margin: 0;
+  }
+
+  li {
+    list-style-type: none;
+  }
+
+}
+
+.doc-page {
+  h1, h2, h3, h4, h5, h6 {
+    font-family: sans-serif;
+  }
+}
+
+.props-table {
+  font-family: sans-serif;
+  text-align: left;
+  border-spacing: 0;
+  width: 100%;
+  box-shadow: 0 2px 8px 0px #888;
+
+  th {
+    background-color: #eee;
+    padding: $unit * 2;
+  }
+
+  td {
+    padding: $unit * 2;
+    border-bottom: 1px solid #ddd;
+  }
+
+  td:first-child {
+    font-family: monospace;
+  }
+
+  tr:last-child td {
+    border-bottom: none;
+  }
+}
+
+.doc-example {
+  box-shadow: 0 2px 8px 0px #888;
+
+  + .doc-example {
+    margin-top: $unit * 4;
+  }
+
+  h4 {
+    margin: 0;
+    padding: $unit * 2;
+    background-color: #eee;
+  }
+
+  .doc-example-rendered {
+    padding: $unit * 2;
+  }
+
+  .doc-example-code {
+    background-color: #222;
+    color: #eee;
+    padding: $unit * 2;
+    overflow: auto;
+
+    pre {
+      margin: 0;
+    }
+  }
+}

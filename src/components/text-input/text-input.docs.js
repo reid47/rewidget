@@ -5,7 +5,7 @@ import { DocPage, Example } from '../../docs/docs-components';
 export const TextInputPage = () => {
   return (
     <DocPage {...{
-      componentName: 'TextInput',
+      componentName: 'Text Input',
       propList: [
         {
           name: 'size',
@@ -43,7 +43,7 @@ export const TextInputPage = () => {
         <Example {...{title: 'Multi-line text input'}}>
           <TextInput multiline/>
         </Example>
-        <Example {...{title: 'text input with placeholder'}}>
+        <Example {...{title: 'Text input with placeholder'}}>
           <TextInput placeholder="Enter something..."/>
         </Example>
         <Example {...{title: 'Single-line text input sizes'}}>

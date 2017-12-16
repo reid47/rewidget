@@ -1,12 +1,35 @@
 .#{prefix(Select)} {
   width: $Select-width;
   box-sizing: border-box;
+  font-family: $Select-font-family;
+  font-size: $size-md;
+  background-color: $Select-background-color;
+  border-radius: $Select-border-radius;
+}
+
+.#{prefix(Select-input)} {
+  width: 100%;
+  box-sizing: border-box;
+  font-size: inherit;
+  font-family: inherit;
+  cursor: pointer;
   border: 1px solid $Select-border-color;
   font-family: $Select-font-family;
   font-size: $size-md;
   background-color: $Select-background-color;
   border-radius: $Select-border-radius;
   padding: 0.5em;
+
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -o-appearance: none;
+  appearance: none;
+  &::-ms-expand { display: none; }
+
+  &:focus {
+    outline: 0;
+    box-shadow: $Select-focus-shadow;
+  }
 
   &.is-size-sm {
     font-size: $size-sm;
@@ -19,9 +42,5 @@
   &.is-size-lg {
     font-size: $size-lg;
   }
-
-  &:focus {
-    outline: 0;
-    box-shadow: $Select-focus-shadow;
-  }
 }
+

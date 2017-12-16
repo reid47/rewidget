@@ -11,14 +11,18 @@ export const Example = ({
   description,
   children
 }) => {
-  return <div>
+  return <div className="doc-example">
     <h4>{title}</h4>
-    {children}
-    <pre><code>{jsxToString(children, {
-      maxInlineAttributesLineLength: 100,
-      filterProps: ['className'],
-      showFunctions: true,
-      functionValue: formatFunction
-    })}</code></pre>
+    <div className="doc-example-rendered">
+      {children}
+    </div>
+    <div className="doc-example-code">
+      <pre><code>{jsxToString(children, {
+        maxInlineAttributesLineLength: 100,
+        filterProps: ['className'],
+        showFunctions: true,
+        functionValue: formatFunction
+      })}</code></pre>
+    </div>
   </div>;
 }
