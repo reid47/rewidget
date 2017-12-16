@@ -11,20 +11,30 @@ describe('Radio', () => {
   });
 
   it('renders a simple radio by default', () => {
-    const outerEl = root.find('span.rw-Radio');
+    const outerEl = root.find('div.rw-Radio');
     expect(outerEl.exists()).toBe(true);
 
-    const innerCb = root.find('span.rw-Radio input[type="radio"]');
+    const innerCb = root.find('div.rw-Radio input[type="radio"]');
     expect(innerCb.exists()).toBe(true);
     expect(innerCb.hasClass('rw-Radio-input')).toBe(true);
 
-    const label = root.find('span.rw-Radio label');
+    const label = root.find('div.rw-Radio label');
     expect(label.exists()).toBe(true);
+
+    const widget = root.find('span.rw-Radio-widget');
+    expect(widget.exists()).toBe(true);
   });
 
   it('places the children inside the label', () => {
-    const label = root.find('span.rw-Radio label');
+    const label = root.find('div.rw-Radio label');
     expect(label.text()).toBe('Check me');
+  });
+
+  it('generates a random unique ID for the input', () => {
+    const innerEl = root.find('div.rw-Radio input[type="radio"]');
+    expect(innerEl.prop('id')).toMatch(/^radio_/);
+    const label = root.find('div.rw-Radio label');
+    expect(label.prop('htmlFor')).toBe(innerEl.prop('id'));
   });
 
   describe('when a className prop is given', () => {
@@ -33,7 +43,7 @@ describe('Radio', () => {
     });
 
     it('sets the className on the outer element', () => {
-      const outerEl = root.find('span.rw-Radio');
+      const outerEl = root.find('div.rw-Radio');
       expect(outerEl.hasClass('some-class')).toBe(true);
     });
   });
@@ -44,7 +54,7 @@ describe('Radio', () => {
     });
 
     it('gives the outer element the is-size-sm class', () => {
-      const el = root.find('span.rw-Radio');
+      const el = root.find('div.rw-Radio');
       expect(el.hasClass('is-size-sm')).toBe(true);
     });
   });
@@ -55,9 +65,9 @@ describe('Radio', () => {
     });
 
     it('sets the input id and label for attributes', () => {
-      const innerCb = root.find('span.rw-Radio input[type="radio"]');
+      const innerCb = root.find('div.rw-Radio input[type="radio"]');
       expect(innerCb.is('#some-id')).toBe(true);
-      const label = root.find('span.rw-Radio label');
+      const label = root.find('div.rw-Radio label');
       expect(label.prop('htmlFor')).toBe('some-id');
     });
   });
@@ -81,6 +91,17 @@ describe('Radio', () => {
     it('sets the className on the inner label', () => {
       const label = root.find('label');
       expect(label.hasClass('rw-Radio-label some-label-class')).toBe(true);
+    });
+  });
+
+  describe('when a widgetClassName prop is given', () => {
+    beforeEach(() => {
+      root.setProps({widgetClassName: 'some-widget-class'});
+    });
+
+    it('sets the className on the inner widget', () => {
+      const widget = root.find('.rw-Radio-widget');
+      expect(widget.hasClass('rw-Radio-widget some-widget-class')).toBe(true);
     });
   });
 

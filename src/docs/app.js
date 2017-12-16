@@ -1,12 +1,12 @@
 import React from 'react';
 import { BrowserRouter, Route, Link } from 'react-router-dom';
-import { ButtonPage } from './pages/button-page';
-import { CheckboxPage } from './pages/checkbox-page';
-import { TextboxPage } from './pages/textbox-page';
-import { TogglePage } from './pages/toggle-page';
-import { RadioPage } from './pages/radio-page';
-import { RadioGroupPage } from './pages/radio-group-page';
-import { SelectPage } from './pages/select-page';
+import { ButtonPage } from '../components/button/button.docs';
+import { CheckboxPage } from '../components/checkbox/checkbox.docs';
+import { TextboxPage } from '../components/textbox/textbox.docs';
+import { TogglePage } from '../components/toggle/toggle.docs';
+import { RadioPage } from '../components/radio/radio.docs';
+import { RadioGroupPage } from '../components/radio-group/radio-group.docs';
+import { SelectPage } from '../components/select/select.docs';
 import '../components/main.css';
 
 const pages = [

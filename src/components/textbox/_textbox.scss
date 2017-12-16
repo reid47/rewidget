@@ -1,25 +1,32 @@
 .#{prefix(Textbox)} {
   width: 100%;
-  font-size: inherit;
-  font-family: inherit;
+  font-size: $size-md;
+  font-family: $font-sans;
   padding: 0.5em;
-  border-radius: $unit / 4;
+  border-radius: $input-border-radius;
   border: 1px solid $color-dark;
   box-sizing: border-box;
 
-  &.multiline {
+  &.is-size-sm {
+    font-size: $size-sm;
+  }
+
+  &.is-size-lg {
+    font-size: $size-lg;
+  }
+
+  &.is-multiline {
     resize: vertical;
     min-height: 2em;
   }
 
-  &.autoresize {
+  &.is-autoresize {
     resize: none;
     overflow: hidden;
   }
 
   &:focus {
     outline: 0;
-    border: 1px solid $focus-color;
     box-shadow: $focus-shadow;
   }
 }

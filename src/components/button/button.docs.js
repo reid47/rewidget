@@ -1,6 +1,6 @@
 import React from 'react';
 import { Button } from '../../components/button';
-import { DocPage, Example } from '../docs-components';
+import { DocPage, Example } from '../../docs/docs-components';
 
 export const ButtonPage = () => {
   return (
@@ -92,9 +92,16 @@ export const ButtonPage = () => {
         </Example>
         <Example {...{title: 'Button sizes'}}>
           <div>
-            <Button size="sm">Click me</Button>
-            <Button size="md">Click me</Button>
-            <Button size="lg">Click me</Button>
+            <div>
+              <Button size="sm">Click me</Button>
+              <Button size="md">Click me</Button>
+              <Button size="lg">Click me</Button>
+            </div>
+            <div>
+              <Button alt size="sm">Click me</Button>
+              <Button alt size="md">Click me</Button>
+              <Button alt size="lg">Click me</Button>
+            </div>
           </div>
         </Example>
       </div>)

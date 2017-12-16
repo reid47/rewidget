@@ -1,13 +1,14 @@
 import React from 'react';
-import { classify, prefix } from '../../util';
+import { classify, prefix, uniqueId } from '../../util';
 
 export const Radio = ({
   size,
   className,
   inputClassName,
   labelClassName,
+  widgetClassName,
   children,
-  id,
+  id = uniqueId('radio'),
   ...props
 }) => {
   const radioClasses = classify(
@@ -23,12 +24,17 @@ export const Radio = ({
     prefix('Radio-label'),
     labelClassName);
 
+  const widgetClasses = classify(
+    prefix('Radio-widget'),
+    widgetClassName);
+
   return (
-    <span className={radioClasses}>
+    <div className={radioClasses}>
       <input type="radio" id={id} className={inputClasses} {...props} />
       <label htmlFor={id} className={labelClasses}>
+        <span className={widgetClasses}/>
         {children}
       </label>
-    </span>
+    </div>
   );
 }

@@ -2,6 +2,14 @@ import React from 'react';
 import Remarkable from 'remarkable';
 const md = new Remarkable();
 
+const byPropName = (a, b) => {
+  if (a.name.indexOf('...') === 0) return 1;
+  if (b.name.indexOf('...') === 0) return -1;
+  if (a.name === 'children') return 1;
+  if (b.name === 'children') return -1;
+  return a.name.localeCompare(b.name);
+}
+
 export const DocPage = ({
   componentName,
   propList,
@@ -20,7 +28,7 @@ export const DocPage = ({
         </tr>
       </thead>
       <tbody>
-        {propList.map(prop => {
+        {propList.sort(byPropName).map(prop => {
           return <tr key={prop.name}>
             <td>{prop.name}</td>
             <td>{prop.type}</td>

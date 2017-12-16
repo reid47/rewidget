@@ -1,13 +1,14 @@
 import React from 'react';
-import { classify, prefix } from '../../util';
+import { classify, prefix, uniqueId } from '../../util';
 
 export const Toggle = ({
   size,
   className,
   inputClassName,
   labelClassName,
+  widgetClassName,
   children,
-  id,
+  id = uniqueId('toggle'),
   ...props
 }) => {
   const toggleClasses = classify(
@@ -23,12 +24,17 @@ export const Toggle = ({
     prefix('Toggle-label'),
     labelClassName);
 
+  const widgetClasses = classify(
+    prefix('Toggle-widget'),
+    widgetClassName);
+
   return (
-    <span className={toggleClasses}>
+    <div className={toggleClasses}>
       <input type="checkbox" id={id} className={inputClasses} {...props} />
       <label htmlFor={id} className={labelClasses}>
+        <span className={widgetClasses}/>
         {children}
       </label>
-    </span>
+    </div>
   );
 }

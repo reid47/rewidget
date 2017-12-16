@@ -1,13 +1,14 @@
 import React from 'react';
-import { classify, prefix } from '../../util';
+import { classify, prefix, uniqueId } from '../../util';
 
 export const Checkbox = ({
   size,
   className,
   inputClassName,
   labelClassName,
+  widgetClassName,
   children,
-  id,
+  id = uniqueId('checkbox'),
   ...props
 }) => {
   const checkboxClasses = classify(
@@ -23,12 +24,17 @@ export const Checkbox = ({
     prefix('Checkbox-label'),
     labelClassName);
 
+  const widgetClasses = classify(
+    prefix('Checkbox-widget'),
+    widgetClassName);
+
   return (
-    <span className={checkboxClasses}>
+    <div className={checkboxClasses}>
       <input type="checkbox" id={id} className={inputClasses} {...props} />
       <label htmlFor={id} className={labelClasses}>
+        <span className={widgetClasses}/>
         {children}
       </label>
-    </span>
+    </div>
   );
 }

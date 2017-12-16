@@ -1,20 +1,19 @@
-$prefix: 'rw-';
+$prefix: 'rw-' !default;
 
-$unit: 1rem;
+$unit: 1rem !default;
+$size-sm: $unit * 0.75 !default;
+$size-md: $unit !default;
+$size-lg: $unit * 1.5 !default;
 
-$size-sm: $unit * 0.75;
-$size-md: $unit;
-$size-lg: $unit * 1.5;
-
-$color-primary: rgb(80, 120, 150);
-$color-secondary: rgb(80, 80, 80);
-$color-success: rgb(60, 170, 80);
-$color-alert: rgb(200, 50, 0);
-$color-warning: rgb(235, 160, 0);
-$color-light: #fafafa;
-$color-dark: #222222;
-$color-white: #fff;
-$color-black: #000;
+$color-primary: rgb(80, 120, 150) !default;
+$color-secondary: rgb(80, 80, 80) !default;
+$color-success: rgb(60, 170, 80) !default;
+$color-alert: rgb(200, 50, 0) !default;
+$color-warning: rgb(235, 160, 0) !default;
+$color-light: #fafafa !default;
+$color-dark: #222222 !default;
+$color-white: #fff !default;
+$color-black: #000 !default;
 
 $colors: (
   primary: $color-primary,
@@ -44,3 +43,33 @@ $input-border: 0.05em solid $color-dark;
 $input-mark-color: $color-dark;
 $input-disabled-background-color: #bbb;
 $input-disabled-foreground-color: #222;
+
+// Checkbox
+$Checkbox-border-color: $color-secondary !default;
+$Checkbox-background-color: $color-light !default;
+$Checkbox-checked-border-color: $color-primary !default;
+$Checkbox-checked-background-color: $color-primary !default;
+$Checkbox-checked-mark-color: $color-light !default;
+$Checkbox-margin-right: $unit / 4 !default;
+$Checkbox-border-radius: $input-border-radius !default;
+$Checkbox-focus-shadow: $focus-shadow !default;
+
+// Radio
+$Radio-border-color: $color-secondary !default;
+$Radio-background-color: $color-light !default;
+$Radio-checked-border-color: $color-primary !default;
+$Radio-checked-background-color: $color-light !default;
+$Radio-checked-mark-color: $color-primary !default;
+$Radio-margin-right: $unit / 4 !default;
+$Radio-border-radius: 100% !default;
+$Radio-focus-shadow: $focus-shadow !default;
+
+// Toggle
+$Toggle-background-color: $color-secondary !default;
+$Toggle-checked-border-color: $color-success !default;
+$Toggle-checked-background-color: $color-success !default;
+$Toggle-checked-mark-color: $color-light !default;
+$Toggle-margin-right: $unit / 4 !default;
+$Toggle-border-radius: 10rem !default;
+$Toggle-focus-shadow: $focus-shadow !default;
+$Toggle-transition: transform 0.05s ease-out !default;
