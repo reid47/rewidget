@@ -1,8 +1,4 @@
-$namespace: null;
-
-@function ns($selector) {
-  @return '.#{$namespace}.#{$selector}';
-}
+$prefix: null;
 
 $unit: 1rem;
 
@@ -15,16 +11,6 @@ $size-xl: $unit * 3;
 $size-xxl: $unit * 4;
 
 $sizes: (
-  xs: $size-xs,
-  s: $size-s,
-  m: $size-m,
-  l: $size-l,
-  xl: $size-xl,
-  xxl: $size-xxl,
-);
-
-$sizesIncludingZero: (
-  z: $size-z,
   xs: $size-xs,
   s: $size-s,
   m: $size-m,
@@ -55,8 +41,6 @@ $colors: (
   black: $color-black
 );
 
-$grid-columns: 12;
-
 $font-sans: Barlow, Raleway, Helvetica, Arial, sans-serif;
 $font-mono: monospace;
 
@@ -72,7 +56,3 @@ $input-border: 0.05em solid $color-dark;
 $input-mark-color: $color-dark;
 $input-disabled-background-color: #bbb;
 $input-disabled-foreground-color: #222;
-
-$progress-foreground-color: rgb(100, 150, 150);
-
-$tooltip-shadow: 0 1px 8px #777;

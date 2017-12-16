@@ -1,55 +1,33 @@
 import React from 'react';
-import { withKeyHandler } from '../key-handler';
-import { cls } from '../../util';
-
-const EnhancedLabel = withKeyHandler('label');
+import { classify, prefix } from '../../util';
 
 export const Toggle = ({
-  value = false,
-  onChange = null,
-  rounded = true,
-  animated = true,
-  size = 'normal',
-  showLabels = false,
+  size,
   className,
+  inputClassName,
+  labelClassName,
+  children,
+  id,
   ...props
 }) => {
+  const toggleClasses = classify(
+    prefix('Toggle'),
+    size && `is-size-${size}`);
+
+  const inputClasses = classify(
+    prefix('Toggle-input'),
+    inputClassName);
+
+  const labelClasses = classify(
+    prefix('Toggle-label'),
+    labelClassName);
+
   return (
-    <EnhancedLabel
-      className={cls('toggle', `is-size-${size}`)}
-      tabIndex="0"
-      role="switch"
-      aria-checked={String(value)}
-      onSpace={evt => {
-        evt.preventDefault();
-        evt.stopPropagation();
-        onChange && onChange(!value);
-      }}>
-      <input
-        {...{
-          type: 'checkbox',
-          className: cls('toggle-checkbox'),
-          checked: value,
-          value: value ? 'on' : 'off',
-          onChange: evt => onChange && onChange(evt.target.checked)
-        }}
-      />
-      <div
-        className={cls(
-          'toggle-slider',
-          rounded && 'is-rounded',
-          animated && 'is-animated',
-          value && 'is-checked'
-        )}>
-        {showLabels &&
-          !value && (
-            <div className={cls('toggle-label', 'toggle-label-off')}>OFF</div>
-          )}
-        {showLabels &&
-          value && (
-            <div className={cls('toggle-label', 'toggle-label-on')}>ON</div>
-          )}
-      </div>
-    </EnhancedLabel>
+    <span className={toggleClasses}>
+      <input type="checkbox" id={id} className={inputClasses} {...props} />
+      <label htmlFor={id} className={labelClasses}>
+        {children}
+      </label>
+    </span>
   );
-};
+}

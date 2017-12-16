@@ -21,7 +21,7 @@
   }
 }
 
-@include component(button) {
+.#{prefix(Button)} {
   background: transparent;
   font-size: $size-m;
   font-weight: bold;

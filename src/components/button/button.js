@@ -1,34 +1,35 @@
 import React from 'react';
-import { cls } from '../../util';
+import { classify, prefix } from '../../util';
 
 export const Button = ({
-  primary = true,
+  primary = false,
   secondary = false,
   success = false,
   alert = false,
   warning = false,
   alt = false,
   plain = false,
-  size = 'default',
+  size,
+  type = 'button',
   className,
   children,
   ...props
 }) => {
-  const cn = cls(
-    'rw-Button',
-    primary && 'rw-Button-primary',
-    secondary && 'rw-Button-secondary',
-    success && 'rw-Button-success',
-    alert && 'rw-Button-alert',
-    warning && 'rw-Button-warning',
-    alt && 'rw-Button-alt',
-    plain && 'rw-Button-plain',
-    `rw-Button-size-${size}`,
+  const buttonClasses = classify(
+    prefix('Button'),
+    (primary || (!secondary && !success && !alert && !warning)) && 'is-primary',
+    secondary && 'is-secondary',
+    success && 'is-success',
+    alert && 'is-alert',
+    warning && 'is-warning',
+    alt && 'is-alt',
+    plain && 'is-plain',
+    size && `is-size-${size}`,
     className
   );
 
   return (
-    <button className={cn} {...props}>
+    <button className={buttonClasses} type={type} {...props}>
       {children}
     </button>
   );

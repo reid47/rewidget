@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { cls, noop } from '../../util';
+import { classify, prefix } from '../../util';
 
 export class Textbox extends React.Component {
   static propTypes = {
@@ -14,7 +14,7 @@ export class Textbox extends React.Component {
 
   static defaultProps = {
     value: '',
-    onChange: noop,
+    onChange: () => null,
     multiline: false,
     autoresize: false,
     rows: 2,
@@ -38,7 +38,7 @@ export class Textbox extends React.Component {
 
   onChange(evt) {
     const { onChange, multiline, autoresize } = this.props;
-    onChange(evt.target.value);
+    onChange && onChange(evt.target.value);
 
     if (multiline && autoresize && this.textarea) {
       this.textarea.style.height = 0;
@@ -48,13 +48,27 @@ export class Textbox extends React.Component {
   }
 
   render() {
-    const { value, onChange, multiline, autoresize, rows, password, ...props } = this.props;
+    const {
+      value,
+      onChange,
+      multiline,
+      autoresize,
+      rows,
+      password,
+      className,
+      ...props
+    } = this.props;
+
+    const textboxClasses = classify(
+      prefix('Textbox'),
+      multiline && 'is-multiline',
+      className);
 
     if (multiline) {
       return <textarea {...{
-        ref: textarea => this.textarea = textarea,
+        ref: el => this.textarea = el,
         ...props,
-        className: cls('textbox', 'multiline', autoresize && 'autoresize'),
+        className: textboxClasses,
         onChange: this.onChange,
         rows
       }}/>;
@@ -63,7 +77,7 @@ export class Textbox extends React.Component {
     return (
       <input {...{
         ...props,
-        className: cls('textbox'),
+        className: textboxClasses,
         type: password ? 'password' : 'text',
         value,
         onChange: this.onChange

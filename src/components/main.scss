@@ -1,12 +1,10 @@
-@import './common/variables.scss';
-@import './common/mixins.scss';
-@import './common/modifiers.scss';
+@import './variables';
+@import './mixins';
 
-@import './common/globals.scss';
-
-@import './button/button.scss';
-@import './checkbox/checkbox.scss';
-@import './radio/radio.scss';
-@import './radio-group/radio-group.scss';
-@import './textbox/textbox.scss';
-@import './toggle/toggle.scss';
+@import './button/button';
+@import './checkbox/checkbox';
+@import './radio/radio';
+@import './radio-group/radio-group';
+@import './select/select';
+@import './textbox/textbox';
+@import './toggle/toggle';
