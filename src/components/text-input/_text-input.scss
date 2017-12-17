@@ -94,6 +94,7 @@
   opacity: 0.5;
   top: $size-md * 0.6;
   left: $size-md * 0.55;
+  pointer-events: none;
 
   svg {
     width: $size-md;
