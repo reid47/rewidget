@@ -91,7 +91,7 @@
 
 .#{prefix(TextInput-icon)} {
   position: absolute;
-  opacity: 0.5;
+  color: $TextInput-border-color;
   top: $size-md * 0.6;
   left: $size-md * 0.55;
   pointer-events: none;

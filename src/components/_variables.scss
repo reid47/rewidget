@@ -66,8 +66,7 @@ $Radio-focus-shadow: $focus-shadow !default;
 
 // Toggle
 $Toggle-background-color: $color-secondary !default;
-$Toggle-checked-border-color: $color-success !default;
-$Toggle-checked-background-color: $color-success !default;
+$Toggle-checked-background-color: $color-primary !default;
 $Toggle-checked-mark-color: $color-light !default;
 $Toggle-margin-right: $unit / 4 !default;
 $Toggle-border-radius: 10rem !default;
@@ -88,4 +87,4 @@ $TextInput-border-radius: $input-border-radius !default;
 $TextInput-focus-shadow: $focus-shadow !default;
 $TextInput-font-family: $font-sans !default;
 $TextInput-width: 100% !default;
-$TextInput-border-color: $color-dark !default;
+$TextInput-border-color: $color-secondary !default;

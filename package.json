@@ -58,7 +58,8 @@
   },
   "scripts": {
     "build-css": "node-sass-chokidar src/ -o src/",
-    "watch-css": "npm run build-css && node-sass-chokidar src/ -o src/ --watch --recursive",
+    "watch-css":
+      "npm run build-css && node-sass-chokidar src/ -o src/ --watch --recursive",
     "start-js": "node scripts/start.js",
     "start": "npm-run-all -p watch-css start-js",
     "build-js": "node scripts/build.js",
@@ -66,9 +67,7 @@
     "test": "node scripts/test.js --env=jsdom"
   },
   "jest": {
-    "collectCoverageFrom": [
-      "src/**/*.{js,jsx,mjs}"
-    ],
+    "collectCoverageFrom": ["src/**/*.{js,jsx,mjs}"],
     "setupTestFrameworkScriptFile": "./node_modules/jest-enzyme/lib/index.js",
     "setupFiles": [
       "<rootDir>/config/polyfills.js",
@@ -83,11 +82,10 @@
     "transform": {
       "^.+\\.(js|jsx|mjs)$": "<rootDir>/node_modules/babel-jest",
       "^.+\\.css$": "<rootDir>/config/jest/cssTransform.js",
-      "^(?!.*\\.(js|jsx|mjs|css|json)$)": "<rootDir>/config/jest/fileTransform.js"
+      "^(?!.*\\.(js|jsx|mjs|css|json)$)":
+        "<rootDir>/config/jest/fileTransform.js"
     },
-    "transformIgnorePatterns": [
-      "[/\\\\]node_modules[/\\\\].+\\.(js|jsx|mjs)$"
-    ],
+    "transformIgnorePatterns": ["[/\\\\]node_modules[/\\\\].+\\.(js|jsx|mjs)$"],
     "moduleNameMapper": {
       "^react-native$": "react-native-web"
     },
@@ -102,14 +100,13 @@
     ]
   },
   "babel": {
-    "presets": [
-      "react-app"
-    ]
+    "presets": ["react-app"]
   },
   "eslintConfig": {
-    "extends": [
-      "react-app",
-      "plugin:jsx-a11y/recommended"
-    ]
+    "extends": ["react-app", "plugin:jsx-a11y/recommended"]
+  },
+  "prettier": {
+    "singleQuote": true,
+    "jsxBracketSameLine": true
   }
 }

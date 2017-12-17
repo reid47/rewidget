@@ -29,7 +29,6 @@
   }
 
   &:checked + .#{prefix(Toggle-label)} > .#{prefix(Toggle-widget)} {
-    border-color: $Toggle-checked-border-color;
     background-color: $Toggle-checked-background-color;
 
     &:after {
