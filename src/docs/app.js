@@ -53,15 +53,23 @@ const App = props => (
     <div>
       <nav>
         <ul>
-          {pages.map((page, key) => <li key={key}>
-            <Link to={page.path}>{page.linkText}</Link>
-          </li>)}
+          {pages.map((page, key) => (
+            <li key={key}>
+              <Link to={page.path}>{page.linkText}</Link>
+            </li>
+          ))}
         </ul>
       </nav>
       <main>
         <div id="routes">
-          {pages.map((page, key) =>
-            <Route key={key} exact path={page.path} component={page.component} />)}
+          {pages.map((page, key) => (
+            <Route
+              key={key}
+              exact
+              path={page.path}
+              component={page.component}
+            />
+          ))}
         </div>
       </main>
     </div>

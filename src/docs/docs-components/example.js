@@ -6,23 +6,23 @@ const formatFunction = fn => {
   return fnName ? `<${fnName} function>` : fn.toString();
 };
 
-export const Example = ({
-  title,
-  description,
-  children
-}) => {
-  return <div className="doc-example">
-    <h4>{title}</h4>
-    <div className="doc-example-rendered">
-      {children}
+export const Example = ({ title, description, children }) => {
+  return (
+    <div className="doc-example">
+      <h4>{title}</h4>
+      <div className="doc-example-rendered">{children}</div>
+      <div className="doc-example-code">
+        <pre>
+          <code>
+            {jsxToString(children, {
+              maxInlineAttributesLineLength: 100,
+              filterProps: ['className'],
+              showFunctions: true,
+              functionValue: formatFunction
+            })}
+          </code>
+        </pre>
+      </div>
     </div>
-    <div className="doc-example-code">
-      <pre><code>{jsxToString(children, {
-        maxInlineAttributesLineLength: 100,
-        filterProps: ['className'],
-        showFunctions: true,
-        functionValue: formatFunction
-      })}</code></pre>
-    </div>
-  </div>;
-}
+  );
+};

@@ -15,33 +15,30 @@ export const Toggle = ({
   const toggleClasses = classify(
     prefix('Toggle'),
     size && `is-size-${size}`,
-    className);
+    className
+  );
 
-  const inputClasses = classify(
-    prefix('Toggle-input'),
-    inputClassName);
+  const inputClasses = classify(prefix('Toggle-input'), inputClassName);
 
-  const labelClasses = classify(
-    prefix('Toggle-label'),
-    labelClassName);
+  const labelClasses = classify(prefix('Toggle-label'), labelClassName);
 
-  const widgetClasses = classify(
-    prefix('Toggle-widget'),
-    widgetClassName);
+  const widgetClasses = classify(prefix('Toggle-widget'), widgetClassName);
 
   return (
     <div className={toggleClasses}>
-      <input {...{
-        ...props,
-        type: 'checkbox',
-        id,
-        className: inputClasses,
-        onChange: evt => onChange && onChange(evt.target.checked)
-      }}/>
+      <input
+        {...{
+          ...props,
+          type: 'checkbox',
+          id,
+          className: inputClasses,
+          onChange: evt => onChange && onChange(evt.target.checked)
+        }}
+      />
       <label htmlFor={id} className={labelClasses}>
-        <span className={widgetClasses}/>
+        <span className={widgetClasses} />
         {children}
       </label>
     </div>
   );
-}
+};

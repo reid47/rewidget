@@ -39,7 +39,7 @@ describe('Radio', () => {
 
   describe('when a className prop is given', () => {
     beforeEach(() => {
-      root.setProps({className: 'some-class'});
+      root.setProps({ className: 'some-class' });
     });
 
     it('sets the className on the outer element', () => {
@@ -50,7 +50,7 @@ describe('Radio', () => {
 
   describe('when given the size prop', () => {
     beforeEach(() => {
-      root.setProps({size: 'sm'});
+      root.setProps({ size: 'sm' });
     });
 
     it('gives the outer element the is-size-sm class', () => {
@@ -61,7 +61,7 @@ describe('Radio', () => {
 
   describe('when an id prop is given', () => {
     beforeEach(() => {
-      root.setProps({id: 'some-id'});
+      root.setProps({ id: 'some-id' });
     });
 
     it('sets the input id and label for attributes', () => {
@@ -74,7 +74,7 @@ describe('Radio', () => {
 
   describe('when an inputClassName prop is given', () => {
     beforeEach(() => {
-      root.setProps({inputClassName: 'some-input-class'});
+      root.setProps({ inputClassName: 'some-input-class' });
     });
 
     it('sets the className on the inner radio', () => {
@@ -85,7 +85,7 @@ describe('Radio', () => {
 
   describe('when a labelClassName prop is given', () => {
     beforeEach(() => {
-      root.setProps({labelClassName: 'some-label-class'});
+      root.setProps({ labelClassName: 'some-label-class' });
     });
 
     it('sets the className on the inner label', () => {
@@ -96,7 +96,7 @@ describe('Radio', () => {
 
   describe('when a widgetClassName prop is given', () => {
     beforeEach(() => {
-      root.setProps({widgetClassName: 'some-widget-class'});
+      root.setProps({ widgetClassName: 'some-widget-class' });
     });
 
     it('sets the className on the inner widget', () => {
@@ -111,7 +111,7 @@ describe('Radio', () => {
     const value = 'some-value';
 
     beforeEach(() => {
-      root.setProps({onClick, onFocus, value});
+      root.setProps({ onClick, onFocus, value });
     });
 
     it('puts the additional props on the inner input', () => {
@@ -126,8 +126,8 @@ describe('Radio', () => {
     const onChange = jest.fn();
 
     beforeEach(() => {
-      root.setProps({onChange});
-      root.find('input').simulate('change', {target: {checked: true}});
+      root.setProps({ onChange });
+      root.find('input').simulate('change', { target: { checked: true } });
     });
 
     it('calls the onChange callback with the new value', () => {

@@ -15,33 +15,30 @@ export const Checkbox = ({
   const checkboxClasses = classify(
     prefix('Checkbox'),
     size && `is-size-${size}`,
-    className);
+    className
+  );
 
-  const inputClasses = classify(
-    prefix('Checkbox-input'),
-    inputClassName);
+  const inputClasses = classify(prefix('Checkbox-input'), inputClassName);
 
-  const labelClasses = classify(
-    prefix('Checkbox-label'),
-    labelClassName);
+  const labelClasses = classify(prefix('Checkbox-label'), labelClassName);
 
-  const widgetClasses = classify(
-    prefix('Checkbox-widget'),
-    widgetClassName);
+  const widgetClasses = classify(prefix('Checkbox-widget'), widgetClassName);
 
   return (
     <div className={checkboxClasses}>
-      <input {...{
-        ...props,
-        type: 'checkbox',
-        id,
-        className: inputClasses,
-        onChange: evt => onChange && onChange(evt.target.checked)
-      }}/>
+      <input
+        {...{
+          ...props,
+          type: 'checkbox',
+          id,
+          className: inputClasses,
+          onChange: evt => onChange && onChange(evt.target.checked)
+        }}
+      />
       <label htmlFor={id} className={labelClasses}>
-        <span className={widgetClasses}/>
+        <span className={widgetClasses} />
         {children}
       </label>
     </div>
   );
-}
+};

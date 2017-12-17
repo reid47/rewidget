@@ -26,7 +26,7 @@ describe('Button', () => {
 
   describe('when given the secondary prop', () => {
     beforeEach(() => {
-      root.setProps({secondary: true});
+      root.setProps({ secondary: true });
     });
 
     it('gives the button the is-secondary class', () => {
@@ -38,7 +38,7 @@ describe('Button', () => {
 
   describe('when given the success prop', () => {
     beforeEach(() => {
-      root.setProps({success: true});
+      root.setProps({ success: true });
     });
 
     it('gives the button the is-success class', () => {
@@ -50,7 +50,7 @@ describe('Button', () => {
 
   describe('when given the alert prop', () => {
     beforeEach(() => {
-      root.setProps({alert: true});
+      root.setProps({ alert: true });
     });
 
     it('gives the button the is-alert class', () => {
@@ -62,7 +62,7 @@ describe('Button', () => {
 
   describe('when given the warning prop', () => {
     beforeEach(() => {
-      root.setProps({warning: true});
+      root.setProps({ warning: true });
     });
 
     it('gives the button the is-warning class', () => {
@@ -74,7 +74,7 @@ describe('Button', () => {
 
   describe('when given the size prop', () => {
     beforeEach(() => {
-      root.setProps({size: 'sm'});
+      root.setProps({ size: 'sm' });
     });
 
     it('gives the button the is-size-sm class', () => {
@@ -85,7 +85,7 @@ describe('Button', () => {
 
   describe('when given a className', () => {
     beforeEach(() => {
-      root.setProps({className: 'some-class'});
+      root.setProps({ className: 'some-class' });
     });
 
     it('gives the button the className', () => {
@@ -96,7 +96,7 @@ describe('Button', () => {
 
   describe('when given an icon', () => {
     beforeEach(() => {
-      root.setProps({icon: <span className="an-icon"/>});
+      root.setProps({ icon: <span className="an-icon" /> });
     });
 
     it('renders the icon', () => {
@@ -112,7 +112,10 @@ describe('Button', () => {
 
   describe('when given an iconClassName', () => {
     beforeEach(() => {
-      root.setProps({icon: <span className="an-icon"/>, iconClassName: 'some-icon-class'});
+      root.setProps({
+        icon: <span className="an-icon" />,
+        iconClassName: 'some-icon-class'
+      });
     });
 
     it('puts the className on the icon', () => {
@@ -123,7 +126,7 @@ describe('Button', () => {
 
   describe('when given a contentClassName', () => {
     beforeEach(() => {
-      root.setProps({contentClassName: 'some-content-class'});
+      root.setProps({ contentClassName: 'some-content-class' });
     });
 
     it('puts the className on the content', () => {
@@ -134,7 +137,7 @@ describe('Button', () => {
 
   describe('when given a textClassName', () => {
     beforeEach(() => {
-      root.setProps({textClassName: 'some-text-class'});
+      root.setProps({ textClassName: 'some-text-class' });
     });
 
     it('puts the className on the text', () => {
@@ -145,7 +148,7 @@ describe('Button', () => {
 
   describe('when type="submit"', () => {
     beforeEach(() => {
-      root.setProps({type: 'submit'});
+      root.setProps({ type: 'submit' });
     });
 
     it('gives the button type="submit"', () => {
@@ -159,7 +162,7 @@ describe('Button', () => {
     const id = 'button-id';
 
     beforeEach(() => {
-      root.setProps({onClick, id});
+      root.setProps({ onClick, id });
     });
 
     it('puts the additional props on the button', () => {

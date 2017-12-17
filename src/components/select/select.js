@@ -14,24 +14,25 @@ export const Select = ({
   const selectClasses = classify(
     prefix('Select'),
     size && `is-size-${size}`,
-    className);
+    className
+  );
 
   const inputClasses = classify(
     prefix('Select-input'),
     size && `is-size-${size}`,
-    inputClassName);
+    inputClassName
+  );
 
-  const arrowClasses = classify(
-    prefix('Select-arrow'),
-    arrowClassName);
+  const arrowClasses = classify(prefix('Select-arrow'), arrowClassName);
 
   return (
     <div className={selectClasses}>
-      <select {...{
-        ...props,
-        className: inputClasses,
-        onChange: evt => onChange && onChange(evt.target.value)
-      }}>
+      <select
+        {...{
+          ...props,
+          className: inputClasses,
+          onChange: evt => onChange && onChange(evt.target.value)
+        }}>
         {children}
       </select>
       <div className={arrowClasses}>
@@ -39,4 +40,4 @@ export const Select = ({
       </div>
     </div>
   );
-}
+};

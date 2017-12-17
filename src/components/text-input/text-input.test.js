@@ -21,7 +21,7 @@ describe('TextInput', () => {
 
   describe('when password prop is true', () => {
     beforeEach(() => {
-      root.setProps({password: true});
+      root.setProps({ password: true });
     });
 
     it('renders a password input', () => {
@@ -32,7 +32,7 @@ describe('TextInput', () => {
 
   describe('when a className is given', () => {
     beforeEach(() => {
-      root.setProps({className: 'some-class'});
+      root.setProps({ className: 'some-class' });
     });
 
     it('puts the className on the outer element', () => {
@@ -43,7 +43,7 @@ describe('TextInput', () => {
 
   describe('when an inputClassName is given', () => {
     beforeEach(() => {
-      root.setProps({inputClassName: 'some-input-class'});
+      root.setProps({ inputClassName: 'some-input-class' });
     });
 
     it('puts the inputClassName on the input', () => {
@@ -54,7 +54,7 @@ describe('TextInput', () => {
 
   describe('when given the size prop', () => {
     beforeEach(() => {
-      root.setProps({size: 'sm'});
+      root.setProps({ size: 'sm' });
     });
 
     it('gives the outer element the is-size-sm class', () => {
@@ -72,8 +72,10 @@ describe('TextInput', () => {
     const onChange = jest.fn();
 
     beforeEach(() => {
-      root.setProps({onChange});
-      root.find('input').simulate('change', {target: {value: 'a new value'}});
+      root.setProps({ onChange });
+      root
+        .find('input')
+        .simulate('change', { target: { value: 'a new value' } });
     });
 
     it('calls the onChange with the new value', () => {
@@ -86,7 +88,7 @@ describe('TextInput', () => {
     const onFocus = () => 47;
 
     beforeEach(() => {
-      root.setProps({placeholder, onFocus});
+      root.setProps({ placeholder, onFocus });
     });
 
     it('puts the additional props on the inner input', () => {
@@ -100,7 +102,7 @@ describe('TextInput', () => {
     const icon = <span className="some-icon">?</span>;
 
     beforeEach(() => {
-      root.setProps({icon});
+      root.setProps({ icon });
     });
 
     it('renders the icon alongside the input', () => {
@@ -121,7 +123,7 @@ describe('TextInput', () => {
 
   describe('when multiline is true', () => {
     beforeEach(() => {
-      root.setProps({multiline: true});
+      root.setProps({ multiline: true });
     });
 
     it('renders a textarea', () => {
@@ -133,7 +135,7 @@ describe('TextInput', () => {
 
     describe('when given a rows prop', () => {
       beforeEach(() => {
-        root.setProps({rows: 5});
+        root.setProps({ rows: 5 });
       });
 
       it('sets the rows prop on the textarea', () => {
@@ -146,8 +148,10 @@ describe('TextInput', () => {
       const onChange = jest.fn();
 
       beforeEach(() => {
-        root.setProps({onChange});
-        root.find('textarea').simulate('change', {target: {value: 'a new value'}});
+        root.setProps({ onChange });
+        root
+          .find('textarea')
+          .simulate('change', { target: { value: 'a new value' } });
       });
 
       it('calls the onChange with the new value', () => {
@@ -160,7 +164,7 @@ describe('TextInput', () => {
       const onFocus = () => 47;
 
       beforeEach(() => {
-        root.setProps({placeholder, onFocus});
+        root.setProps({ placeholder, onFocus });
       });
 
       it('puts the additional props on the inner textarea', () => {

@@ -7,11 +7,13 @@ describe('Select', () => {
   let root;
 
   beforeEach(() => {
-    root = mount(<Select>
-      <option value="1">one</option>
-      <option value="2">two</option>
-      <option value="3">three</option>
-    </Select>);
+    root = mount(
+      <Select>
+        <option value="1">one</option>
+        <option value="2">two</option>
+        <option value="3">three</option>
+      </Select>
+    );
   });
 
   it('renders a simple select by default', () => {
@@ -33,7 +35,7 @@ describe('Select', () => {
 
   describe('when a className prop is given', () => {
     beforeEach(() => {
-      root.setProps({className: 'some-class'});
+      root.setProps({ className: 'some-class' });
     });
 
     it('sets the className on the outer element', () => {
@@ -44,7 +46,7 @@ describe('Select', () => {
 
   describe('when an inputClassName prop is given', () => {
     beforeEach(() => {
-      root.setProps({inputClassName: 'some-input-class'});
+      root.setProps({ inputClassName: 'some-input-class' });
     });
 
     it('sets the className on the inner input element', () => {
@@ -55,7 +57,7 @@ describe('Select', () => {
 
   describe('when an arrowClassName prop is given', () => {
     beforeEach(() => {
-      root.setProps({arrowClassName: 'some-arrow-class'});
+      root.setProps({ arrowClassName: 'some-arrow-class' });
     });
 
     it('sets the className on the inner arrow element', () => {
@@ -66,7 +68,7 @@ describe('Select', () => {
 
   describe('when given the size prop', () => {
     beforeEach(() => {
-      root.setProps({size: 'sm'});
+      root.setProps({ size: 'sm' });
     });
 
     it('gives the outer element the is-size-sm class', () => {
@@ -85,7 +87,7 @@ describe('Select', () => {
     const onFocus = () => 23;
 
     beforeEach(() => {
-      root.setProps({onClick, onFocus});
+      root.setProps({ onClick, onFocus });
     });
 
     it('puts the additional props on the inner input', () => {
@@ -99,8 +101,8 @@ describe('Select', () => {
     const onChange = jest.fn();
 
     beforeEach(() => {
-      root.setProps({onChange});
-      root.find('select').simulate('change', {target: {value: '3'}});
+      root.setProps({ onChange });
+      root.find('select').simulate('change', { target: { value: '3' } });
     });
 
     it('calls the onChange callback correctly', () => {
