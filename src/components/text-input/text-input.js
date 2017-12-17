@@ -8,29 +8,49 @@ export const TextInput = ({
   rows = 2,
   password,
   className,
+  inputClassName,
+  icon,
   ...props
 }) => {
-  const inputClasses = classify(
+  const wrapperClasses = classify(
     prefix('TextInput'),
-    multiline && 'is-multiline',
     size && `is-size-${size}`,
     className);
 
-  if (multiline) {
-    return <textarea {...{
-      ...props,
-      className: inputClasses,
-      onChange: evt => onChange && onChange(evt.target.value),
-      rows
-    }}/>;
-  }
+  const inputClasses = classify(
+    prefix('TextInput-input'),
+    multiline && 'is-multiline',
+    size && `is-size-${size}`,
+    icon && 'has-icon',
+    inputClassName);
 
-  return (
-    <input {...{
-      ...props,
-      className: inputClasses,
-      type: password ? 'password' : 'text',
-      onChange: evt => onChange && onChange(evt.target.value)
-    }}/>
-  );
+  const iconClasses = classify(
+    prefix('TextInput-icon'),
+    );
+
+  const convertedOnChange = evt =>
+    onChange && onChange(evt.target.value)
+
+  const input = multiline
+    ? <textarea {...{
+        ...props,
+        className: inputClasses,
+        onChange: convertedOnChange,
+        rows
+      }}/>
+    : <input {...{
+        ...props,
+        className: inputClasses,
+        type: password ? 'password' : 'text',
+        onChange: convertedOnChange
+      }}/>;
+
+  const iconEl = icon && <div role="presentation" className={iconClasses}>
+      {icon}
+    </div>;
+
+  return <div className={wrapperClasses}>
+    {iconEl}
+    {input}
+  </div>;
 }

@@ -1,16 +1,19 @@
 import React from 'react';
 import { classify, prefix } from '../../util';
+import { UpDownChevronIcon } from '../icons';
 
 export const Select = ({
   size,
   className,
   inputClassName,
+  arrowClassName,
   children,
   onChange,
   ...props
 }) => {
   const selectClasses = classify(
     prefix('Select'),
+    size && `is-size-${size}`,
     className);
 
   const inputClasses = classify(
@@ -19,7 +22,8 @@ export const Select = ({
     inputClassName);
 
   const arrowClasses = classify(
-    prefix('Select-arrow'));
+    prefix('Select-arrow'),
+    arrowClassName);
 
   return (
     <div className={selectClasses}>
@@ -30,7 +34,9 @@ export const Select = ({
       }}>
         {children}
       </select>
-      <div className={arrowClasses}/>
+      <div className={arrowClasses}>
+        <UpDownChevronIcon />
+      </div>
     </div>
   );
 }

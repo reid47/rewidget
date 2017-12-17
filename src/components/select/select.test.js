@@ -21,6 +21,9 @@ describe('Select', () => {
     const input = root.find('select.rw-Select-input');
     expect(input.exists()).toBe(true);
 
+    const arrows = root.find('div.rw-Select-arrow');
+    expect(arrows.exists()).toBe(true);
+
     const options = root.find('option');
     expect(options.length).toBe(3);
     expect(options.at(0).text()).toBe('one');
@@ -50,9 +53,25 @@ describe('Select', () => {
     });
   });
 
+  describe('when an arrowClassName prop is given', () => {
+    beforeEach(() => {
+      root.setProps({arrowClassName: 'some-arrow-class'});
+    });
+
+    it('sets the className on the inner arrow element', () => {
+      const arrows = root.find('div.rw-Select-arrow');
+      expect(arrows.hasClass('some-arrow-class')).toBe(true);
+    });
+  });
+
   describe('when given the size prop', () => {
     beforeEach(() => {
       root.setProps({size: 'sm'});
+    });
+
+    it('gives the outer element the is-size-sm class', () => {
+      const el = root.find('div.rw-Select');
+      expect(el.hasClass('is-size-sm')).toBe(true);
     });
 
     it('gives the inner element the is-size-sm class', () => {

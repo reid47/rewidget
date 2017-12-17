@@ -49,7 +49,7 @@ export const RadioPage = () => {
         </Example>
         <Example {...{title: 'Radio sizes'}}>
           <div>
-            <Radio size="sm" name="ex3" className="mt-1">I am a label within a radio</Radio>
+            <Radio size="sm" name="ex3">I am a label within a radio</Radio>
             <Radio size="md" name="ex3" className="mt-1">I am a label within a radio</Radio>
             <Radio size="lg" name="ex3" className="mt-1">I am a label within a radio</Radio>
           </div>

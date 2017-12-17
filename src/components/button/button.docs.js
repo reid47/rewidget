@@ -9,31 +9,31 @@ export const ButtonPage = () => {
       propList: [
         {
           name: 'primary',
-          type: 'bool',
+          type: 'boolean',
           description: 'Indicates a primary button (adds the `is-primary` class)'
         }, {
           name: 'secondary',
-          type: 'bool',
+          type: 'boolean',
           description: 'Indicates a secondary button (adds the `is-secondary` class)'
         }, {
           name: 'success',
-          type: 'bool',
+          type: 'boolean',
           description: 'Indicates a success button (adds the `is-success` class)'
         }, {
           name: 'alert',
-          type: 'bool',
+          type: 'boolean',
           description: 'Indicates a alert button (adds the `is-alert` class)'
         }, {
           name: 'warning',
-          type: 'bool',
+          type: 'boolean',
           description: 'Indicates a warning button (adds the `is-warning` class)'
         }, {
           name: 'alt',
-          type: 'bool',
+          type: 'boolean',
           description: 'Indicates an alt button (adds the `is-alt` class)'
         }, {
           name: 'plain',
-          type: 'bool',
+          type: 'boolean',
           description: 'Indicates a plain button (adds the `is-plain` class)'
         }, {
           name: 'size',

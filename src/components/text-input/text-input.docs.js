@@ -1,6 +1,7 @@
 import React from 'react';
 import { TextInput } from '../../components/text-input';
 import { DocPage, Example } from '../../docs/docs-components';
+import { SearchIcon } from '../../components/icons';
 
 export const TextInputPage = () => {
   return (
@@ -18,7 +19,7 @@ export const TextInputPage = () => {
         }, {
           name: 'multiline',
           type: 'boolean',
-          description: 'Whether or not this text input supports multiple lines'
+          description: 'Whether or not this text input supports multiple lines (adds the `is-multiline` class)'
         }, {
           name: 'rows',
           type: 'number',
@@ -40,8 +41,11 @@ export const TextInputPage = () => {
         <Example {...{title: 'Single-line text input'}}>
           <TextInput/>
         </Example>
-        <Example {...{title: 'Multi-line text input'}}>
-          <TextInput multiline/>
+        <Example {...{title: 'Single-line text input with icon'}}>
+          <TextInput icon={<SearchIcon />}/>
+        </Example>
+        <Example {...{title: 'Password input'}}>
+          <TextInput password/>
         </Example>
         <Example {...{title: 'Text input with placeholder'}}>
           <TextInput placeholder="Enter something..."/>
@@ -52,6 +56,19 @@ export const TextInputPage = () => {
             <TextInput size="md" className="mt-1"/>
             <TextInput size="lg" className="mt-1"/>
           </div>
+        </Example>
+        <Example {...{title: 'Single-line text input sizes with icons'}}>
+          <div>
+            <TextInput size="sm" icon={<SearchIcon />}/>
+            <TextInput size="md" icon={<SearchIcon />} className="mt-1"/>
+            <TextInput size="lg" icon={<SearchIcon />} className="mt-1"/>
+          </div>
+        </Example>
+        <Example {...{title: 'Multi-line text input'}}>
+          <TextInput multiline/>
+        </Example>
+        <Example {...{title: 'Multi-line text input with icon'}}>
+          <TextInput multiline icon={<SearchIcon />}/>
         </Example>
         <Example {...{title: 'Multi-line text input sizes'}}>
           <div>
