@@ -16,6 +16,12 @@ describe('Button', () => {
     expect(btn.is('[type="button"]')).toBe(true);
     expect(btn.hasClass('is-primary')).toBe(true);
     expect(btn.text()).toBe('Click me');
+
+    const btnContent = root.find('span.rw-Button-content');
+    expect(btnContent.exists()).toBe(true);
+
+    const btnText = root.find('span.rw-Button-text');
+    expect(btnText.exists()).toBe(true);
   });
 
   describe('when given the secondary prop', () => {
@@ -85,6 +91,55 @@ describe('Button', () => {
     it('gives the button the className', () => {
       const btn = root.find('button');
       expect(btn.hasClass('some-class')).toBe(true);
+    });
+  });
+
+  describe('when given an icon', () => {
+    beforeEach(() => {
+      root.setProps({icon: <span className="an-icon"/>});
+    });
+
+    it('renders the icon', () => {
+      const el = root.find('span.rw-Button-icon span.an-icon');
+      expect(el.exists()).toBe(true);
+    });
+
+    it('gives the icon role="presentation"', () => {
+      const el = root.find('span.rw-Button-icon');
+      expect(el.prop('role')).toBe('presentation');
+    });
+  });
+
+  describe('when given an iconClassName', () => {
+    beforeEach(() => {
+      root.setProps({icon: <span className="an-icon"/>, iconClassName: 'some-icon-class'});
+    });
+
+    it('puts the className on the icon', () => {
+      const el = root.find('span.rw-Button-icon');
+      expect(el.hasClass('some-icon-class')).toBe(true);
+    });
+  });
+
+  describe('when given a contentClassName', () => {
+    beforeEach(() => {
+      root.setProps({contentClassName: 'some-content-class'});
+    });
+
+    it('puts the className on the content', () => {
+      const el = root.find('span.rw-Button-content');
+      expect(el.hasClass('some-content-class')).toBe(true);
+    });
+  });
+
+  describe('when given a textClassName', () => {
+    beforeEach(() => {
+      root.setProps({textClassName: 'some-text-class'});
+    });
+
+    it('puts the className on the text', () => {
+      const el = root.find('span.rw-Button-text');
+      expect(el.hasClass('some-text-class')).toBe(true);
     });
   });
 

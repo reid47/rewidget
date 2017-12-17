@@ -12,6 +12,10 @@ export const Button = ({
   size,
   type = 'button',
   className,
+  icon,
+  iconClassName,
+  contentClassName,
+  textClassName,
   children,
   ...props
 }) => {
@@ -28,9 +32,28 @@ export const Button = ({
     className
   );
 
+  const iconClasses = classify(
+    prefix('Button-icon'),
+    iconClassName);
+
+  const contentClasses = classify(
+    prefix('Button-content'),
+    icon && 'has-icon',
+    !children && 'is-icon-only',
+    contentClassName);
+
+  const textClasses = classify(
+    prefix('Button-text'),
+    icon && 'has-icon',
+    !children && 'is-icon-only',
+    textClassName);
+
   return (
     <button className={buttonClasses} type={type} {...props}>
-      {children}
+      <span className={contentClasses}>
+        {icon && <span role="presentation" className={iconClasses}>{icon}</span>}
+        <span className={textClasses}>{children}</span>
+      </span>
     </button>
   );
 };

@@ -37,6 +37,10 @@ nav {
   h1, h2, h3, h4, h5, h6 {
     font-family: sans-serif;
   }
+
+  section + section {
+    margin-top: $unit * 4;
+  }
 }
 
 .props-table {

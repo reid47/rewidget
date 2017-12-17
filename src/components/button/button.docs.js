@@ -1,6 +1,7 @@
 import React from 'react';
 import { Button } from '../../components/button';
 import { DocPage, Example } from '../../docs/docs-components';
+import { CheckIcon } from '../../components/icons';
 
 export const ButtonPage = () => {
   return (
@@ -40,6 +41,22 @@ export const ButtonPage = () => {
           type: 'string (possible values: "sm", "md", "lg")',
           description: 'Size of the button (adds the `is-size-{size}` class)'
         }, {
+          name: 'icon',
+          type: 'node',
+          description: 'Icon to place inside the button'
+        }, {
+          name: 'iconClassName',
+          type: 'string',
+          description: 'Class name to add to the element surrounding the icon (if given)'
+        }, {
+          name: 'contentClassName',
+          type: 'string',
+          description: 'Class name to add to the element surrounding both the text and the icon (if given)'
+        }, {
+          name: 'textClassName',
+          type: 'string',
+          description: 'Class name to add to the element surrounding both the inner text'
+        }, {
           name: '...props',
           description: 'All additional props are placed on the inner `button` element'
         }
@@ -72,6 +89,16 @@ export const ButtonPage = () => {
             <Button plain alert className="ml-1">Click me</Button>
           </div>
         </Example>
+        <Example {...{title: 'Buttons with icons'}}>
+          <div>
+            <Button success icon={<CheckIcon/>}>Click me</Button>
+            <Button warning icon={<CheckIcon/>} className="ml-1">Click me</Button>
+            <Button alert alt icon={<CheckIcon/>} className="ml-1">Click me</Button>
+            <Button success icon={<CheckIcon/>} className="ml-1"/>
+            <Button warning icon={<CheckIcon/>} className="ml-1"/>
+            <Button alert alt icon={<CheckIcon/>} className="ml-1"/>
+          </div>
+        </Example>
         <Example {...{title: 'Button sizes'}}>
           <div>
             <div>
@@ -84,6 +111,20 @@ export const ButtonPage = () => {
               <Button alt size="md" className="ml-1">Click me</Button>
               <Button alt size="lg" className="ml-1">Click me</Button>
             </div>
+          </div>
+        </Example>
+        <Example {...{title: 'Button sizes with icons'}}>
+          <div>
+            <Button success icon={<CheckIcon/>} size="sm">Click me</Button>
+            <Button success icon={<CheckIcon/>} size="md" className="ml-1">Click me</Button>
+            <Button success icon={<CheckIcon/>} size="lg" className="ml-1">Click me</Button>
+          </div>
+        </Example>
+        <Example {...{title: 'Disabled buttons'}}>
+          <div>
+            <Button disabled primary>Click me</Button>
+            <Button plain disabled alert className="ml-1">Click me</Button>
+            <Button alt disabled success className="ml-1">Click me</Button>
           </div>
         </Example>
       </div>)

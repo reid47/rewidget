@@ -6,11 +6,15 @@
   border: none;
   cursor: pointer;
   text-transform: uppercase;
-  line-height: 1em;
   letter-spacing: 0.1em;
-  padding: 0.75em 1em;
-  transition: transform 0.1s ease-in-out;
+  padding-left: 0.75em;
+  padding-right: 0.75em;
   border-radius: $input-border-radius;
+  line-height: 1em;
+  height: 2.5 * $unit;
+  display: inline-flex;
+  align-items: center;
+  box-sizing: border-box;
 
   &:focus {
     outline: none;
@@ -24,10 +28,11 @@
   }
 
   &.is-alt {
-    $border-width: 0.25em;
+    $border-width: 0.2em;
     border-style: solid;
     border-width: $border-width;
-    padding: (0.75em - $border-width) (1em - $border-width);
+    padding-left: 0.75em - $border-width;
+    padding-right: 0.75em - $border-width;
   }
 
   @each $style in 'primary', 'secondary', 'success', 'alert', 'warning' {
@@ -53,13 +58,37 @@
 
   &.is-size-sm {
     font-size: $size-sm;
+    height: 2 * $unit;
   }
 
   &.is-size-md {
     font-size: $size-md;
+    height: 2.5 * $unit;
   }
 
   &.is-size-lg {
     font-size: $size-lg;
+    height: 3 * $unit;
+  }
+}
+
+.#{prefix(Button-text)} {
+  &.has-icon {
+    margin-left: 1.5em;
+  }
+
+  &.is-icon-only {
+    margin-left: 1em;
+  }
+}
+
+.#{prefix(Button-icon)} {
+  position: relative;
+
+  svg {
+    box-sizing: border-box;
+    width: 1em;
+    height: 1em;
+    position: absolute;
   }
 }
