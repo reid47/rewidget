@@ -1,0 +1,105 @@
+.#{prefix(Chip)} {
+  display: inline-flex;
+  cursor: pointer;
+  align-items: center;
+  font-size: $size-md;
+  vertical-align: middle;
+  background-color: $color-primary;
+  color: $color-light;
+  font-family: $font-sans;
+  padding-top: 0.25em;
+  padding-bottom: 0.25em;
+  padding-left: 0.75em;
+  padding-right: 0.25em;
+  border-radius: $unit * 10;
+  box-sizing: border-box;
+
+  &.is-selected, &:focus {
+    outline: 0;
+    background-color: lighten($color-primary, 40%);
+    color: darken($color-primary, 10%);
+
+    .#{prefix(Chip-icon)} {
+      background-color: $color-primary;
+
+      &:hover {
+        background-color: $color-light;
+        color: $color-primary;
+      }
+    }
+  }
+
+  &.is-size-sm {
+    font-size: $size-sm;
+
+    .#{prefix(Chip-icon)} {
+      width: $size-sm;
+      height: $size-sm;
+
+      svg {
+        width: $size-sm;
+        height: $size-sm;
+      }
+    }
+  }
+
+  &.is-size-md {
+    font-size: $size-md;
+
+    .#{prefix(Chip-icon)} {
+      width: $size-md;
+      height: $size-md;
+
+      svg {
+        width: $size-md;
+        height: $size-md;
+      }
+    }
+  }
+
+  &.is-size-lg {
+    font-size: $size-lg;
+
+    .#{prefix(Chip-icon)} {
+      width: $size-lg;
+      height: $size-lg;
+
+      svg {
+        width: $size-lg;
+        height: $size-lg;
+      }
+    }
+  }
+}
+
+.#{prefix(Chip-icon)} {
+  border: none;
+  font-size: $size-md;
+  box-sizing: content-box;
+  background-color: darken($color-primary, 10%);
+  color: $color-light;
+  font-family: inherit;
+  font-size: inherit;
+  border-radius: $unit * 10;
+  margin-left: $unit / 4;
+  width: $size-md;
+  height: $size-md;
+  padding: 0.25em;
+  display: inline-flex;
+  align-items: center;
+  cursor: pointer;
+
+  &:focus {
+    outline: 0;
+  }
+
+  &:hover {
+    background-color: $color-light;
+    color: darken($color-primary, 10%);
+  }
+
+  svg {
+    width: $size-md;
+    height: $size-md;
+  }
+}

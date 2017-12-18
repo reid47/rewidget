@@ -88,3 +88,12 @@ $TextInput-focus-shadow: $focus-shadow !default;
 $TextInput-font-family: $font-sans !default;
 $TextInput-width: 100% !default;
 $TextInput-border-color: $color-secondary !default;
+
+// ChipInput
+$ChipInput-background-color: $color-light !default;
+$ChipInput-border-radius: $input-border-radius !default;
+$ChipInput-focus-shadow: $focus-shadow !default;
+$ChipInput-font-family: $font-sans !default;
+$ChipInput-width: 100% !default;
+$ChipInput-inner-input-width: 10 * $unit !default;
+$ChipInput-border-color: $color-secondary !default;

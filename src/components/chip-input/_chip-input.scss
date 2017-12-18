@@ -1,0 +1,118 @@
+.#{prefix(ChipInput)} {
+  display: block;
+  cursor: text;
+  width: $ChipInput-width;
+  font-family: $ChipInput-font-family;
+  box-sizing: border-box;
+  border: 1px solid $ChipInput-border-color;
+  border-radius: $ChipInput-border-radius;
+  padding: $unit / 2;
+  padding-bottom: $unit / 4;
+  overflow-x: hidden;
+  outline: 0;
+
+  &.is-focused {
+    outline: 0;
+    box-shadow: $ChipInput-focus-shadow;
+  }
+
+  &.is-size-sm {
+    .#{prefix(ChipInput-icon)} {
+      top: $size-sm * 0.25;
+      left: $size-sm * 0.55;
+
+      svg {
+        width: $size-sm;
+        height: $size-sm;
+      }
+    }
+  }
+
+  &.is-size-md {
+    .#{prefix(ChipInput-icon)} {
+      top: $size-md * 0.6;
+      left: $size-md * 0.55;
+
+      svg {
+        width: $size-md;
+        height: $size-md;
+      }
+    }
+  }
+
+  &.is-size-lg {
+    .#{prefix(ChipInput-icon)} {
+      top: $size-lg * 0.6;
+      left: $size-lg * 0.55;
+
+      svg {
+        width: $size-lg;
+        height: $size-lg;
+      }
+    }
+  }
+
+  .#{prefix(Chip)} {
+    margin-right: $unit / 4;
+    margin-bottom: $unit / 4;
+  }
+}
+
+.#{prefix(ChipInput-input)} {
+  display: inline-block;
+  font-size: $size-md;
+  min-height: $size-md * 2;
+  font-family: $ChipInput-font-family;
+  width: $ChipInput-inner-input-width;
+  background-color: transparent;
+  border: none;
+  box-sizing: border-box;
+  margin-bottom: $unit / 4;
+
+  &.has-icon {
+    padding-left: 2em;
+  }
+
+  &.is-size-sm {
+    font-size: $size-sm;
+    min-height: $size-sm * 2;
+  }
+
+  &.is-size-md {
+    font-size: $size-md;
+    min-height: $size-md * 2;
+  }
+
+  &.is-size-lg {
+    font-size: $size-lg;
+    min-height: $size-lg * 2;
+  }
+
+  &.is-multiline {
+    resize: vertical;
+    min-height: 2em;
+  }
+
+  &.is-autoresize {
+    resize: none;
+    overflow: hidden;
+  }
+
+  &:focus {
+    outline: 0;
+  }
+}
+
+.#{prefix(ChipInput-icon)} {
+  position: absolute;
+  color: $ChipInput-border-color;
+  top: $size-md * 0.6;
+  left: $size-md * 0.55;
+  pointer-events: none;
+
+  svg {
+    width: $size-md;
+    height: $size-md;
+  }
+}
+

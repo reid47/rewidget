@@ -2,6 +2,8 @@ import React from 'react';
 import { BrowserRouter, Route, Link } from 'react-router-dom';
 import { ButtonPage } from '../components/button/button.docs';
 import { CheckboxPage } from '../components/checkbox/checkbox.docs';
+import { ChipPage } from '../components/chip/chip.docs';
+import { ChipInputPage } from '../components/chip-input/chip-input.docs';
 import { TextInputPage } from '../components/text-input/text-input.docs';
 import { TogglePage } from '../components/toggle/toggle.docs';
 import { RadioPage } from '../components/radio/radio.docs';
@@ -20,6 +22,16 @@ const pages = [
     path: '/checkbox',
     component: CheckboxPage,
     linkText: 'checkbox'
+  },
+  {
+    path: '/chip',
+    component: ChipPage,
+    linkText: 'chip'
+  },
+  {
+    path: '/chip-input',
+    component: ChipInputPage,
+    linkText: 'chip input'
   },
   {
     path: '/radio',
