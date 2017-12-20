@@ -30,6 +30,7 @@ export const Toggle = ({
         {...{
           ...props,
           type: 'checkbox',
+          role: 'switch',
           id,
           className: inputClasses,
           onChange: evt => onChange && onChange(evt.target.checked)

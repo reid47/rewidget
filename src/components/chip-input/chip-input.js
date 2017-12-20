@@ -24,12 +24,10 @@ export class ChipInput extends React.Component {
   }
 
   onInputFocus(evt) {
-    console.log('f')
     this.setState({ inputHasFocus: true });
   }
 
   onInputBlur(evt) {
-    console.log('b')
     this.setState({ inputHasFocus: false });
   }
 
@@ -119,6 +117,7 @@ export class ChipInput extends React.Component {
         const newValues = currentValues.filter((val, j) => j !== i);
 
         this.props.onChange && this.props.onChange(newValues);
+        this.inputElement && this.inputElement.focus();
       }
     };
   }
@@ -138,7 +137,8 @@ export class ChipInput extends React.Component {
     const wrapperClasses = classify(
       prefix('ChipInput'),
       inputHasFocus && 'is-focused',
-      className);
+      className
+    );
 
     const inputClasses = classify(
       prefix('ChipInput-input'),
@@ -168,9 +168,11 @@ export class ChipInput extends React.Component {
         <Chip
           key={i}
           size={size}
+          role="option"
+          aria-selected="false"
           onKeyDown={this.onChipKeyDown(i)}
           onClick={this.onChipClick(i)}
-          onIconClick={this.onChipIconClick(i)}>
+          iconOnClick={this.onChipIconClick(i)}>
           {val}
         </Chip>
       ));

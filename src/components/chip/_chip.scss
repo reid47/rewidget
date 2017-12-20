@@ -13,8 +13,27 @@
   padding-right: 0.25em;
   border-radius: $unit * 10;
   box-sizing: border-box;
+  border: none;
 
-  &.is-selected, &:focus {
+  &.has-no-icon {
+    padding-right: 0.75em;
+  }
+
+  &.is-disabled {
+    opacity: 0.5;
+    cursor: default;
+
+    .#{prefix(Chip-icon)} {
+      cursor: default;
+
+      &:hover {
+        background-color: darken($color-primary, 10%);
+        color: $color-light;
+      }
+    }
+  }
+
+  &:focus {
     outline: 0;
     background-color: lighten($color-primary, 40%);
     color: darken($color-primary, 10%);
@@ -86,6 +105,7 @@
   height: $size-md;
   padding: 0.25em;
   display: inline-flex;
+  justify-content: center;
   align-items: center;
   cursor: pointer;
 

@@ -3,40 +3,46 @@ import { classify, prefix } from '../../util';
 import { XIcon } from '../icons';
 
 export const Chip = ({
-  selected,
   size,
+  disabled,
   className,
   children,
+  hideIcon,
   icon = <XIcon />,
   iconClassName,
   onClick,
-  onIconClick,
+  iconOnClick,
   ...props
 }) => {
   const chipClasses = classify(
     prefix('Chip'),
-    selected && 'is-selected',
     size && `is-size-${size}`,
+    hideIcon && 'has-no-icon',
     className
   );
 
-  const iconClasses = classify(prefix('Chip-icon'), iconClassName);
+  const iconClasses = !hideIcon && classify(prefix('Chip-icon'), iconClassName);
 
   return (
-    <div // eslint-disable-line jsx-a11y/click-events-have-key-events
+    <button // eslint-disable-line jsx-a11y/click-events-have-key-events
       tabIndex="-1"
-      role="option"
-      aria-selected={selected}
       className={chipClasses}
       onClick={onClick}
+      disabled={disabled}
       {...props}>
       {children}
-      <div // eslint-disable-line jsx-a11y/click-events-have-key-events
-        role="none"
-        onClick={onIconClick}
-        className={iconClasses}>
-        {icon}
-      </div>
-    </div>
+      {!hideIcon && (
+        <div // eslint-disable-line jsx-a11y/click-events-have-key-events
+          role="none"
+          onClick={iconOnClick ? (evt => {
+            evt.stopPropagation();
+            evt.preventDefault();
+            iconOnClick(evt);
+          }) : undefined}
+          className={iconClasses}>
+          {icon}
+        </div>
+      )}
+    </button>
   );
 };

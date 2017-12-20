@@ -1,6 +1,7 @@
 import React from 'react';
 import { Chip } from '../../components/chip';
 import { DocPage, Example } from '../../docs/docs-components';
+import { CheckIcon } from '../../components/icons';
 
 export const ChipPage = () => {
   return (
@@ -30,8 +31,14 @@ export const ChipPage = () => {
             <Example {...{ title: 'Simple chip' }}>
               <Chip>A chip</Chip>
             </Example>
-            <Example {...{ title: 'Focused chip' }}>
-              <Chip focused>Focused chip</Chip>
+            <Example {...{ title: 'Chip with custom icon' }}>
+              <Chip icon={<CheckIcon/>}>Chip with custom icon</Chip>
+            </Example>
+            <Example {...{ title: 'Chip without icon' }}>
+              <Chip hideIcon>Chip with no icon</Chip>
+            </Example>
+            <Example {...{ title: 'Disabled chip' }}>
+              <Chip disabled>Disabled chip</Chip>
             </Example>
             <Example {...{ title: 'Chip sizes' }}>
               <div>
