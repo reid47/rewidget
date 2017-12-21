@@ -15,10 +15,11 @@ export const Example = ({ title, description, children }) => {
         <pre>
           <code>
             {jsxToString(children, {
-              maxInlineAttributesLineLength: 100,
+              maxInlineAttributesLineLength: 500,
               filterProps: ['className'],
               showFunctions: true,
-              functionValue: formatFunction
+              functionValue: formatFunction,
+              showDefaultProps: false
             })}
           </code>
         </pre>

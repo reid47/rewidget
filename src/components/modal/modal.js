@@ -43,8 +43,13 @@ export class Modal extends React.Component {
         this.lastFocusedEl = document.activeElement;
         this.firstFocusableEl && this.firstFocusableEl.focus();
 
-        const firstFocusableEl = getFocusableElements(this.modalRoot)[0];
-        firstFocusableEl && firstFocusableEl.focus();
+        const focusOnFirstElement = () => {
+          const firstFocusableEl = getFocusableElements(this.modalRoot)[0];
+          firstFocusableEl && firstFocusableEl.focus();
+        };
+
+        if (!this.props.animated) focusOnFirstElement();
+        else setTimeout(focusOnFirstElement, 210);
       } else {
         document.body.classList.remove(prefix('Modal-document-body'));
         this.lastFocusedEl && this.lastFocusedEl.focus();
@@ -108,7 +113,8 @@ export class Modal extends React.Component {
         className={classify(
           prefix('Modal-content'),
           `is-${type}`,
-          animated && 'is-animated'
+          animated && 'is-animated',
+          open && 'is-open'
         )}
         onKeyDown={this.handleKeyDown}
         {...props}>
