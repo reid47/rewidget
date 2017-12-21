@@ -1,0 +1,98 @@
+.#{prefix(Modal)} {
+  visibility: hidden;
+  background-color: rgba(20, 20, 20, 0);
+  position: fixed;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+
+  &.is-open {
+    background-color: rgba(20, 20, 20, 0.7);
+    visibility: visible;
+  }
+
+  &.is-animated {
+    transition: background-color 0.2s ease-in-out;
+  }
+}
+
+.#{prefix(Modal-content)} {
+  position: fixed;
+
+  &:focus {
+    outline: none;
+  }
+
+  &.is-dialog {
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  &.is-flyout-left {
+    left: 0;
+    top: 0;
+    bottom: 0;
+  }
+
+  &.is-flyout-right {
+    right: 0;
+    top: 0;
+    bottom: 0;
+  }
+
+  &.is-fullscreen {
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+  }
+}
+
+.#{prefix(Modal-close-button)} {
+  $Modal-close-button-size: $unit * 2;
+
+  position: absolute;
+  background: transparent;
+  width: $Modal-close-button-size;
+  height: $Modal-close-button-size;
+  border: none;
+  color: $color-light;
+  cursor: pointer;
+  border-radius: $input-border-radius;
+  display: flex;
+
+  svg {
+    margin: auto;
+  }
+
+  &:focus {
+    box-shadow: $focus-shadow;
+  }
+
+  &.is-dialog {
+    right: -$Modal-close-button-size * 1.25;
+    top: -$Modal-close-button-size * 1.25;
+  }
+
+  &.is-flyout-left {
+    right: -$Modal-close-button-size * 1.25;
+    top: $Modal-close-button-size * 0.25;
+  }
+
+  &.is-flyout-right {
+    left: -$Modal-close-button-size * 1.25;
+    top: $Modal-close-button-size * 0.25;
+  }
+
+  &.is-fullscreen {
+    color: $color-dark;
+    right: $Modal-close-button-size * 0.25;
+    top: $Modal-close-button-size * 0.25;
+  }
+}
+
+.#{prefix(Modal-document-body)} {
+  overflow: hidden;
+}
