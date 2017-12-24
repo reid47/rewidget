@@ -23,6 +23,23 @@ export class ModalPage extends React.Component {
       <DocPage
         {...{
           componentName: 'Modal',
+          description: `
+            The \`Modal\` component helps you place content in overlays that block out the
+            content in the background. They prevent interaction with the background content
+            until the overlay is closed.
+
+            The visibility of the \`Modal\` is controlled by the \`open\` prop. The simplest
+            version of a \`Modal\` might look like this:
+
+            \`\`\`
+            <Modal open={this.state.isOpen} onClose={() => this.setState({isOpen: false})}>
+              some content
+            </Modal>
+            \`\`\`
+
+            By default, when the modal is open, the \`onClose\` callback is called in two
+            cases: when the *Escape* key is pressed, and when the close button is pressed.
+          `,
           propList: [
             {
               name: '...props',
@@ -38,15 +55,28 @@ export class ModalPage extends React.Component {
                     Open dialog
                   </Button>
                   <Modal
+                    aria-label="Example modal"
                     open={this.state.isOpen1}
                     onClose={() => this.setState({ isOpen1: false })}>
                     <div
                       className="modal-content-example"
                       style={{
                         width: '400px',
-                        height: '200px'
+                        height: '200px',
+                        overflowY: 'auto',
+                        display: 'block'
                       }}>
-                      I am modal content!
+                      <p>This is a line of modal content.</p>
+                      <p>This is a line of modal content.</p>
+                      <p>This is a line of modal content.</p>
+                      <p>This is a line of modal content.</p>
+                      <p>This is a line of modal content.</p>
+                      <p>This is a line of modal content.</p>
+                      <p>This is a line of modal content.</p>
+                      <p>This is a line of modal content.</p>
+                      <p>This is a line of modal content.</p>
+                      <p>This is a line of modal content.</p>
+                      <p>This is a line of modal content.</p>
                     </div>
                   </Modal>
                 </div>
@@ -57,6 +87,7 @@ export class ModalPage extends React.Component {
                     Open left flyout
                   </Button>
                   <Modal
+                    aria-label="Example modal flyout from left"
                     type="flyout-left"
                     open={this.state.isOpen2}
                     onClose={() => this.setState({ isOpen2: false })}>
@@ -77,6 +108,7 @@ export class ModalPage extends React.Component {
                     Open right flyout
                   </Button>
                   <Modal
+                    aria-label="Example modal flyout from right"
                     type="flyout-right"
                     open={this.state.isOpen3}
                     onClose={() => this.setState({ isOpen3: false })}>
@@ -94,6 +126,7 @@ export class ModalPage extends React.Component {
                     Open full-screen modal
                   </Button>
                   <Modal
+                    aria-label="Example full-screen modal"
                     type="fullscreen"
                     open={this.state.isOpen4}
                     onClose={() => this.setState({ isOpen4: false })}>
@@ -115,6 +148,7 @@ export class ModalPage extends React.Component {
                   </Button>
                   <Modal
                     animated
+                    aria-label="Example animated modal"
                     open={this.state.isOpen5}
                     onClose={() => this.setState({ isOpen5: false })}>
                     <div
@@ -135,6 +169,7 @@ export class ModalPage extends React.Component {
                   </Button>
                   <Modal
                     animated
+                    aria-label="Example animated flyout from left"
                     type="flyout-left"
                     open={this.state.isOpen6}
                     onClose={() => this.setState({ isOpen6: false })}>
@@ -156,6 +191,7 @@ export class ModalPage extends React.Component {
                   </Button>
                   <Modal
                     animated
+                    aria-label="Example animated flyout from right"
                     type="flyout-right"
                     open={this.state.isOpen7}
                     onClose={() => this.setState({ isOpen7: false })}>
@@ -175,6 +211,7 @@ export class ModalPage extends React.Component {
                   <Modal
                     type="fullscreen"
                     animated
+                    aria-label="Example animated full-screen modal"
                     open={this.state.isOpen8}
                     onClose={() => this.setState({ isOpen8: false })}>
                     <div

@@ -34,6 +34,7 @@ export class ChipInput extends React.Component {
   onInputKeyDown(evt) {
     const { currentText } = this.state;
     if (evt.key === 'Enter') {
+      evt.preventDefault();
       const currentValues = this.props.value || [];
       this.setState({ currentText: '' });
 
@@ -46,6 +47,8 @@ export class ChipInput extends React.Component {
       }
     } else if (evt.key === 'ArrowLeft' || evt.key === 'Backspace') {
       if (this.inputElement && this.inputElement.selectionStart === 0) {
+        evt.preventDefault();
+        evt.stopPropagation();
         const lastChip = this.inputElement.previousElementSibling;
         lastChip && lastChip.focus();
       }
@@ -54,6 +57,7 @@ export class ChipInput extends React.Component {
         this.inputElement &&
         this.inputElement.selectionStart === currentText.length
       ) {
+        evt.preventDefault();
         const firstChip =
           this.inputElement.parentNode &&
           this.inputElement.parentNode.firstElementChild;

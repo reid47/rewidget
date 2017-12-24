@@ -14,7 +14,7 @@
   }
 
   &.is-animated {
-    transition: all 0.2s ease-in-out;
+    transition: opacity 0.2s, visibility 0.2s;
   }
 }
 
@@ -26,7 +26,7 @@
   }
 
   &.is-animated {
-    transition: transform 0.2s ease-in-out;
+    transition: transform 0.2s;
   }
 
   &.is-dialog {
@@ -107,8 +107,14 @@
   }
 
   &:focus {
+    outline: 0;
     box-shadow: $focus-shadow;
   }
+
+  &::-moz-focus-inner {
+    border: 0;
+  }
+
 
   &.is-dialog {
     right: -$Modal-close-button-size * 1.25;
@@ -133,5 +139,4 @@
 
 .#{prefix(Modal-document-body)} {
   overflow: hidden;
-  margin-right: 17px;
 }

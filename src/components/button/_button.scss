@@ -22,6 +22,10 @@
     box-shadow: $focus-shadow;
   }
 
+  &::-moz-focus-inner {
+    border: 0;
+  }
+
   &[disabled] {
     opacity: 0.5;
     cursor: auto;

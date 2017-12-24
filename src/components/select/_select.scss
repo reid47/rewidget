@@ -69,6 +69,11 @@
   appearance: none;
   &::-ms-expand { display: none; }
 
+  &:-moz-focusring {
+    color: transparent;
+    text-shadow: 0 0 0 #000;
+  }
+
   &:focus {
     outline: 0;
     box-shadow: $Select-focus-shadow;

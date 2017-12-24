@@ -9,7 +9,10 @@ const formatFunction = fn => {
 export const Example = ({ title, description, children }) => {
   return (
     <div className="doc-example">
-      <h4>{title}</h4>
+      <div className="doc-example-header">
+        <h4>{title}</h4>
+        <span>{description}</span>
+      </div>
       <div className="doc-example-rendered">{children}</div>
       <div className="doc-example-code">
         <pre>
