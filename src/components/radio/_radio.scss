@@ -34,6 +34,7 @@
 
     &:after {
       opacity: 1;
+      transform: translate(-50%, -50%) scale(1);
     }
   }
 
@@ -73,6 +74,7 @@
     border-radius: $Radio-border-radius;
     left: 50%;
     top: 50%;
-    transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%) scale(0.6);
+    transition: transform 0.2s ease-in-out;
   }
 }

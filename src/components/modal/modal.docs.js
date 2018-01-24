@@ -18,6 +18,7 @@ export class ModalPage extends React.Component {
       isOpen8: false
     };
   }
+
   render() {
     return (
       <DocPage

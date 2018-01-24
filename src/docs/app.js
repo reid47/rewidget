@@ -4,6 +4,7 @@ import { ButtonPage } from '../components/button/button.docs';
 import { CheckboxPage } from '../components/checkbox/checkbox.docs';
 import { ChipPage } from '../components/chip/chip.docs';
 import { ChipInputPage } from '../components/chip-input/chip-input.docs';
+import { ListboxPage } from '../components/listbox/listbox.docs';
 import { ModalPage } from '../components/modal/modal.docs';
 import { TextInputPage } from '../components/text-input/text-input.docs';
 import { TogglePage } from '../components/toggle/toggle.docs';
@@ -33,6 +34,11 @@ const pages = [
     path: '/chip-input',
     component: ChipInputPage,
     linkText: 'chip input'
+  },
+  {
+    path: '/listbox',
+    component: ListboxPage,
+    linkText: 'listbox'
   },
   {
     path: '/modal',
