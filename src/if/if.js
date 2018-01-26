@@ -2,16 +2,18 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 const If = ({
-  condition,
+  not,
+  cond,
   children
 }) => {
-  return typeof condition === 'function'
-    ? condition() ? children : null
-    : condition ? children : null;
+  cond = typeof cond === 'function' ? cond() : cond;
+  if (not) return cond ? null : children;
+  return cond ? children : null;
 };
 
 If.propTypes = {
-  condition: PropTypes.oneOf(PropTypes.bool, PropTypes.func),
+  not: PropTypes.bool,
+  cond: PropTypes.any,
   children: PropTypes.node
 };
 

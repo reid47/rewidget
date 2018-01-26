@@ -29,7 +29,10 @@ const Each = ({
 Each.propTypes = {
   data: PropTypes.array,
   filter: PropTypes.func,
-  children: PropTypes.oneOf(PropTypes.node, PropTypes.func)
+  children: PropTypes.oneOfType([
+    PropTypes.node,
+    PropTypes.func
+  ])
 };
 
 Each.defaultProps = {

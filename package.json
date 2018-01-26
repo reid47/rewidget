@@ -7,7 +7,7 @@
   "main": "dist/bundle.js",
   "repository": {
     "type": "git",
-    "url": "https://github.com/reid47/rewidget/tree/master/components/src"
+    "url": "https://github.com/reid47/rewidget"
   },
   "keywords": [
     "react",
@@ -23,6 +23,8 @@
   ],
   "scripts": {
     "test": "jest",
+    "test-watch": "jest --watch",
+    "coverage": "rm -rf coverage && jest --coverage",
     "build": "rollup -c",
     "lint": "eslint src"
   },
@@ -63,6 +65,13 @@
     "roots": [
       "src"
     ],
-    "setupTestFrameworkScriptFile": "./test-setup.js"
+    "setupTestFrameworkScriptFile": "./test-setup.js",
+    "collectCoverageFrom": [
+      "src/**/*.js",
+      "!src/**/*.docs.js"
+    ],
+    "coverageReporters": [
+      "html"
+    ]
   }
 }
