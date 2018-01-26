@@ -1,13 +1,10 @@
 {
   "name": "rewidget",
   "version": "0.1.0",
+  "author": "Reid Mitchell",
+  "license": "MIT",
   "description": "React component library",
   "main": "dist/bundle.js",
-  "scripts": {
-    "test": "jest",
-    "build": "rollup -c",
-    "lint": "eslint src"
-  },
   "repository": {
     "type": "git",
     "url": "https://github.com/reid47/rewidget/tree/master/components/src"
@@ -18,8 +15,17 @@
     "library",
     "widget"
   ],
-  "author": "Reid Mitchell",
-  "license": "MIT",
+  "files": [
+    "dist/",
+    "LICENSE.md",
+    "README.md",
+    "package.json"
+  ],
+  "scripts": {
+    "test": "jest",
+    "build": "rollup -c",
+    "lint": "eslint src"
+  },
   "dependencies": {
     "prop-types": "^15.6.0"
   },
