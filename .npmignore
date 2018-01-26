@@ -1,9 +1,9 @@
-/node_modules
-/coverage
-/build
-/ignored
-
-*.css
+node_modules/
+src/
+.npmignore
+.gitignore
+yarn.lock
+rollup.config.js
 
 .DS_Store
 .env.local
@@ -14,10 +14,3 @@
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
-
-*.docs.js
-*.test.js
-/scripts
-/config
-/src/docs
-/public

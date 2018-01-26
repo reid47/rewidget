@@ -1,0 +1,131 @@
+// $sizes: (
+//   none: 0, 
+//   tiny: 0.25rem, 
+//   small: 0.5rem, 
+//   default: 1rem, 
+//   large: 2rem, 
+//   huge: 4rem);
+$sizes: (
+  none: 0, 
+  tiny: 0.25rem, 
+  small: 8px, 
+  default: 16px, 
+  large: 32px, 
+  huge: 4rem);
+
+.flex {
+  display: flex;
+  flex: 1 0 auto;
+  flex-direction: row;
+  align-self: stretch;
+  box-sizing: border-box;
+
+  &.reverse {
+    margin-left: 0;
+    flex-direction: row-reverse;
+  }
+
+  // Default gap
+  > .box {
+    margin-right: map-get($sizes, 'default') / 2;
+    margin-left: map-get($sizes, 'default') / 2;
+    &:first-child { margin-left: 0; }
+    &:last-child { margin-right: 0; }
+  }
+
+  // Gap sizes
+  @each $sizeName, $size in $sizes {
+    &.gap-#{$sizeName} {
+      > .box {
+        margin-left: $size / 2;
+        margin-right: $size / 2;
+        &:first-child { margin-left: 0; }
+        &:last-child { margin-right: 0; }
+      }
+
+      &.reverse > .box + .box {
+        margin-left: 0;
+        margin-right: $size;
+      }
+
+      > .box {
+        &.pct-20 {
+          width: calc(20% - #{$size});
+        }
+        &.pct-25 {
+          width: calc(25% - #{$size});
+        }
+        &.pct-33 {
+          width: calc(33.3333% - #{$size});
+        }
+        &.pct-40 {
+          width: calc(40% - #{$size});
+        }
+        &.pct-50 {
+          width: calc(50% - #{$size});
+        }
+        &.pct-60 {
+          width: calc(60% - #{$size});
+        }
+        &.pct-66 {
+          width: calc(66.6666% - #{$size});
+        }
+        &.pct-75 {
+          width: calc(50% - #{$size});
+        }
+        &.pct-80 {
+          width: calc(80% - #{$size});
+        }
+        &.pct-100 {
+          width: calc(100% - #{$size});
+        }
+      }
+    }
+  }
+
+  &.col {
+    flex-direction: column;
+
+    // Default gap
+    > .box + .box {
+      margin-bottom: 0;
+      margin-top: map-get($sizes, 'default');
+    }
+
+    // Gap sizes
+    @each $sizeName, $size in $sizes {
+      &.gap-#{$sizeName} {
+        + .flex {
+          margin-top: $size;
+        }
+
+        > .box + .box {
+          margin-top: $size;
+        }
+
+        // &.reverse > .box + .box {
+        //   margin-left: 0;
+        //   margin-right: $size;
+        // }
+     
+      }
+    }
+  }
+}
+
+.box {
+  display: flex;
+  flex: 1 0 auto;
+  box-sizing: border-box;
+  overflow: hidden;
+
+  &.fixed {
+    flex: initial;
+  }
+
+  @for $i from 2 through 11 {
+    &.grow-#{$i} {
+      flex-grow: $i;
+    }
+  }
+}

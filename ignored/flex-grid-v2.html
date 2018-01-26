@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>flex grid v2</title>
+    <link rel="stylesheet" href="./flex-grid-v2.css"/>
+    <link href="https://fonts.googleapis.com/css?family=Lato:400,400i|Rajdhani:400,500|Share+Tech+Mono" rel="stylesheet">
+    <style type="text/css">
+    body {
+    margin: 0;
+    padding: 0;
+    }
+    main {
+    width: 100%;
+    }
+    section {
+    text-align: center;
+    }
+    section h1 {
+    font-family: Rajdhani, sans-serif;
+    font-size: 32px;
+    }
+    .mt {
+    margin-top: 1rem;
+    }
+    .box {
+    font-family: 'Share Tech Mono', monospace;
+    color: #eee;
+    background-color: #444;
+    padding: 1rem;
+    border-radius: 0.125rem;
+    }
+    </style>
+  </head>
+  <body>
+    <main>
+      <section>
+        <h1>The Basic Auto Layout</h1>
+        <div class="flex">
+          <div class="box">box</div>
+        </div>
+        <div class="flex mt">
+          <div class="box">box</div>
+          <div class="box">box</div>
+        </div>
+        <div class="flex mt">
+          <div class="box">box</div>
+          <div class="box">box</div>
+          <div class="box">box</div>
+        </div>
+        <div class="flex mt">
+          <div class="box">box</div>
+          <div class="box">box</div>
+          <div class="box">box</div>
+          <div class="box">box</div>
+        </div>
+      </section>
+      <section>
+        <h1>Percentage-Based Columns</h1>
+        <div class="flex gap-default">
+          <div class="box pct-50">box pct-50</div>
+          <div class="box pct-50">box pct-50</div>
+        </div>
+        <div class="flex gap-default mt">
+          <div class="box pct-25">box pct-25</div>
+          <div class="box pct-25">box pct-25</div>
+          <div class="box pct-50">box pct-50</div>
+        </div>
+        <div class="flex gap-default mt">
+          <div class="box pct-33">box pct-33</div>
+          <div class="box pct-33">box pct-33</div>
+          <div class="box pct-33">box pct-33</div>
+        </div>
+        <div class="flex gap-default mt">
+          <div class="box pct-66">box pct-66</div>
+          <div class="box pct-33">box pct-33</div>
+        </div>
+        <div class="flex gap-default mt">
+          <div class="box pct-20">box pct-20</div>
+          <div class="box pct-80">box pct-80</div>
+        </div>
+        <div class="flex gap-default mt">
+          <div class="box pct-40">box pct-40</div>
+          <div class="box pct-20">box pct-20</div>
+          <div class="box pct-40">box pct-40</div>
+        </div>
+        <div class="flex gap-default mt">
+          <div class="box pct-60">box pct-60</div>
+          <div class="box pct-40">box pct-40</div>
+        </div>
+        <div class="flex gap-default mt">
+          <div class="box pct-100">box pct-100</div>
+        </div>
+      </div>
+    </section>
+    <section>
+      <h1>Flex-Grow Columns</h1>
+      <div class="flex">
+        <div class="box grow-2">box grow-2</div>
+        <div class="box">box</div>
+        <div class="box">box</div>
+      </div>
+      <div class="flex mt">
+        <div class="box grow-3">box grow-3</div>
+        <div class="box grow-2">box grow-2</div>
+        <div class="box">box</div>
+      </div>
+      <div class="flex mt">
+        <div class="box grow-3">box grow-3</div>
+        <div class="box">box</div>
+      </div>
+    </div>
+  </section>
+  <section>
+    <h1>Fixed Columns</h1>
+    <div class="flex">
+      <div class="box fixed">box fixed</div>
+      <div class="box">box</div>
+      <div class="box">box</div>
+    </div>
+  </section>
+  <section>
+    <h1>Mixed Columns</h1>
+    <div class="flex">
+      <div class="box fixed">box.fixed</div>
+      <div class="box grow-2">box grow-2</div>
+      <div class="box">box</div>
+    </div>
+    <div class="flex mt">
+      <div class="box fixed">box.fixed</div>
+      <div class="box grow-2">box grow-2</div>
+      <div class="box">box</div>
+      <div class="box pct-3-12">box.pct-3-12</div>
+      <div class="box pct-3-12">box.pct-3-12</div>
+    </div>
+  </section>
+  <section>
+    <h1>Gap Sizes</h1>
+    <div class="flex gap-none">
+      <div class="box">box</div>
+      <div class="box">box</div>
+      <div class="box">box</div>
+    </div>
+    <div class="flex gap-tiny mt">
+      <div class="box">box</div>
+      <div class="box">box</div>
+      <div class="box">box</div>
+    </div>
+    <div class="flex gap-small mt">
+      <div class="box">box</div>
+      <div class="box">box</div>
+      <div class="box">box</div>
+    </div>
+    <div class="flex gap-default mt">
+      <div class="box">box</div>
+      <div class="box">box</div>
+      <div class="box">box</div>
+    </div>
+    <div class="flex gap-large mt">
+      <div class="box">box</div>
+      <div class="box">box</div>
+      <div class="box">box</div>
+    </div>
+    <div class="flex gap-huge mt">
+      <div class="box">box</div>
+      <div class="box">box</div>
+      <div class="box">box</div>
+    </div>
+  </section>
+</main>
+</body>
+</html>
