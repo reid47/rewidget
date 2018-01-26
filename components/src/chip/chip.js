@@ -1,5 +1,5 @@
 import React from 'react';
-import { classify, prefix } from '../../util';
+import { classify, prefix } from '../util';
 import { XIcon } from '../icons';
 
 export const Chip = ({

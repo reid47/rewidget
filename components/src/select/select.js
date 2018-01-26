@@ -1,5 +1,5 @@
 import React from 'react';
-import { classify, prefix } from '../../util';
+import { classify, prefix } from '../util';
 import { UpDownChevronIcon } from '../icons';
 
 export const Select = ({

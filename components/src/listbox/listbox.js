@@ -1,8 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { classify, prefix } from '../../util';
+import { classify, prefix } from '../util';
 import { XIcon } from '../icons';
-import { t } from '../../translations';
+import { t } from '../translations';
 
 export class Listbox extends React.Component {
   constructor(props) {

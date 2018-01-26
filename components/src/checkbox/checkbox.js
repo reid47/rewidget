@@ -1,7 +1,7 @@
 import React from 'react';
-import { classify, prefix, uniqueId } from '../../util';
+import { classify, prefix, uniqueId } from '../util';
 
-export const Toggle = ({
+export const Checkbox = ({
   size,
   className,
   inputClassName,
@@ -9,28 +9,27 @@ export const Toggle = ({
   widgetClassName,
   children,
   onChange,
-  id = uniqueId('toggle'),
+  id = uniqueId('checkbox'),
   ...props
 }) => {
-  const toggleClasses = classify(
-    prefix('Toggle'),
+  const checkboxClasses = classify(
+    prefix('Checkbox'),
     size && `is-size-${size}`,
     className
   );
 
-  const inputClasses = classify(prefix('Toggle-input'), inputClassName);
+  const inputClasses = classify(prefix('Checkbox-input'), inputClassName);
 
-  const labelClasses = classify(prefix('Toggle-label'), labelClassName);
+  const labelClasses = classify(prefix('Checkbox-label'), labelClassName);
 
-  const widgetClasses = classify(prefix('Toggle-widget'), widgetClassName);
+  const widgetClasses = classify(prefix('Checkbox-widget'), widgetClassName);
 
   return (
-    <div className={toggleClasses}>
+    <div className={checkboxClasses}>
       <input
         {...{
           ...props,
           type: 'checkbox',
-          role: 'switch',
           id,
           className: inputClasses,
           onChange: evt => onChange && onChange(evt.target.checked)

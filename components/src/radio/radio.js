@@ -1,5 +1,5 @@
 import React from 'react';
-import { classify, prefix, uniqueId } from '../../util';
+import { classify, prefix, uniqueId } from '../util';
 
 export const Radio = ({
   size,
