@@ -1,6 +1,6 @@
 import React from 'react';
 import { classify, prefix } from '../util';
-import { Chip } from '../chip';
+import { Chip } from '../chip/chip';
 
 export class ChipInput extends React.Component {
   constructor(props) {

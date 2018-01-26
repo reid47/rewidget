@@ -1,5 +1,5 @@
 import React from 'react';
-import { ChipInput } from './chip-input';
+import { ChipInput } from '../chip-input/chip-input';
 import { DocPage, Example } from '../../docs/docs-components';
 
 export class ChipInputPage extends React.Component {

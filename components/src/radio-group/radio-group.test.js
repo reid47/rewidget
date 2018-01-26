@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { mount } from 'enzyme';
 import { RadioGroup } from './radio-group';
-import { Radio } from '../radio';
+import { Radio } from '../radio/radio';
 
 describe('RadioGroup', () => {
   let root;
