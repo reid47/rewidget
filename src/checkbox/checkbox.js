@@ -1,7 +1,8 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { classify, prefix, uniqueId } from '../util';
 
-export const Checkbox = ({
+const Checkbox = ({
   size,
   className,
   inputClassName,
@@ -42,3 +43,16 @@ export const Checkbox = ({
     </div>
   );
 };
+
+Checkbox.propTypes = {
+  children: PropTypes.node,
+  className: PropTypes.string,
+  id: PropTypes.string,
+  inputClassName: PropTypes.string,
+  labelClassName: PropTypes.string,
+  onChange: PropTypes.func,
+  size: PropTypes.oneOf(['sm', 'md', 'lg']),
+  widgetClassName: PropTypes.string
+};
+
+export { Checkbox };

@@ -3,10 +3,6 @@ import { Listbox } from '../../components/listbox';
 import { DocPage, Example } from '../../docs/docs-components';
 
 export class ListboxPage extends React.Component {
-  constructor(props) {
-    super(props);
-  }
-
   render() {
     return (
       <DocPage
@@ -19,7 +15,7 @@ export class ListboxPage extends React.Component {
           examples: (
             <div>
               <Example {...{ title: 'Simple listbox' }}>
-                <Listbox items={['One', 'Two', 'Three']}/>
+                <Listbox items={['One', 'Two', 'Three']} />
               </Example>
             </div>
           )

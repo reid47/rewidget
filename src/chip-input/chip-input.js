@@ -1,17 +1,20 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { classify, prefix } from '../util';
 import { Chip } from '../chip/chip';
 
 export class ChipInput extends React.Component {
+  static propTypes = {
+    allowDuplicates: PropTypes.bool,
+    className: PropTypes.string,
+    inputClassName: PropTypes.string,
+    onChange: PropTypes.func,
+    size: PropTypes.oneOf(['sm', 'md', 'lg']),
+    value: PropTypes.any
+  };
+
   constructor(props) {
     super(props);
-    this.onInputChange = this.onInputChange.bind(this);
-    this.onInputKeyDown = this.onInputKeyDown.bind(this);
-    this.onInputFocus = this.onInputFocus.bind(this);
-    this.onInputBlur = this.onInputBlur.bind(this);
-    this.onChipKeyDown = this.onChipKeyDown.bind(this);
-    this.onChipIconClick = this.onChipIconClick.bind(this);
-    this.onChipClick = this.onChipClick.bind(this);
 
     this.state = {
       currentText: '',
@@ -19,19 +22,19 @@ export class ChipInput extends React.Component {
     };
   }
 
-  onInputChange(evt) {
+  onInputChange = evt => {
     this.setState({ currentText: evt.target.value });
-  }
+  };
 
-  onInputFocus(evt) {
+  onInputFocus = () => {
     this.setState({ inputHasFocus: true });
-  }
+  };
 
-  onInputBlur(evt) {
+  onInputBlur = () => {
     this.setState({ inputHasFocus: false });
-  }
+  };
 
-  onInputKeyDown(evt) {
+  onInputKeyDown = evt => {
     const { currentText } = this.state;
     if (evt.key === 'Enter') {
       evt.preventDefault();
@@ -64,9 +67,9 @@ export class ChipInput extends React.Component {
         firstChip && firstChip.focus();
       }
     }
-  }
+  };
 
-  onChipKeyDown(i) {
+  onChipKeyDown = i => {
     return evt => {
       if (evt.key === 'Delete' || evt.key === 'Backspace') {
         const currentValues = this.props.value || [];
@@ -102,16 +105,16 @@ export class ChipInput extends React.Component {
         }
       }
     };
-  }
+  };
 
-  onChipClick(i) {
+  onChipClick = () => {
     return evt => {
       evt.preventDefault();
       evt.stopPropagation();
     };
-  }
+  };
 
-  onChipIconClick(i) {
+  onChipIconClick = i => {
     return evt => {
       evt.preventDefault();
       evt.stopPropagation();
@@ -124,17 +127,10 @@ export class ChipInput extends React.Component {
         this.inputElement && this.inputElement.focus();
       }
     };
-  }
+  };
 
   render() {
-    const {
-      size,
-      value,
-      onChange,
-      className,
-      inputClassName,
-      ...props
-    } = this.props;
+    const { size, value, className, inputClassName, ...props } = this.props;
 
     const { currentText, inputHasFocus } = this.state;
 

@@ -1,5 +1,4 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
 import { mount } from 'enzyme';
 import { ChipInput } from './chip-input';
 
@@ -7,7 +6,7 @@ describe('ChipInput', () => {
   let root;
 
   beforeEach(() => {
-    root = mount(<ChipInput values={['One', 'Two', 'Three']}/>);
+    root = mount(<ChipInput values={['One', 'Two', 'Three']} />);
   });
 
   it('renders a basic chip input by default', () => {

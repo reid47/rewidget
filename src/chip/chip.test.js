@@ -1,5 +1,4 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
 import { mount } from 'enzyme';
 import { Chip } from './chip';
 import { XIcon } from '../icons';
@@ -18,7 +17,7 @@ describe('Chip', () => {
     const icon = root.find('div.rw-Chip-icon');
     expect(icon.exists()).toBe(true);
     expect(icon.prop('role')).toBe('none');
-    expect(icon.contains(<XIcon/>)).toBe(true);
+    expect(icon.contains(<XIcon />)).toBe(true);
   });
 
   describe('when given a size', () => {
@@ -156,7 +155,6 @@ describe('Chip', () => {
     });
 
     it('does not call the onClick when clicked', () => {
-      const el = root.find('button.rw-Chip');
       expect(onClick).not.toBeCalled();
     });
   });

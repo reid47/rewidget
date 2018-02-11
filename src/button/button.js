@@ -1,16 +1,17 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { classify, prefix } from '../util';
 
-export const Button = ({
-  primary = false,
-  secondary = false,
-  success = false,
-  alert = false,
-  warning = false,
-  alt = false,
-  plain = false,
+const Button = ({
+  primary,
+  secondary,
+  success,
+  alert,
+  warning,
+  alt,
+  plain,
   size,
-  type = 'button',
+  type,
   className,
   icon,
   iconClassName,
@@ -61,3 +62,28 @@ export const Button = ({
     </button>
   );
 };
+
+Button.propTypes = {
+  alert: PropTypes.bool,
+  alt: PropTypes.bool,
+  children: PropTypes.node,
+  className: PropTypes.string,
+  contentClassName: PropTypes.string,
+  icon: PropTypes.node,
+  iconClassName: PropTypes.string,
+  plain: PropTypes.bool,
+  primary: PropTypes.bool,
+  secondary: PropTypes.bool,
+  size: PropTypes.oneOf(['sm', 'md', 'lg']),
+  success: PropTypes.bool,
+  textClassName: PropTypes.string,
+  type: PropTypes.string,
+  warning: PropTypes.bool
+};
+
+Button.defaultProps = {
+  size: 'md',
+  type: 'button'
+};
+
+export { Button };

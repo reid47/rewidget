@@ -1,7 +1,8 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { classify, prefix } from '../util';
 
-export const TextInput = ({
+const TextInput = ({
   size,
   onChange,
   multiline,
@@ -63,3 +64,21 @@ export const TextInput = ({
     </div>
   );
 };
+
+TextInput.propTypes = {
+  className: PropTypes.string,
+  icon: PropTypes.node,
+  inputClassName: PropTypes.string,
+  onChange: PropTypes.func,
+  multiline: PropTypes.bool,
+  password: PropTypes.bool,
+  rows: PropTypes.number,
+  size: PropTypes.oneOf(['sm', 'md', 'lg'])
+};
+
+TextInput.defaultProps = {
+  size: 'md',
+  rows: 2
+};
+
+export { TextInput };

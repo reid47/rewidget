@@ -2,6 +2,8 @@ export { Button } from './button/button';
 export { Checkbox } from './checkbox/checkbox';
 export { Chip } from './chip/chip';
 export { ChipInput } from './chip-input/chip-input';
+export { Each } from './each/each';
+export { If } from './if/if';
 export { Listbox } from './listbox/listbox';
 export { Modal } from './modal/modal';
 export { Radio } from './radio/radio';

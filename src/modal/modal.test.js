@@ -9,7 +9,7 @@ jest.mock('react-dom', () => ({
   createPortal: jest.fn((content, root) => {
     modalContent = content;
     modalRoot = root;
-    return null;
+    return content;
   })
 }));
 
@@ -18,7 +18,7 @@ describe('Modal', () => {
 
   beforeEach(() => {
     onClose = jest.fn();
-    children = {};
+    children = <div />;
 
     root = mount(<Modal onClose={onClose}>{children}</Modal>);
   });
@@ -138,6 +138,17 @@ describe('Modal', () => {
 
     it('renders the modal root with the correct props', () => {
       expect(modalRoot.className).toEqual('rw-Modal is-open');
+    });
+  });
+
+  describe('when open and escape key is pressed', () => {
+    beforeEach(() => {
+      root.setProps({ open: true });
+      root.simulate('keyDown', { key: 'Escape', which: 27, keyCode: 27 });
+    });
+
+    it('calls the onClose callback', () => {
+      expect(onClose).toHaveBeenCalled();
     });
   });
 });

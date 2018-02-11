@@ -1,13 +1,17 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
+import PropTypes from 'prop-types';
 import { classify, prefix } from '../util';
-import { XIcon } from '../icons';
-import { t } from '../translations';
 
 export class Listbox extends React.Component {
-  constructor(props) {
-    super(props);
-  }
+  static propTypes = {
+    className: PropTypes.string,
+    emptyState: PropTypes.node,
+    getItemValue: PropTypes.func,
+    itemClassName: PropTypes.string,
+    items: PropTypes.array,
+    renderItem: PropTypes.func,
+    value: PropTypes.any
+  };
 
   render() {
     const {
@@ -17,8 +21,7 @@ export class Listbox extends React.Component {
       itemClassName,
       renderItem,
       getItemValue,
-      emptyState,
-      ...props
+      emptyState
     } = this.props;
 
     const listboxClasses = classify(prefix('Listbox'), className);

@@ -1,8 +1,9 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { classify, prefix } from '../util';
 import { UpDownChevronIcon } from '../icons';
 
-export const Select = ({
+const Select = ({
   size,
   className,
   inputClassName,
@@ -41,3 +42,18 @@ export const Select = ({
     </div>
   );
 };
+
+Select.propTypes = {
+  arrowClassName: PropTypes.string,
+  children: PropTypes.node,
+  className: PropTypes.string,
+  inputClassName: PropTypes.string,
+  onChange: PropTypes.func,
+  size: PropTypes.oneOf(['sm', 'md', 'lg'])
+};
+
+Select.defaultProps = {
+  size: 'md'
+};
+
+export { Select };

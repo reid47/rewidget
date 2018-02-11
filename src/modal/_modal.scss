@@ -115,7 +115,6 @@
     border: 0;
   }
 
-
   &.is-dialog {
     right: -$Modal-close-button-size * 1.25;
     top: -$Modal-close-button-size * 1.25;
@@ -135,8 +134,4 @@
     right: $Modal-close-button-size * 0.25;
     top: $Modal-close-button-size * 0.25;
   }
-}
-
-.#{prefix(Modal-document-body)} {
-  overflow: hidden;
 }
