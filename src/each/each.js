@@ -1,22 +1,16 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const Each = ({
-  data,
-  filter,
-  postFilter,
-  children
-}) => {
+const Each = ({ data, filter, postFilter, children }) => {
   if (filter) {
     data = data.filter(filter);
   }
 
   children = data.map((datum, i) => {
-    const child = typeof children === 'function'
-      ? children(datum, i)
-      : children;
+    const child =
+      typeof children === 'function' ? children(datum, i) : children;
 
-    return React.cloneElement(child, {key: i});
+    return React.cloneElement(child, { key: i });
   });
 
   if (postFilter) {
@@ -29,10 +23,7 @@ const Each = ({
 Each.propTypes = {
   data: PropTypes.array,
   filter: PropTypes.func,
-  children: PropTypes.oneOfType([
-    PropTypes.node,
-    PropTypes.func
-  ])
+  children: PropTypes.oneOfType([PropTypes.node, PropTypes.func])
 };
 
 Each.defaultProps = {

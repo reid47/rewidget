@@ -2,8 +2,6 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { mount } from 'enzyme';
 import { Modal } from './modal';
-import { jsdom } from 'jsdom';
-import { XIcon } from '../icons';
 
 let modalContent, modalRoot;
 

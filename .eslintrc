@@ -2,11 +2,17 @@
   "parser": "babel-eslint",
   "plugins": [
     "react",
-    "jsx-a11y"
+    "jsx-a11y",
+    "jest"
   ],
   "extends": [
     "eslint:recommended",
     "plugin:react/recommended",
     "plugin:jsx-a11y/recommended"
-  ]
+  ],
+  "env": {
+    "es6": true,
+    "browser": true,
+    "jest/globals": true
+  }
 }

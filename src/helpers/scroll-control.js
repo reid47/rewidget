@@ -1,7 +1,7 @@
-import { getScrollbarWidth } from "./scrollbar-width";
+import { getScrollbarWidth } from './scrollbar-width';
 
-const paddingRightAttr = "data-rw-padding-right";
-const overflowAttr = "data-rw-overflow";
+const paddingRightAttr = 'data-rw-padding-right';
+const overflowAttr = 'data-rw-overflow';
 let scrollbarWidth;
 
 export const disableBodyScrolling = () => {
@@ -11,7 +11,7 @@ export const disableBodyScrolling = () => {
 
   const padding = document.body.style.paddingRight;
   if (padding) {
-    document.body.setAttribute(paddingRightAttr, inlinePadding);
+    document.body.setAttribute(paddingRightAttr, padding);
   }
 
   const overflow = document.body.style.overflow;
@@ -22,7 +22,7 @@ export const disableBodyScrolling = () => {
   const computedPadding = getComputedStyle(
     document.body,
     null
-  ).getPropertyValue("padding-right");
+  ).getPropertyValue('padding-right');
 
   document.body.style.paddingRight = `${scrollbarWidth +
     parseFloat(computedPadding)}px`;

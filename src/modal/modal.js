@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import PropTypes from 'prop-types';
 import { classify, prefix } from '../util';
 import { XIcon } from '../icons';
 import { t } from '../translations';
@@ -17,13 +18,21 @@ const toClassName = props =>
   );
 
 export class Modal extends React.Component {
+  static propTypes = {
+    animated: PropTypes.bool,
+    children: PropTypes.node,
+    onClose: PropTypes.func,
+    open: PropTypes.bool,
+    type: PropTypes.string
+  };
+
   static defaultProps = {
     type: 'dialog'
   };
 
   constructor(props) {
     super(props);
-    this.handleKeyDown = this.handleKeyDown.bind(this);
+
     this.modalRoot = document.createElement('div');
     this.modalRoot.className = toClassName(props);
 
@@ -69,7 +78,7 @@ export class Modal extends React.Component {
     }
   }
 
-  handleKeyDown(evt) {
+  handleKeyDown = evt => {
     if (evt.key === 'Tab') {
       const tabbableEls = getTabbableElements(this.modalRoot);
       if (!tabbableEls) return;
@@ -99,7 +108,7 @@ export class Modal extends React.Component {
     } else if (evt.key === 'Escape') {
       this.props.onClose && this.props.onClose();
     }
-  }
+  };
 
   render() {
     const { children, type, onClose, open, animated, ...props } = this.props;

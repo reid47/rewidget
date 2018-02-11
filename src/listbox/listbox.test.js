@@ -1,5 +1,4 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
 import { mount } from 'enzyme';
 import { Listbox } from './listbox';
 
@@ -24,7 +23,9 @@ describe('Listbox', () => {
     expect(itemEls.at(1)).toHaveText('Two');
     expect(itemEls.at(2)).toHaveText('Three');
     expect(itemEls.everyWhere(el => el.prop('role') === 'option')).toBe(true);
-    expect(itemEls.everyWhere(el => el.prop('aria-selected') === 'false')).toBe(true);
+    expect(itemEls.everyWhere(el => el.prop('aria-selected') === 'false')).toBe(
+      true
+    );
   });
 
   describe('when given an itemClassName', () => {
@@ -72,7 +73,9 @@ describe('Listbox', () => {
   });
 
   describe('when given a renderItem callback', () => {
-    const renderItem = jest.fn(item => <span className="test-render-item">{item}</span>);
+    const renderItem = jest.fn(item => (
+      <span className="test-render-item">{item}</span>
+    ));
 
     beforeEach(() => {
       root.setProps({ renderItem });
@@ -86,9 +89,15 @@ describe('Listbox', () => {
 
     it('renders the return value of the callback', () => {
       const itemEls = root.find('li.rw-Listbox-item');
-      expect(itemEls.at(0).contains(<span className="test-render-item">One</span>)).toBe(true);
-      expect(itemEls.at(1).contains(<span className="test-render-item">Two</span>)).toBe(true);
-      expect(itemEls.at(2).contains(<span className="test-render-item">Three</span>)).toBe(true);
+      expect(
+        itemEls.at(0).contains(<span className="test-render-item">One</span>)
+      ).toBe(true);
+      expect(
+        itemEls.at(1).contains(<span className="test-render-item">Two</span>)
+      ).toBe(true);
+      expect(
+        itemEls.at(2).contains(<span className="test-render-item">Three</span>)
+      ).toBe(true);
     });
   });
 
