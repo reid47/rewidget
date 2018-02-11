@@ -1,12 +1,8 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+import React from "react";
+import PropTypes from "prop-types";
 
-const If = ({
-  not,
-  cond,
-  children
-}) => {
-  cond = typeof cond === 'function' ? cond() : cond;
+const If = ({ not, cond, children }) => {
+  cond = typeof cond === "function" ? cond() : cond;
   if (not) return cond ? null : children;
   return cond ? children : null;
 };

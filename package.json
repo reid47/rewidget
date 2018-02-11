@@ -9,18 +9,8 @@
     "type": "git",
     "url": "https://github.com/reid47/rewidget"
   },
-  "keywords": [
-    "react",
-    "component",
-    "library",
-    "widget"
-  ],
-  "files": [
-    "dist/",
-    "LICENSE.md",
-    "README.md",
-    "package.json"
-  ],
+  "keywords": ["react", "component", "library", "widget"],
+  "files": ["dist/", "LICENSE.md", "README.md", "package.json"],
   "scripts": {
     "test": "jest",
     "test-watch": "jest --watch",
@@ -62,16 +52,9 @@
     "react-dom": "^16.0.0"
   },
   "jest": {
-    "roots": [
-      "src"
-    ],
+    "roots": ["src"],
     "setupTestFrameworkScriptFile": "./test-setup.js",
-    "collectCoverageFrom": [
-      "src/**/*.js",
-      "!src/**/*.docs.js"
-    ],
-    "coverageReporters": [
-      "html"
-    ]
+    "collectCoverageFrom": ["src/**/*.js", "!src/**/*.docs.js"],
+    "coverageReporters": ["html"]
   }
 }
