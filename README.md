@@ -1,7 +1,9 @@
 # rewidget
 
-*a work-in-progress...*
+_a work-in-progress..._
 
-This repository contains both the core `rewidget` components and the documentation/styleguide app that demonstrates them.
+This repository contains both the core `rewidget` components and the
+documentation/styleguide app that demonstrates them.
 
-The core library is located in the `components` directory.
+The components are located in the `src` directory, and the documentation app is
+located in `docs`.

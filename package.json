@@ -55,7 +55,7 @@
   },
   "jest": {
     "roots": ["src"],
-    "setupTestFrameworkScriptFile": "./test-setup.js",
+    "setupTestFrameworkScriptFile": "./test.config.js",
     "collectCoverageFrom": ["src/**/*.js", "!src/**/*.docs.js"],
     "coverageReporters": ["html"]
   }
