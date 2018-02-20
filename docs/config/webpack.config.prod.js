@@ -137,7 +137,11 @@ module.exports = {
             exclude: /node_modules/,
             loader: require.resolve('babel-loader'),
             options: {
-              compact: true
+              compact: true,
+              presets: [require.resolve('babel-preset-react-app')],
+              plugins: [
+                require.resolve('babel-plugin-react-component-metadata')
+              ]
             }
           },
           // The notation here is somewhat confusing.
