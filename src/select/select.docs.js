@@ -1,8 +1,8 @@
 import React from 'react';
-import { Select } from '../../components/select';
+import { Select } from './select';
 import { DocPage, Example } from '../../docs/docs-components';
 
-export const SelectPage = () => {
+const SelectPage = () => {
   return (
     <DocPage
       {...{
@@ -105,3 +105,5 @@ export const SelectPage = () => {
     />
   );
 };
+
+export default SelectPage;

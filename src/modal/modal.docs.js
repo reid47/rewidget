@@ -1,9 +1,9 @@
 import React from 'react';
-import { Button } from '../../components/button';
-import { Modal } from '../../components/modal';
+import { Button } from '../button/button';
+import { Modal } from './modal';
 import { DocPage, Example } from '../../docs/docs-components';
 
-export class ModalPage extends React.Component {
+class ModalPage extends React.Component {
   constructor(props) {
     super(props);
 
@@ -233,3 +233,5 @@ export class ModalPage extends React.Component {
     );
   }
 }
+
+export default ModalPage;

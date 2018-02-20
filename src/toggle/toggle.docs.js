@@ -1,8 +1,8 @@
 import React from 'react';
-import { Toggle } from '../../components/toggle';
+import { Toggle } from './toggle';
 import { DocPage, Example } from '../../docs/docs-components';
 
-export const TogglePage = () => {
+const TogglePage = () => {
   return (
     <DocPage
       {...{
@@ -87,3 +87,5 @@ export const TogglePage = () => {
     />
   );
 };
+
+export default TogglePage;

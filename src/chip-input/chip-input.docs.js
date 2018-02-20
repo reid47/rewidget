@@ -2,7 +2,7 @@ import React from 'react';
 import { ChipInput } from '../chip-input/chip-input';
 import { DocPage, Example } from '../../docs/docs-components';
 
-export class ChipInputPage extends React.Component {
+class ChipInputPage extends React.Component {
   constructor(props) {
     super(props);
 
@@ -62,8 +62,10 @@ export class ChipInputPage extends React.Component {
           examples: (
             <div>
               <Example {...{ title: 'Basic chip input' }}>
-                <ChipInput value={this.state.example1}
-                  onChange={newValue => this.setState({ example1: newValue })}/>
+                <ChipInput
+                  value={this.state.example1}
+                  onChange={newValue => this.setState({ example1: newValue })}
+                />
               </Example>
               <Example {...{ title: 'Chip input with some values' }}>
                 <ChipInput
@@ -72,8 +74,11 @@ export class ChipInputPage extends React.Component {
                 />
               </Example>
               <Example {...{ title: 'Chip input with a placeholder' }}>
-                <ChipInput placeholder="Enter something..." value={this.state.example3}
-                  onChange={newValue => this.setState({ example3: newValue })}/>
+                <ChipInput
+                  placeholder="Enter something..."
+                  value={this.state.example3}
+                  onChange={newValue => this.setState({ example3: newValue })}
+                />
               </Example>
             </div>
           )
@@ -82,3 +87,5 @@ export class ChipInputPage extends React.Component {
     );
   }
 }
+
+export default ChipInputPage;

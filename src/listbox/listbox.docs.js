@@ -1,8 +1,8 @@
 import React from 'react';
-import { Listbox } from '../../components/listbox';
+import { Listbox } from './listbox';
 import { DocPage, Example } from '../../docs/docs-components';
 
-export class ListboxPage extends React.Component {
+class ListboxPage extends React.Component {
   render() {
     return (
       <DocPage
@@ -24,3 +24,5 @@ export class ListboxPage extends React.Component {
     );
   }
 }
+
+export default ListboxPage;

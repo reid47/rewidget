@@ -1,8 +1,8 @@
 import React from 'react';
-import { Radio } from '../../components/radio';
+import { Radio } from './radio';
 import { DocPage, Example } from '../../docs/docs-components';
 
-export const RadioPage = () => {
+const RadioPage = () => {
   return (
     <DocPage
       {...{
@@ -89,3 +89,5 @@ export const RadioPage = () => {
     />
   );
 };
+
+export default RadioPage;

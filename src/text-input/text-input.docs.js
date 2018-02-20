@@ -1,9 +1,9 @@
 import React from 'react';
-import { TextInput } from '../../components/text-input';
+import { TextInput } from './text-input';
 import { DocPage, Example } from '../../docs/docs-components';
-import { SearchIcon } from '../../components/icons';
+import { SearchIcon } from '../icons';
 
-export const TextInputPage = () => {
+const TextInputPage = () => {
   return (
     <DocPage
       {...{
@@ -96,3 +96,5 @@ export const TextInputPage = () => {
     />
   );
 };
+
+export default TextInputPage;

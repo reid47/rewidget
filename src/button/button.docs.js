@@ -1,9 +1,9 @@
 import React from 'react';
-import { Button } from '../../components/button';
+import { Button } from './button';
 import { DocPage, Example } from '../../docs/docs-components';
-import { CheckIcon } from '../../components/icons';
+import { CheckIcon } from '../icons';
 
-export const ButtonPage = () => {
+const ButtonPage = () => {
   return (
     <DocPage
       {...{
@@ -211,3 +211,5 @@ export const ButtonPage = () => {
     />
   );
 };
+
+export default ButtonPage;

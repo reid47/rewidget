@@ -77,7 +77,7 @@ Button.propTypes = {
   size: PropTypes.oneOf(['sm', 'md', 'lg']),
   success: PropTypes.bool,
   textClassName: PropTypes.string,
-  type: PropTypes.string,
+  type: PropTypes.string.isRequired,
   warning: PropTypes.bool
 };
 

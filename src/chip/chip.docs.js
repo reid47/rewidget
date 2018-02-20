@@ -1,9 +1,9 @@
 import React from 'react';
-import { Chip } from '../../components/chip';
+import { Chip } from './chip';
 import { DocPage, Example } from '../../docs/docs-components';
-import { CheckIcon } from '../../components/icons';
+import { CheckIcon } from '../icons';
 
-export const ChipPage = () => {
+const ChipPage = () => {
   return (
     <DocPage
       {...{
@@ -12,8 +12,7 @@ export const ChipPage = () => {
           {
             name: 'size',
             type: 'string (possible values: "sm", "md", "lg")',
-            description:
-              'Size of the chip (adds the `is-size-{size}` class)'
+            description: 'Size of the chip (adds the `is-size-{size}` class)'
           },
           {
             name: 'className',
@@ -32,7 +31,7 @@ export const ChipPage = () => {
               <Chip>A chip</Chip>
             </Example>
             <Example {...{ title: 'Chip with custom icon' }}>
-              <Chip icon={<CheckIcon/>}>Chip with custom icon</Chip>
+              <Chip icon={<CheckIcon />}>Chip with custom icon</Chip>
             </Example>
             <Example {...{ title: 'Chip without icon' }}>
               <Chip hideIcon>Chip with no icon</Chip>
@@ -43,8 +42,12 @@ export const ChipPage = () => {
             <Example {...{ title: 'Chip sizes' }}>
               <div>
                 <Chip size="sm">Small chip</Chip>
-                <Chip size="md" className="ml-1">Medium chip</Chip>
-                <Chip size="lg" className="ml-1">Large chip</Chip>
+                <Chip size="md" className="ml-1">
+                  Medium chip
+                </Chip>
+                <Chip size="lg" className="ml-1">
+                  Large chip
+                </Chip>
               </div>
             </Example>
           </div>
@@ -53,3 +56,5 @@ export const ChipPage = () => {
     />
   );
 };
+
+export default ChipPage;

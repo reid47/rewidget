@@ -1,9 +1,9 @@
 import React from 'react';
-import { RadioGroup } from '../../components/radio-group';
-import { Radio } from '../../components/radio';
+import { RadioGroup } from './radio-group';
+import { Radio } from '../radio/radio';
 import { DocPage, Example } from '../../docs/docs-components';
 
-export class RadioGroupPage extends React.Component {
+class RadioGroupPage extends React.Component {
   constructor(props) {
     super(props);
 
@@ -68,3 +68,5 @@ export class RadioGroupPage extends React.Component {
     );
   }
 }
+
+export default RadioGroupPage;

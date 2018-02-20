@@ -1,8 +1,8 @@
 import React from 'react';
-import { Checkbox } from '../../components/checkbox';
+import { Checkbox } from './checkbox';
 import { DocPage, Example } from '../../docs/docs-components';
 
-export const CheckboxPage = () => {
+const CheckboxPage = () => {
   return (
     <DocPage
       {...{
@@ -88,3 +88,5 @@ export const CheckboxPage = () => {
     />
   );
 };
+
+export default CheckboxPage;
