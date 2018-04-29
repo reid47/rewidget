@@ -26,6 +26,8 @@ export const disableBodyScrolling = () => {
 
   document.body.style.paddingRight = `${scrollbarWidth +
     parseFloat(computedPadding)}px`;
+
+  document.body.style.overflow = 'hidden';
 };
 
 export const enableBodyScrolling = () => {

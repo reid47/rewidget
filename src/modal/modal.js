@@ -23,7 +23,12 @@ export class Modal extends React.Component {
     children: PropTypes.node,
     onClose: PropTypes.func,
     open: PropTypes.bool,
-    type: PropTypes.string
+    type: PropTypes.oneOf([
+      'dialog',
+      'flyout-left',
+      'flyout-right',
+      'fullscreen'
+    ])
   };
 
   static defaultProps = {
