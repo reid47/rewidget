@@ -64,18 +64,14 @@ const TextInputPage = () => {
               <TextInput placeholder="Enter something..." />
             </Example>
             <Example {...{ title: 'Single-line text input sizes' }}>
-              <div>
-                <TextInput size="sm" />
-                <TextInput size="md" className="mt-1" />
-                <TextInput size="lg" className="mt-1" />
-              </div>
+              <TextInput size="sm" />
+              <TextInput size="md" className="mt-1" />
+              <TextInput size="lg" className="mt-1" />
             </Example>
             <Example {...{ title: 'Single-line text input sizes with icons' }}>
-              <div>
-                <TextInput size="sm" icon={<SearchIcon />} />
-                <TextInput size="md" icon={<SearchIcon />} className="mt-1" />
-                <TextInput size="lg" icon={<SearchIcon />} className="mt-1" />
-              </div>
+              <TextInput size="sm" icon={<SearchIcon />} />
+              <TextInput size="md" icon={<SearchIcon />} className="mt-1" />
+              <TextInput size="lg" icon={<SearchIcon />} className="mt-1" />
             </Example>
             <Example {...{ title: 'Multi-line text input' }}>
               <TextInput multiline />
@@ -84,11 +80,9 @@ const TextInputPage = () => {
               <TextInput multiline icon={<SearchIcon />} />
             </Example>
             <Example {...{ title: 'Multi-line text input sizes' }}>
-              <div>
-                <TextInput multiline size="sm" />
-                <TextInput multiline size="md" className="mt-1" />
-                <TextInput multiline size="lg" className="mt-1" />
-              </div>
+              <TextInput multiline size="sm" />
+              <TextInput multiline size="md" className="mt-1" />
+              <TextInput multiline size="lg" className="mt-1" />
             </Example>
           </div>
         )
