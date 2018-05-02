@@ -1,28 +1,31 @@
 import React from 'react';
 import { BrowserRouter, Route, Link } from 'react-router-dom';
 import * as components from '../../src';
-import { Modal } from '../../src/modal/modal';
-import { Button } from '../../src/button/button';
-import { MenuIcon } from '../../src/icons';
+import { Modal, Button, MenuIcon } from '../../src';
 import '../../src/main.css';
 import './docs.css';
 
-const pages = Object.keys(components).map(name => {
-  const hyphenated = name
-    .replace(/[A-Z]/g, '-$&')
-    .toLowerCase()
-    .substr(1);
+const pages = Object.keys(components)
+  .map(name => {
+    if (name.indexOf('Icon') > -1) return null;
 
-  const component = components[name];
+    const hyphenated = name
+      .replace(/[A-Z]/g, '-$&')
+      .toLowerCase()
+      .substr(1);
 
-  return {
-    metadata: component.metadata,
-    component,
-    componentName: name,
-    linkPath: `/${hyphenated}`,
-    page: require(`../../src/${hyphenated}/${hyphenated}.docs.js`).default
-  };
-});
+    const component = components[name];
+
+    return {
+      metadata: component.metadata,
+      component,
+      componentName: name,
+      linkPath: `/${hyphenated}`,
+      page: require(`../../src/components/${hyphenated}/${hyphenated}.docs.js`)
+        .default
+    };
+  })
+  .filter(Boolean);
 
 class App extends React.Component {
   state = { navOpen: false };

@@ -1,0 +1,139 @@
+$transition-duration: 0.1s;
+
+.#{prefix(Modal)} {
+  visibility: hidden;
+  opacity: 0;
+  background-color: rgba(20, 20, 20, 0.7);
+  position: fixed;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+
+  &.is-open {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  &.is-animated {
+    transition: opacity $transition-duration, visibility $transition-duration;
+  }
+}
+
+.#{prefix(Modal-content)} {
+  position: fixed;
+
+  &:focus {
+    outline: none;
+  }
+
+  &.is-animated {
+    transition: transform $transition-duration;
+  }
+
+  &.is-dialog {
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+
+    &.is-animated {
+      transform: translate(-50%, -50%) scale(0.8);
+
+      &.is-open {
+        transform: translate(-50%, -50%) scale(1);
+      }
+    }
+  }
+
+  &.is-flyout-left {
+    left: 0;
+    top: 0;
+    bottom: 0;
+
+    &.is-animated {
+      transform: translateX(-20%);
+
+      &.is-open {
+        transform: translateX(0);
+      }
+    }
+  }
+
+  &.is-flyout-right {
+    right: 0;
+    top: 0;
+    bottom: 0;
+
+    &.is-animated {
+      transform: translateX(20%);
+
+      &.is-open {
+        transform: translateX(0);
+      }
+    }
+  }
+
+  &.is-fullscreen {
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+
+    &.is-animated {
+      transform: scale(0.9);
+
+      &.is-open {
+        transform: scale(1);
+      }
+    }
+  }
+}
+
+.#{prefix(Modal-close-button)} {
+  $Modal-close-button-size: $unit * 2;
+
+  position: absolute;
+  background: transparent;
+  width: $Modal-close-button-size;
+  height: $Modal-close-button-size;
+  border: none;
+  color: $color-light;
+  cursor: pointer;
+  border-radius: $input-border-radius;
+
+  svg {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  &:focus {
+    outline: 0;
+    box-shadow: $focus-shadow;
+  }
+
+  &::-moz-focus-inner {
+    border: 0;
+  }
+
+  &.is-dialog {
+    right: -$Modal-close-button-size * 1.25;
+    top: -$Modal-close-button-size * 1.25;
+  }
+
+  &.is-flyout-left {
+    right: -$Modal-close-button-size * 1.25;
+    top: $Modal-close-button-size * 0.25;
+  }
+
+  &.is-flyout-right {
+    left: -$Modal-close-button-size * 1.25;
+    top: $Modal-close-button-size * 0.25;
+  }
+
+  &.is-fullscreen {
+    right: $Modal-close-button-size * 0.25;
+    top: $Modal-close-button-size * 0.25;
+  }
+}

@@ -5,11 +5,10 @@
     "browser": true,
     "jest/globals": true
   },
-  "plugins": [
-    "react",
-    "jsx-a11y",
-    "jest"
-  ],
+  "globals": {
+    "process": true
+  },
+  "plugins": ["react", "jsx-a11y", "jest"],
   "extends": [
     "eslint:recommended",
     "plugin:react/recommended",

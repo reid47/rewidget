@@ -1,10 +1,8 @@
 import React, { Fragment } from 'react';
 import jsxToString from 'react-element-to-jsx-string';
-
-const formatFunction = fn => {
-  const fnName = fn.toString().split(/[ (]/)[1];
-  return fnName ? `<${fnName} function>` : fn.toString();
-};
+import Prism from 'prismjs';
+import 'prismjs/components/prism-jsx.min';
+import 'prismjs/themes/prism-okaidia.css';
 
 export const Example = ({ title, description, children }) => {
   children = React.isValidElement(children) ? (
@@ -22,15 +20,21 @@ export const Example = ({ title, description, children }) => {
       <div className="doc-example-rendered">{children}</div>
       <div className="doc-example-code">
         <pre>
-          <code>
-            {jsxToString(children, {
-              maxInlineAttributesLineLength: 500,
-              filterProps: ['className'],
-              showFunctions: true,
-              functionValue: formatFunction,
-              showDefaultProps: false
-            })}
-          </code>
+          <code
+            dangerouslySetInnerHTML={{
+              __html: Prism.highlight(
+                jsxToString(children, {
+                  maxInlineAttributesLineLength: 500,
+                  filterProps: ['className'],
+                  showFunctions: true,
+                  functionValue: () => '/* function */',
+                  showDefaultProps: false
+                }),
+                Prism.languages.jsx,
+                'jsx'
+              )
+            }}
+          />
         </pre>
       </div>
     </div>

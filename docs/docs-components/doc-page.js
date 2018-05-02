@@ -7,27 +7,25 @@ const stripInitialNewLines = text => {
   return lines.map(line => line.trim()).join('\n');
 };
 
-const byPropName = (a, b) => {
-  if (a.name.indexOf('...') === 0) return 1;
-  if (b.name.indexOf('...') === 0) return -1;
-  if (a.name === 'children') return 1;
-  if (b.name === 'children') return -1;
-  return a.name.localeCompare(b.name);
-};
-
-export const DocPage = ({ componentName, description, propList, examples }) => {
+export const DocPage = ({
+  componentName,
+  componentMetadata,
+  description,
+  propList,
+  examples
+}) => {
   return (
     <div className="doc-page">
       <h1>{componentName}</h1>
-      {description && <div className="doc-page-description">
-        <p dangerouslySetInnerHTML={{
-          __html: md.render(stripInitialNewLines(description))
-        }}/>
-      </div>}
-      <section>
-        <h2 id="examples">Examples</h2>
-        {examples}
-      </section>
+      {description && (
+        <div className="doc-page-description">
+          <p
+            dangerouslySetInnerHTML={{
+              __html: md.render(stripInitialNewLines(description))
+            }}
+          />
+        </div>
+      )}
       <section>
         <h2 id="props">Props</h2>
         <table className="props-table">
@@ -35,25 +33,39 @@ export const DocPage = ({ componentName, description, propList, examples }) => {
             <tr>
               <th>Name</th>
               <th>Type</th>
+              <th>Required</th>
               <th>Description</th>
             </tr>
           </thead>
           <tbody>
-            {propList.sort(byPropName).map(prop => {
-              return (
-                <tr key={prop.name}>
-                  <td>{prop.name}</td>
-                  <td>{prop.type}</td>
-                  <td
-                    dangerouslySetInnerHTML={{
-                      __html: md.render(prop.description)
-                    }}
-                  />
-                </tr>
-              );
-            })}
+            {componentMetadata &&
+              Object.keys(componentMetadata.props)
+                .sort()
+                .map(propName => {
+                  const {
+                    description: { lines },
+                    typeInfo: { type, required }
+                  } = componentMetadata.props[propName];
+
+                  return (
+                    <tr key={propName}>
+                      <td>{propName}</td>
+                      <td>{type}</td>
+                      <td>{required ? 'yes' : 'no'}</td>
+                      <td
+                        dangerouslySetInnerHTML={{
+                          __html: md.render(lines.join('\n'))
+                        }}
+                      />
+                    </tr>
+                  );
+                })}
           </tbody>
         </table>
+      </section>
+      <section>
+        <h2 id="examples">Examples</h2>
+        {examples}
       </section>
     </div>
   );
