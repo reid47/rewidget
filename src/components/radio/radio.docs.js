@@ -8,7 +8,7 @@ export default function RadioDocs() {
       <Example {...{ title: 'Simple radio' }}>
         <Radio defaultChecked />
       </Example>
-      <Example {...{ title: 'Radio with label contents' }}>
+      <Example {...{ title: 'Radio with label' }}>
         <Radio>I am a label within a radio</Radio>
       </Example>
       <Example {...{ title: 'Radio sizes' }}>

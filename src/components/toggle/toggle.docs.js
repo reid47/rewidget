@@ -1,6 +1,6 @@
 import React from 'react';
 import { Toggle } from './toggle';
-import { DocPage, Example } from '../../../docs/docs-components';
+import { DocPage, Example } from '../../../docs/components';
 
 export default function TogglePage() {
   return (

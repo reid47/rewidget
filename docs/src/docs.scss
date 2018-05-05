@@ -188,6 +188,14 @@ main {
 
     h4 {
       margin: 0;
+      display: inline-block;
+    }
+
+    .doc-example-toggle-code {
+      background: transparent;
+      border: none;
+      float: right;
+      cursor: pointer;
     }
 
     span:not(:empty) {
