@@ -1,7 +1,6 @@
 import React from 'react';
 import { BrowserRouter, Route, NavLink } from 'react-router-dom';
 import * as components from '../../src';
-import '../../src/main.css';
 import './docs.css';
 
 const pages = Object.keys(components)
