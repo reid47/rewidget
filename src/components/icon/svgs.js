@@ -17,6 +17,66 @@ export default {
     </svg>
   ),
 
+  chevron_down: ({ height, width }) => (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width={width}
+      height={height}
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round">
+      <polyline points="4 9 12 17 20 9" />
+    </svg>
+  ),
+
+  chevron_left: ({ height, width }) => (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width={width}
+      height={height}
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round">
+      <polyline points="15 4 7 12 15 20" />
+    </svg>
+  ),
+
+  chevron_right: ({ height, width }) => (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width={width}
+      height={height}
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round">
+      <polyline points="9 4 17 12 9 20" />
+    </svg>
+  ),
+
+  chevron_up: ({ height, width }) => (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width={width}
+      height={height}
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round">
+      <polyline points="4 15 12 7 20 15" />
+    </svg>
+  ),
+
   chevron_up_down: ({ height, width }) => (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -41,7 +101,7 @@ export default {
       viewBox="0 0 24 24"
       fill="none"
       stroke="currentColor"
-      strokeWidth="3"
+      strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round">
       <polyline points="2 6 22 6" />
@@ -58,9 +118,10 @@ export default {
       viewBox="0 0 24 24"
       fill="none"
       stroke="currentColor"
+      strokeLinecap="round"
       strokeWidth="2">
       <circle cx="11" cy="11" r="9" />
-      <line x1="24" y1="24" x2="17.65" y2="17.65" />
+      <line x1="22" y1="22" x2="17.65" y2="17.65" />
     </svg>
   ),
 

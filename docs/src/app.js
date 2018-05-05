@@ -1,7 +1,6 @@
 import React from 'react';
-import { BrowserRouter, Route, Link } from 'react-router-dom';
+import { BrowserRouter, Route, NavLink } from 'react-router-dom';
 import * as components from '../../src';
-import { Modal, Button, Icon } from '../../src';
 import '../../src/main.css';
 import './docs.css';
 
@@ -25,46 +24,28 @@ const pages = Object.keys(components)
   })
   .filter(Boolean);
 
-class App extends React.Component {
-  state = { navOpen: false };
-
+export default class App extends React.Component {
   render() {
-    const { navOpen } = this.state;
-
     return (
       <BrowserRouter>
         <div>
-          <Modal
-            type="flyout-left"
-            open={navOpen}
-            onClose={() => this.setState({ navOpen: false })}>
-            <nav>
-              <ul>
-                {pages.map(({ linkPath, componentName }) => (
-                  <li key={linkPath}>
-                    <Link
-                      to={linkPath}
-                      onClick={() => this.setState({ navOpen: false })}>
-                      {componentName}
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-            </nav>
-          </Modal>
-
-          <header className="app-header">
-            <Button
-              secondary
-              plain
-              icon={<Icon name="menu" />}
-              onClick={() => this.setState({ navOpen: true })}
-            />
-            <h1>rewidget</h1>
-          </header>
+          <nav className="left-nav">
+            <ul>
+              {pages.map(({ linkPath, componentName }) => (
+                <li key={linkPath}>
+                  <NavLink
+                    to={linkPath}
+                    activeClassName="active"
+                    onClick={() => this.setState({ navOpen: false })}>
+                    {componentName}
+                  </NavLink>
+                </li>
+              ))}
+            </ul>
+          </nav>
 
           <main>
-            <div id="routes">
+            <div className="main-content" id="routes">
               {pages.map(({ linkPath, page }) => (
                 <Route key={linkPath} exact path={linkPath} component={page} />
               ))}
@@ -75,5 +56,3 @@ class App extends React.Component {
     );
   }
 }
-
-export default App;

@@ -1,6 +1,8 @@
 $unit: 0.5rem;
 $color-dark: #222;
 $color-light: #fff;
+$color-gray: #eee;
+$left-nav-width: 240px;
 
 .mt-1 {
   margin-top: $unit;
@@ -17,13 +19,6 @@ body {
   font-family: sans-serif;
 }
 
-main,
-nav {
-  padding: $unit * 2;
-  max-width: 960px;
-  margin: 0 auto;
-}
-
 header {
   display: block;
   background: $color-dark;
@@ -38,10 +33,26 @@ header {
   }
 }
 
-nav {
+main {
+  position: fixed;
+  left: $left-nav-width;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  overflow-y: auto;
+}
+
+.main-content {
+  padding: $unit * 2;
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+.left-nav {
+  position: fixed;
   background: $color-dark;
   height: 100%;
-  width: 240px;
+  width: $left-nav-width;
   overflow-y: auto;
   max-width: 100%;
 
@@ -53,12 +64,37 @@ nav {
 
   li {
     list-style-type: none;
-    padding-top: $unit * 2;
-    padding-bottom: $unit * 2;
   }
 
   a {
     color: $color-light;
+    display: block;
+    padding: 16px;
+    text-decoration: none;
+    font-family: monospace;
+    font-size: 1.5em;
+
+    &::before {
+      opacity: 0.4;
+      content: '<';
+    }
+
+    &::after {
+      opacity: 0.4;
+      content: '/>';
+    }
+
+    &:hover,
+    &:focus {
+      background: $color-gray;
+      color: $color-dark;
+    }
+
+    &.active {
+      background: $color-light;
+      color: $color-dark;
+      font-weight: bold;
+    }
   }
 }
 
@@ -75,6 +111,21 @@ nav {
   section + section {
     margin-top: $unit * 4;
   }
+
+  .doc-page-component-name {
+    font-family: monospace;
+    font-size: 3em;
+
+    &::before {
+      opacity: 0.4;
+      content: '<';
+    }
+
+    &::after {
+      opacity: 0.4;
+      content: '/>';
+    }
+  }
 }
 
 .props-table {
@@ -85,7 +136,7 @@ nav {
   box-shadow: 0 2px 8px 0px #888;
 
   th {
-    background-color: #eee;
+    background-color: $color-gray;
     padding: $unit * 2;
   }
 
@@ -113,7 +164,7 @@ nav {
   .doc-example-header {
     margin: 0;
     padding: $unit * 2;
-    background-color: #eee;
+    background-color: $color-gray;
     font-family: sans-serif;
 
     h4 {
@@ -132,7 +183,7 @@ nav {
 
   .doc-example-code {
     background-color: #222;
-    color: #eee;
+    color: $color-gray;
     padding: $unit * 2;
     overflow: auto;
 

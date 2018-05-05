@@ -25,15 +25,12 @@ const typeInfoToString = typeInfo => {
   }
 };
 
-export const DocPage = ({
-  componentName,
-  componentMetadata,
-  description,
-  examples
-}) => {
+export const DocPage = ({ component, description, children }) => {
   return (
     <div className="doc-page">
-      <h1>{componentName}</h1>
+      <h1 className="doc-page-component-name">
+        {component.displayName || component.name}
+      </h1>
       {description && (
         <div className="doc-page-description">
           <p
@@ -45,7 +42,7 @@ export const DocPage = ({
       )}
       <section>
         <h2 id="examples">Examples</h2>
-        {examples}
+        {children}
       </section>
       <section>
         <h2 id="props">Props</h2>
@@ -59,13 +56,12 @@ export const DocPage = ({
             </tr>
           </thead>
           <tbody>
-            {componentMetadata &&
-              Object.keys(componentMetadata.props)
+            {component.metadata &&
+              Object.keys(component.metadata.props)
                 .sort()
                 .map(propName => {
-                  const { description, typeInfo } = componentMetadata.props[
-                    propName
-                  ];
+                  const prop = component.metadata.props[propName];
+                  const { description, typeInfo } = prop;
 
                   return (
                     <tr key={propName}>

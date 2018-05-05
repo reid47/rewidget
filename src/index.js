@@ -3,7 +3,6 @@ export { Checkbox } from './components/checkbox/checkbox';
 export { Chip } from './components/chip/chip';
 export { ChipInput } from './components/chip-input/chip-input';
 export { default as Icon } from './components/icon/icon';
-export { Listbox } from './components/listbox/listbox';
 export { Modal } from './components/modal/modal';
 export { Pagination } from './components/pagination/pagination';
 export { Radio } from './components/radio/radio';

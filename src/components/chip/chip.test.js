@@ -1,7 +1,7 @@
 import React from 'react';
 import { mount } from 'enzyme';
 import { Chip } from './chip';
-import { XIcon } from '../icons';
+import Icon from '../icon/icon';
 
 describe('Chip', () => {
   let root;
@@ -17,7 +17,7 @@ describe('Chip', () => {
     const icon = root.find('div.rw-Chip-icon');
     expect(icon.exists()).toBe(true);
     expect(icon.prop('role')).toBe('none');
-    expect(icon.contains(<XIcon />)).toBe(true);
+    expect(icon.contains(<Icon name="x" />)).toBe(true);
   });
 
   describe('when given a size', () => {
