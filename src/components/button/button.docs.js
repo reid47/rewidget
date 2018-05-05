@@ -1,7 +1,7 @@
 import React from 'react';
 import { Button } from './button';
 import { DocPage, Example } from '../../../docs/docs-components';
-import { CheckIcon } from '../icons';
+import Icon from '../icon/icon';
 
 const ButtonPage = () => {
   return (
@@ -141,18 +141,23 @@ const ButtonPage = () => {
             </Example>
             <Example {...{ title: 'Buttons with icons' }}>
               <div>
-                <Button success icon={<CheckIcon />}>
+                <Button success icon={<Icon name="check" />}>
                   Click me
                 </Button>
-                <Button warning icon={<CheckIcon />} className="ml-1">
+                <Button warning icon={<Icon name="check" />} className="ml-1">
                   Click me
                 </Button>
-                <Button alert alt icon={<CheckIcon />} className="ml-1">
+                <Button alert alt icon={<Icon name="check" />} className="ml-1">
                   Click me
                 </Button>
-                <Button success icon={<CheckIcon />} className="ml-1" />
-                <Button warning icon={<CheckIcon />} className="ml-1" />
-                <Button alert alt icon={<CheckIcon />} className="ml-1" />
+                <Button success icon={<Icon name="check" />} className="ml-1" />
+                <Button warning icon={<Icon name="check" />} className="ml-1" />
+                <Button
+                  alert
+                  alt
+                  icon={<Icon name="check" />}
+                  className="ml-1"
+                />
               </div>
             </Example>
             <Example {...{ title: 'Button sizes' }}>
@@ -181,13 +186,21 @@ const ButtonPage = () => {
             </Example>
             <Example {...{ title: 'Button sizes with icons' }}>
               <div>
-                <Button success icon={<CheckIcon />} size="sm">
+                <Button success icon={<Icon name="check" />} size="sm">
                   Click me
                 </Button>
-                <Button success icon={<CheckIcon />} size="md" className="ml-1">
+                <Button
+                  success
+                  icon={<Icon name="check" />}
+                  size="md"
+                  className="ml-1">
                   Click me
                 </Button>
-                <Button success icon={<CheckIcon />} size="lg" className="ml-1">
+                <Button
+                  success
+                  icon={<Icon name="check" />}
+                  size="lg"
+                  className="ml-1">
                   Click me
                 </Button>
               </div>

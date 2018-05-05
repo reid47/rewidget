@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { classify, prefix } from '../../util';
-import { UpDownChevronIcon } from '../icons';
+import Icon from '../icon/icon';
 
 const Select = ({
   size,
@@ -37,7 +37,7 @@ const Select = ({
         {children}
       </select>
       <div className={arrowClasses}>
-        <UpDownChevronIcon />
+        <Icon name="chevron_up_down" />
       </div>
     </div>
   );

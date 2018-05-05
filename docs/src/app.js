@@ -1,14 +1,12 @@
 import React from 'react';
 import { BrowserRouter, Route, Link } from 'react-router-dom';
 import * as components from '../../src';
-import { Modal, Button, MenuIcon } from '../../src';
+import { Modal, Button, Icon } from '../../src';
 import '../../src/main.css';
 import './docs.css';
 
 const pages = Object.keys(components)
   .map(name => {
-    if (name.indexOf('Icon') > -1) return null;
-
     const hyphenated = name
       .replace(/[A-Z]/g, '-$&')
       .toLowerCase()
@@ -59,7 +57,7 @@ class App extends React.Component {
             <Button
               secondary
               plain
-              icon={<MenuIcon />}
+              icon={<Icon name="menu" />}
               onClick={() => this.setState({ navOpen: true })}
             />
             <h1>rewidget</h1>

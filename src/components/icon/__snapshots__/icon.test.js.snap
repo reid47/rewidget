@@ -1,0 +1,229 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Icon name = check custom size 1`] = `
+<svg
+  fill="none"
+  height="36"
+  stroke="currentColor"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+  stroke-width="3"
+  viewBox="0 0 24 24"
+  width="36"
+  xmlns="http://www.w3.org/2000/svg"
+>
+  <polyline
+    points="20 6 9 17 4 12"
+  />
+</svg>
+`;
+
+exports[`Icon name = check default size 1`] = `
+<svg
+  fill="none"
+  height="24"
+  stroke="currentColor"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+  stroke-width="3"
+  viewBox="0 0 24 24"
+  width="24"
+  xmlns="http://www.w3.org/2000/svg"
+>
+  <polyline
+    points="20 6 9 17 4 12"
+  />
+</svg>
+`;
+
+exports[`Icon name = chevron_up_down custom size 1`] = `
+<svg
+  fill="none"
+  height="36"
+  stroke="currentColor"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+  stroke-width="2"
+  viewBox="0 0 24 24"
+  width="36"
+  xmlns="http://www.w3.org/2000/svg"
+>
+  <polyline
+    points="6 9 12 3 18 9"
+  />
+  <polyline
+    points="6 15 12 21 18 15"
+  />
+</svg>
+`;
+
+exports[`Icon name = chevron_up_down default size 1`] = `
+<svg
+  fill="none"
+  height="24"
+  stroke="currentColor"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+  stroke-width="2"
+  viewBox="0 0 24 24"
+  width="24"
+  xmlns="http://www.w3.org/2000/svg"
+>
+  <polyline
+    points="6 9 12 3 18 9"
+  />
+  <polyline
+    points="6 15 12 21 18 15"
+  />
+</svg>
+`;
+
+exports[`Icon name = menu custom size 1`] = `
+<svg
+  fill="none"
+  height="36"
+  stroke="currentColor"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+  stroke-width="3"
+  viewBox="0 0 24 24"
+  width="36"
+  xmlns="http://www.w3.org/2000/svg"
+>
+  <polyline
+    points="2 6 22 6"
+  />
+  <polyline
+    points="2 12 22 12"
+  />
+  <polyline
+    points="2 18 22 18"
+  />
+</svg>
+`;
+
+exports[`Icon name = menu default size 1`] = `
+<svg
+  fill="none"
+  height="24"
+  stroke="currentColor"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+  stroke-width="3"
+  viewBox="0 0 24 24"
+  width="24"
+  xmlns="http://www.w3.org/2000/svg"
+>
+  <polyline
+    points="2 6 22 6"
+  />
+  <polyline
+    points="2 12 22 12"
+  />
+  <polyline
+    points="2 18 22 18"
+  />
+</svg>
+`;
+
+exports[`Icon name = search custom size 1`] = `
+<svg
+  fill="none"
+  height="36"
+  stroke="currentColor"
+  stroke-width="2"
+  viewBox="0 0 24 24"
+  width="36"
+  xmlns="http://www.w3.org/2000/svg"
+>
+  <circle
+    cx="11"
+    cy="11"
+    r="9"
+  />
+  <line
+    x1="24"
+    x2="17.65"
+    y1="24"
+    y2="17.65"
+  />
+</svg>
+`;
+
+exports[`Icon name = search default size 1`] = `
+<svg
+  fill="none"
+  height="24"
+  stroke="currentColor"
+  stroke-width="2"
+  viewBox="0 0 24 24"
+  width="24"
+  xmlns="http://www.w3.org/2000/svg"
+>
+  <circle
+    cx="11"
+    cy="11"
+    r="9"
+  />
+  <line
+    x1="24"
+    x2="17.65"
+    y1="24"
+    y2="17.65"
+  />
+</svg>
+`;
+
+exports[`Icon name = x custom size 1`] = `
+<svg
+  fill="none"
+  height="36"
+  stroke="currentColor"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+  stroke-width="2"
+  viewBox="0 0 24 24"
+  width="36"
+  xmlns="http://www.w3.org/2000/svg"
+>
+  <line
+    x1="18"
+    x2="6"
+    y1="6"
+    y2="18"
+  />
+  <line
+    x1="6"
+    x2="18"
+    y1="6"
+    y2="18"
+  />
+</svg>
+`;
+
+exports[`Icon name = x default size 1`] = `
+<svg
+  fill="none"
+  height="24"
+  stroke="currentColor"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+  stroke-width="2"
+  viewBox="0 0 24 24"
+  width="24"
+  xmlns="http://www.w3.org/2000/svg"
+>
+  <line
+    x1="18"
+    x2="6"
+    y1="6"
+    y2="18"
+  />
+  <line
+    x1="6"
+    x2="18"
+    y1="6"
+    y2="18"
+  />
+</svg>
+`;

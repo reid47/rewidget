@@ -25,7 +25,7 @@ export const Example = ({ title, description, children }) => {
               __html: Prism.highlight(
                 jsxToString(children, {
                   maxInlineAttributesLineLength: 500,
-                  filterProps: ['className'],
+                  filterProps: ['className', 'style'],
                   showFunctions: true,
                   functionValue: () => '/* function */',
                   showDefaultProps: false

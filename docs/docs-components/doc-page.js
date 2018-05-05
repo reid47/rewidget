@@ -43,7 +43,7 @@ export const DocPage = ({
                 .sort()
                 .map(propName => {
                   const {
-                    description: { lines },
+                    description,
                     typeInfo: { type, required }
                   } = componentMetadata.props[propName];
 
@@ -54,7 +54,9 @@ export const DocPage = ({
                       <td>{required ? 'yes' : 'no'}</td>
                       <td
                         dangerouslySetInnerHTML={{
-                          __html: md.render(lines.join('\n'))
+                          __html: description
+                            ? md.render(description.lines.join('\n'))
+                            : ''
                         }}
                       />
                     </tr>

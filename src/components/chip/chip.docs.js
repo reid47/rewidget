@@ -1,7 +1,7 @@
 import React from 'react';
 import { Chip } from './chip';
 import { DocPage, Example } from '../../../docs/docs-components';
-import { CheckIcon } from '../icons';
+import Icon from '../icon/icon';
 
 const ChipPage = () => {
   return (
@@ -31,7 +31,7 @@ const ChipPage = () => {
               <Chip>A chip</Chip>
             </Example>
             <Example {...{ title: 'Chip with custom icon' }}>
-              <Chip icon={<CheckIcon />}>Chip with custom icon</Chip>
+              <Chip icon={<Icon name="check" />}>Chip with custom icon</Chip>
             </Example>
             <Example {...{ title: 'Chip without icon' }}>
               <Chip hideIcon>Chip with no icon</Chip>

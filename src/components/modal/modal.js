@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import PropTypes from 'prop-types';
 import { classify, prefix } from '../../util';
-import { XIcon } from '../icons';
+import Icon from '../icon/icon';
 // import { t } from '../translations';
 import { getTabbableElements } from '../helpers/find-tabbables';
 import {
@@ -135,7 +135,7 @@ export class Modal extends React.Component {
           onClick={onClose}
           // aria-label={t('closeButtonLabel')}
           className={classify(prefix('Modal-close-button'), `is-${type}`)}>
-          <XIcon />
+          <Icon name="x" />
         </button>
         {children}
       </div>,

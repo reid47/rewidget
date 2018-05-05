@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { classify, prefix } from '../../util';
-import { XIcon } from '../icons';
+import Icon from '../icon/icon';
 
 const Chip = ({
   size,
@@ -65,7 +65,7 @@ Chip.propTypes = {
 };
 
 Chip.defaultProps = {
-  icon: <XIcon />,
+  icon: <Icon name="x" />,
   size: 'md'
 };
 

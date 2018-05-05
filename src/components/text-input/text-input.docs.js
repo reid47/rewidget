@@ -1,7 +1,7 @@
 import React from 'react';
 import { TextInput } from './text-input';
 import { DocPage, Example } from '../../../docs/docs-components';
-import { SearchIcon } from '../icons';
+import Icon from '../icon/icon';
 
 const TextInputPage = () => {
   return (
