@@ -41,6 +41,7 @@ exports[`Icon name = check custom size 1`] = `
 
 exports[`Icon name = check custom title and desc 1`] = `
 <svg
+  aria-labelledby="rw-svg-title_t4lsq31k rw-svg-desc_cu81qnqd"
   fill="none"
   height="24"
   role="img"
@@ -52,6 +53,16 @@ exports[`Icon name = check custom title and desc 1`] = `
   width="24"
   xmlns="http://www.w3.org/2000/svg"
 >
+  <title
+    id="rw-svg-title_t4lsq31k"
+  >
+    Test icon title
+  </title>
+  <desc
+    id="Test icon description"
+  >
+    Test icon description
+  </desc>
   <polyline
     points="20 6 9 17 4 12"
   />
@@ -118,6 +129,7 @@ exports[`Icon name = chevron_down custom size 1`] = `
 
 exports[`Icon name = chevron_down custom title and desc 1`] = `
 <svg
+  aria-labelledby="rw-svg-title_vr4cm15j rw-svg-desc_dzmwr5b9"
   fill="none"
   height="24"
   role="img"
@@ -129,6 +141,16 @@ exports[`Icon name = chevron_down custom title and desc 1`] = `
   width="24"
   xmlns="http://www.w3.org/2000/svg"
 >
+  <title
+    id="rw-svg-title_vr4cm15j"
+  >
+    Test icon title
+  </title>
+  <desc
+    id="Test icon description"
+  >
+    Test icon description
+  </desc>
   <polyline
     points="4 9 12 17 20 9"
   />
@@ -195,6 +217,7 @@ exports[`Icon name = chevron_left custom size 1`] = `
 
 exports[`Icon name = chevron_left custom title and desc 1`] = `
 <svg
+  aria-labelledby="rw-svg-title_7yd5b1j0 rw-svg-desc_iktra1t7"
   fill="none"
   height="24"
   role="img"
@@ -206,6 +229,16 @@ exports[`Icon name = chevron_left custom title and desc 1`] = `
   width="24"
   xmlns="http://www.w3.org/2000/svg"
 >
+  <title
+    id="rw-svg-title_7yd5b1j0"
+  >
+    Test icon title
+  </title>
+  <desc
+    id="Test icon description"
+  >
+    Test icon description
+  </desc>
   <polyline
     points="15 4 7 12 15 20"
   />
@@ -272,6 +305,7 @@ exports[`Icon name = chevron_right custom size 1`] = `
 
 exports[`Icon name = chevron_right custom title and desc 1`] = `
 <svg
+  aria-labelledby="rw-svg-title_zo4xiuov rw-svg-desc_lxv5cfxz"
   fill="none"
   height="24"
   role="img"
@@ -283,6 +317,16 @@ exports[`Icon name = chevron_right custom title and desc 1`] = `
   width="24"
   xmlns="http://www.w3.org/2000/svg"
 >
+  <title
+    id="rw-svg-title_zo4xiuov"
+  >
+    Test icon title
+  </title>
+  <desc
+    id="Test icon description"
+  >
+    Test icon description
+  </desc>
   <polyline
     points="9 4 17 12 9 20"
   />
@@ -349,6 +393,7 @@ exports[`Icon name = chevron_up custom size 1`] = `
 
 exports[`Icon name = chevron_up custom title and desc 1`] = `
 <svg
+  aria-labelledby="rw-svg-title_mwi301bd rw-svg-desc_bsxeoeuk"
   fill="none"
   height="24"
   role="img"
@@ -360,6 +405,16 @@ exports[`Icon name = chevron_up custom title and desc 1`] = `
   width="24"
   xmlns="http://www.w3.org/2000/svg"
 >
+  <title
+    id="rw-svg-title_mwi301bd"
+  >
+    Test icon title
+  </title>
+  <desc
+    id="Test icon description"
+  >
+    Test icon description
+  </desc>
   <polyline
     points="4 15 12 7 20 15"
   />
@@ -432,6 +487,7 @@ exports[`Icon name = chevron_up_down custom size 1`] = `
 
 exports[`Icon name = chevron_up_down custom title and desc 1`] = `
 <svg
+  aria-labelledby="rw-svg-title_v66n60yu rw-svg-desc_lenrw24r"
   fill="none"
   height="24"
   role="img"
@@ -443,6 +499,16 @@ exports[`Icon name = chevron_up_down custom title and desc 1`] = `
   width="24"
   xmlns="http://www.w3.org/2000/svg"
 >
+  <title
+    id="rw-svg-title_v66n60yu"
+  >
+    Test icon title
+  </title>
+  <desc
+    id="Test icon description"
+  >
+    Test icon description
+  </desc>
   <polyline
     points="6 9 12 3 18 9"
   />
@@ -527,6 +593,7 @@ exports[`Icon name = menu custom size 1`] = `
 
 exports[`Icon name = menu custom title and desc 1`] = `
 <svg
+  aria-labelledby="rw-svg-title_seb6ybyi rw-svg-desc_o5nj3jrk"
   fill="none"
   height="24"
   role="img"
@@ -538,6 +605,16 @@ exports[`Icon name = menu custom title and desc 1`] = `
   width="24"
   xmlns="http://www.w3.org/2000/svg"
 >
+  <title
+    id="rw-svg-title_seb6ybyi"
+  >
+    Test icon title
+  </title>
+  <desc
+    id="Test icon description"
+  >
+    Test icon description
+  </desc>
   <polyline
     points="2 6 22 6"
   />
@@ -632,6 +709,7 @@ exports[`Icon name = search custom size 1`] = `
 
 exports[`Icon name = search custom title and desc 1`] = `
 <svg
+  aria-labelledby="rw-svg-title_cdgmu1br rw-svg-desc_yppusaqd"
   fill="none"
   height="24"
   role="img"
@@ -643,6 +721,16 @@ exports[`Icon name = search custom title and desc 1`] = `
   width="24"
   xmlns="http://www.w3.org/2000/svg"
 >
+  <title
+    id="rw-svg-title_cdgmu1br"
+  >
+    Test icon title
+  </title>
+  <desc
+    id="Test icon description"
+  >
+    Test icon description
+  </desc>
   <circle
     cx="11"
     cy="11"
@@ -731,6 +819,7 @@ exports[`Icon name = to_end custom size 1`] = `
 
 exports[`Icon name = to_end custom title and desc 1`] = `
 <svg
+  aria-labelledby="rw-svg-title_r0uq808y rw-svg-desc_g2at36lt"
   fill="none"
   height="24"
   role="img"
@@ -742,6 +831,16 @@ exports[`Icon name = to_end custom title and desc 1`] = `
   width="24"
   xmlns="http://www.w3.org/2000/svg"
 >
+  <title
+    id="rw-svg-title_r0uq808y"
+  >
+    Test icon title
+  </title>
+  <desc
+    id="Test icon description"
+  >
+    Test icon description
+  </desc>
   <polyline
     points="7 4 15 12 7 20"
   />
@@ -820,6 +919,7 @@ exports[`Icon name = to_start custom size 1`] = `
 
 exports[`Icon name = to_start custom title and desc 1`] = `
 <svg
+  aria-labelledby="rw-svg-title_vu700ktw rw-svg-desc_69vbma5i"
   fill="none"
   height="24"
   role="img"
@@ -831,6 +931,16 @@ exports[`Icon name = to_start custom title and desc 1`] = `
   width="24"
   xmlns="http://www.w3.org/2000/svg"
 >
+  <title
+    id="rw-svg-title_vu700ktw"
+  >
+    Test icon title
+  </title>
+  <desc
+    id="Test icon description"
+  >
+    Test icon description
+  </desc>
   <polyline
     points="17 4 9 12 17 20"
   />
@@ -921,6 +1031,7 @@ exports[`Icon name = x custom size 1`] = `
 
 exports[`Icon name = x custom title and desc 1`] = `
 <svg
+  aria-labelledby="rw-svg-title_ecdf82n7 rw-svg-desc_wf0avqu3"
   fill="none"
   height="24"
   role="img"
@@ -932,6 +1043,16 @@ exports[`Icon name = x custom title and desc 1`] = `
   width="24"
   xmlns="http://www.w3.org/2000/svg"
 >
+  <title
+    id="rw-svg-title_ecdf82n7"
+  >
+    Test icon title
+  </title>
+  <desc
+    id="Test icon description"
+  >
+    Test icon description
+  </desc>
   <line
     x1="18"
     x2="6"

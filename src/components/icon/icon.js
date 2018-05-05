@@ -30,7 +30,7 @@ export default class Icon extends PureComponent {
   };
 
   render() {
-    const { className, height, name, width } = this.props;
-    return svgs[name]({ className, height, width }) || null;
+    const { name, ...svgProps } = this.props;
+    return svgs[name](svgProps) || null;
   }
 }
