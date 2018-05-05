@@ -40,7 +40,7 @@ export default class Example extends PureComponent {
                   __html: Prism.highlight(
                     jsxToString(renderedChildren, {
                       maxInlineAttributesLineLength: 500,
-                      filterProps: ['className', 'style'],
+                      filterProps: ['style'],
                       showFunctions: true,
                       functionValue: () => '/* function */',
                       showDefaultProps: false

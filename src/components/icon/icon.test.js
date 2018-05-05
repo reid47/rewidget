@@ -19,6 +19,18 @@ describe('Icon', () => {
         render(<Icon name="check" className="test-class" />)
       ).toMatchSnapshot();
     });
+
+    test('custom title and desc', () => {
+      expect(
+        render(
+          <Icon
+            name="check"
+            title="Test icon title"
+            desc="Test icon description"
+          />
+        )
+      ).toMatchSnapshot();
+    });
   });
 
   describe('name = chevron_down', () => {
@@ -35,6 +47,18 @@ describe('Icon', () => {
     test('custom className', () => {
       expect(
         render(<Icon name="chevron_down" className="test-class" />)
+      ).toMatchSnapshot();
+    });
+
+    test('custom title and desc', () => {
+      expect(
+        render(
+          <Icon
+            name="chevron_down"
+            title="Test icon title"
+            desc="Test icon description"
+          />
+        )
       ).toMatchSnapshot();
     });
   });
@@ -55,6 +79,18 @@ describe('Icon', () => {
         render(<Icon name="chevron_left" className="test-class" />)
       ).toMatchSnapshot();
     });
+
+    test('custom title and desc', () => {
+      expect(
+        render(
+          <Icon
+            name="chevron_left"
+            title="Test icon title"
+            desc="Test icon description"
+          />
+        )
+      ).toMatchSnapshot();
+    });
   });
 
   describe('name = chevron_right', () => {
@@ -71,6 +107,18 @@ describe('Icon', () => {
     test('custom className', () => {
       expect(
         render(<Icon name="chevron_right" className="test-class" />)
+      ).toMatchSnapshot();
+    });
+
+    test('custom title and desc', () => {
+      expect(
+        render(
+          <Icon
+            name="chevron_right"
+            title="Test icon title"
+            desc="Test icon description"
+          />
+        )
       ).toMatchSnapshot();
     });
   });
@@ -91,6 +139,18 @@ describe('Icon', () => {
         render(<Icon name="chevron_up" className="test-class" />)
       ).toMatchSnapshot();
     });
+
+    test('custom title and desc', () => {
+      expect(
+        render(
+          <Icon
+            name="chevron_up"
+            title="Test icon title"
+            desc="Test icon description"
+          />
+        )
+      ).toMatchSnapshot();
+    });
   });
 
   describe('name = chevron_up_down', () => {
@@ -107,6 +167,18 @@ describe('Icon', () => {
     test('custom className', () => {
       expect(
         render(<Icon name="chevron_up_down" className="test-class" />)
+      ).toMatchSnapshot();
+    });
+
+    test('custom title and desc', () => {
+      expect(
+        render(
+          <Icon
+            name="chevron_up_down"
+            title="Test icon title"
+            desc="Test icon description"
+          />
+        )
       ).toMatchSnapshot();
     });
   });
@@ -127,6 +199,18 @@ describe('Icon', () => {
         render(<Icon name="menu" className="test-class" />)
       ).toMatchSnapshot();
     });
+
+    test('custom title and desc', () => {
+      expect(
+        render(
+          <Icon
+            name="menu"
+            title="Test icon title"
+            desc="Test icon description"
+          />
+        )
+      ).toMatchSnapshot();
+    });
   });
 
   describe('name = search', () => {
@@ -143,6 +227,18 @@ describe('Icon', () => {
     test('custom className', () => {
       expect(
         render(<Icon name="search" className="test-class" />)
+      ).toMatchSnapshot();
+    });
+
+    test('custom title and desc', () => {
+      expect(
+        render(
+          <Icon
+            name="search"
+            title="Test icon title"
+            desc="Test icon description"
+          />
+        )
       ).toMatchSnapshot();
     });
   });
@@ -163,6 +259,18 @@ describe('Icon', () => {
         render(<Icon name="to_end" className="test-class" />)
       ).toMatchSnapshot();
     });
+
+    test('custom title and desc', () => {
+      expect(
+        render(
+          <Icon
+            name="to_end"
+            title="Test icon title"
+            desc="Test icon description"
+          />
+        )
+      ).toMatchSnapshot();
+    });
   });
 
   describe('name = to_start', () => {
@@ -181,6 +289,18 @@ describe('Icon', () => {
         render(<Icon name="to_start" className="test-class" />)
       ).toMatchSnapshot();
     });
+
+    test('custom title and desc', () => {
+      expect(
+        render(
+          <Icon
+            name="to_start"
+            title="Test icon title"
+            desc="Test icon description"
+          />
+        )
+      ).toMatchSnapshot();
+    });
   });
 
   describe('name = x', () => {
@@ -197,6 +317,14 @@ describe('Icon', () => {
     test('custom className', () => {
       expect(
         render(<Icon name="x" className="test-class" />)
+      ).toMatchSnapshot();
+    });
+
+    test('custom title and desc', () => {
+      expect(
+        render(
+          <Icon name="x" title="Test icon title" desc="Test icon description" />
+        )
       ).toMatchSnapshot();
     });
   });

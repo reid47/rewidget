@@ -5,10 +5,11 @@ exports[`Icon name = check custom className 1`] = `
   class="test-class"
   fill="none"
   height="24"
+  role="img"
   stroke="currentColor"
   stroke-linecap="round"
   stroke-linejoin="round"
-  stroke-width="3"
+  stroke-width="2"
   viewBox="0 0 24 24"
   width="24"
   xmlns="http://www.w3.org/2000/svg"
@@ -23,12 +24,32 @@ exports[`Icon name = check custom size 1`] = `
 <svg
   fill="none"
   height="36"
+  role="img"
   stroke="currentColor"
   stroke-linecap="round"
   stroke-linejoin="round"
-  stroke-width="3"
+  stroke-width="2"
   viewBox="0 0 24 24"
   width="36"
+  xmlns="http://www.w3.org/2000/svg"
+>
+  <polyline
+    points="20 6 9 17 4 12"
+  />
+</svg>
+`;
+
+exports[`Icon name = check custom title and desc 1`] = `
+<svg
+  fill="none"
+  height="24"
+  role="img"
+  stroke="currentColor"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+  stroke-width="2"
+  viewBox="0 0 24 24"
+  width="24"
   xmlns="http://www.w3.org/2000/svg"
 >
   <polyline
@@ -41,10 +62,11 @@ exports[`Icon name = check default size 1`] = `
 <svg
   fill="none"
   height="24"
+  role="img"
   stroke="currentColor"
   stroke-linecap="round"
   stroke-linejoin="round"
-  stroke-width="3"
+  stroke-width="2"
   viewBox="0 0 24 24"
   width="24"
   xmlns="http://www.w3.org/2000/svg"
@@ -60,6 +82,7 @@ exports[`Icon name = chevron_down custom className 1`] = `
   class="test-class"
   fill="none"
   height="24"
+  role="img"
   stroke="currentColor"
   stroke-linecap="round"
   stroke-linejoin="round"
@@ -78,6 +101,7 @@ exports[`Icon name = chevron_down custom size 1`] = `
 <svg
   fill="none"
   height="36"
+  role="img"
   stroke="currentColor"
   stroke-linecap="round"
   stroke-linejoin="round"
@@ -92,10 +116,30 @@ exports[`Icon name = chevron_down custom size 1`] = `
 </svg>
 `;
 
+exports[`Icon name = chevron_down custom title and desc 1`] = `
+<svg
+  fill="none"
+  height="24"
+  role="img"
+  stroke="currentColor"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+  stroke-width="2"
+  viewBox="0 0 24 24"
+  width="24"
+  xmlns="http://www.w3.org/2000/svg"
+>
+  <polyline
+    points="4 9 12 17 20 9"
+  />
+</svg>
+`;
+
 exports[`Icon name = chevron_down default size 1`] = `
 <svg
   fill="none"
   height="24"
+  role="img"
   stroke="currentColor"
   stroke-linecap="round"
   stroke-linejoin="round"
@@ -115,6 +159,7 @@ exports[`Icon name = chevron_left custom className 1`] = `
   class="test-class"
   fill="none"
   height="24"
+  role="img"
   stroke="currentColor"
   stroke-linecap="round"
   stroke-linejoin="round"
@@ -133,6 +178,7 @@ exports[`Icon name = chevron_left custom size 1`] = `
 <svg
   fill="none"
   height="36"
+  role="img"
   stroke="currentColor"
   stroke-linecap="round"
   stroke-linejoin="round"
@@ -147,10 +193,30 @@ exports[`Icon name = chevron_left custom size 1`] = `
 </svg>
 `;
 
+exports[`Icon name = chevron_left custom title and desc 1`] = `
+<svg
+  fill="none"
+  height="24"
+  role="img"
+  stroke="currentColor"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+  stroke-width="2"
+  viewBox="0 0 24 24"
+  width="24"
+  xmlns="http://www.w3.org/2000/svg"
+>
+  <polyline
+    points="15 4 7 12 15 20"
+  />
+</svg>
+`;
+
 exports[`Icon name = chevron_left default size 1`] = `
 <svg
   fill="none"
   height="24"
+  role="img"
   stroke="currentColor"
   stroke-linecap="round"
   stroke-linejoin="round"
@@ -170,6 +236,7 @@ exports[`Icon name = chevron_right custom className 1`] = `
   class="test-class"
   fill="none"
   height="24"
+  role="img"
   stroke="currentColor"
   stroke-linecap="round"
   stroke-linejoin="round"
@@ -188,6 +255,7 @@ exports[`Icon name = chevron_right custom size 1`] = `
 <svg
   fill="none"
   height="36"
+  role="img"
   stroke="currentColor"
   stroke-linecap="round"
   stroke-linejoin="round"
@@ -202,10 +270,30 @@ exports[`Icon name = chevron_right custom size 1`] = `
 </svg>
 `;
 
+exports[`Icon name = chevron_right custom title and desc 1`] = `
+<svg
+  fill="none"
+  height="24"
+  role="img"
+  stroke="currentColor"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+  stroke-width="2"
+  viewBox="0 0 24 24"
+  width="24"
+  xmlns="http://www.w3.org/2000/svg"
+>
+  <polyline
+    points="9 4 17 12 9 20"
+  />
+</svg>
+`;
+
 exports[`Icon name = chevron_right default size 1`] = `
 <svg
   fill="none"
   height="24"
+  role="img"
   stroke="currentColor"
   stroke-linecap="round"
   stroke-linejoin="round"
@@ -225,6 +313,7 @@ exports[`Icon name = chevron_up custom className 1`] = `
   class="test-class"
   fill="none"
   height="24"
+  role="img"
   stroke="currentColor"
   stroke-linecap="round"
   stroke-linejoin="round"
@@ -243,6 +332,7 @@ exports[`Icon name = chevron_up custom size 1`] = `
 <svg
   fill="none"
   height="36"
+  role="img"
   stroke="currentColor"
   stroke-linecap="round"
   stroke-linejoin="round"
@@ -257,10 +347,30 @@ exports[`Icon name = chevron_up custom size 1`] = `
 </svg>
 `;
 
+exports[`Icon name = chevron_up custom title and desc 1`] = `
+<svg
+  fill="none"
+  height="24"
+  role="img"
+  stroke="currentColor"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+  stroke-width="2"
+  viewBox="0 0 24 24"
+  width="24"
+  xmlns="http://www.w3.org/2000/svg"
+>
+  <polyline
+    points="4 15 12 7 20 15"
+  />
+</svg>
+`;
+
 exports[`Icon name = chevron_up default size 1`] = `
 <svg
   fill="none"
   height="24"
+  role="img"
   stroke="currentColor"
   stroke-linecap="round"
   stroke-linejoin="round"
@@ -280,6 +390,7 @@ exports[`Icon name = chevron_up_down custom className 1`] = `
   class="test-class"
   fill="none"
   height="24"
+  role="img"
   stroke="currentColor"
   stroke-linecap="round"
   stroke-linejoin="round"
@@ -301,6 +412,7 @@ exports[`Icon name = chevron_up_down custom size 1`] = `
 <svg
   fill="none"
   height="36"
+  role="img"
   stroke="currentColor"
   stroke-linecap="round"
   stroke-linejoin="round"
@@ -318,10 +430,33 @@ exports[`Icon name = chevron_up_down custom size 1`] = `
 </svg>
 `;
 
+exports[`Icon name = chevron_up_down custom title and desc 1`] = `
+<svg
+  fill="none"
+  height="24"
+  role="img"
+  stroke="currentColor"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+  stroke-width="2"
+  viewBox="0 0 24 24"
+  width="24"
+  xmlns="http://www.w3.org/2000/svg"
+>
+  <polyline
+    points="6 9 12 3 18 9"
+  />
+  <polyline
+    points="6 15 12 21 18 15"
+  />
+</svg>
+`;
+
 exports[`Icon name = chevron_up_down default size 1`] = `
 <svg
   fill="none"
   height="24"
+  role="img"
   stroke="currentColor"
   stroke-linecap="round"
   stroke-linejoin="round"
@@ -344,6 +479,7 @@ exports[`Icon name = menu custom className 1`] = `
   class="test-class"
   fill="none"
   height="24"
+  role="img"
   stroke="currentColor"
   stroke-linecap="round"
   stroke-linejoin="round"
@@ -368,6 +504,7 @@ exports[`Icon name = menu custom size 1`] = `
 <svg
   fill="none"
   height="36"
+  role="img"
   stroke="currentColor"
   stroke-linecap="round"
   stroke-linejoin="round"
@@ -388,10 +525,36 @@ exports[`Icon name = menu custom size 1`] = `
 </svg>
 `;
 
+exports[`Icon name = menu custom title and desc 1`] = `
+<svg
+  fill="none"
+  height="24"
+  role="img"
+  stroke="currentColor"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+  stroke-width="2"
+  viewBox="0 0 24 24"
+  width="24"
+  xmlns="http://www.w3.org/2000/svg"
+>
+  <polyline
+    points="2 6 22 6"
+  />
+  <polyline
+    points="2 12 22 12"
+  />
+  <polyline
+    points="2 18 22 18"
+  />
+</svg>
+`;
+
 exports[`Icon name = menu default size 1`] = `
 <svg
   fill="none"
   height="24"
+  role="img"
   stroke="currentColor"
   stroke-linecap="round"
   stroke-linejoin="round"
@@ -417,8 +580,10 @@ exports[`Icon name = search custom className 1`] = `
   class="test-class"
   fill="none"
   height="24"
+  role="img"
   stroke="currentColor"
   stroke-linecap="round"
+  stroke-linejoin="round"
   stroke-width="2"
   viewBox="0 0 24 24"
   width="24"
@@ -442,11 +607,40 @@ exports[`Icon name = search custom size 1`] = `
 <svg
   fill="none"
   height="36"
+  role="img"
   stroke="currentColor"
   stroke-linecap="round"
+  stroke-linejoin="round"
   stroke-width="2"
   viewBox="0 0 24 24"
   width="36"
+  xmlns="http://www.w3.org/2000/svg"
+>
+  <circle
+    cx="11"
+    cy="11"
+    r="9"
+  />
+  <line
+    x1="22"
+    x2="17.65"
+    y1="22"
+    y2="17.65"
+  />
+</svg>
+`;
+
+exports[`Icon name = search custom title and desc 1`] = `
+<svg
+  fill="none"
+  height="24"
+  role="img"
+  stroke="currentColor"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+  stroke-width="2"
+  viewBox="0 0 24 24"
+  width="24"
   xmlns="http://www.w3.org/2000/svg"
 >
   <circle
@@ -467,8 +661,10 @@ exports[`Icon name = search default size 1`] = `
 <svg
   fill="none"
   height="24"
+  role="img"
   stroke="currentColor"
   stroke-linecap="round"
+  stroke-linejoin="round"
   stroke-width="2"
   viewBox="0 0 24 24"
   width="24"
@@ -493,6 +689,7 @@ exports[`Icon name = to_end custom className 1`] = `
   class="test-class"
   fill="none"
   height="24"
+  role="img"
   stroke="currentColor"
   stroke-linecap="round"
   stroke-linejoin="round"
@@ -502,10 +699,10 @@ exports[`Icon name = to_end custom className 1`] = `
   xmlns="http://www.w3.org/2000/svg"
 >
   <polyline
-    points="6 4 14 12 6 20"
+    points="7 4 15 12 7 20"
   />
   <polyline
-    points="19 4 19 20"
+    points="18 4 18 20"
   />
 </svg>
 `;
@@ -514,6 +711,7 @@ exports[`Icon name = to_end custom size 1`] = `
 <svg
   fill="none"
   height="36"
+  role="img"
   stroke="currentColor"
   stroke-linecap="round"
   stroke-linejoin="round"
@@ -523,18 +721,19 @@ exports[`Icon name = to_end custom size 1`] = `
   xmlns="http://www.w3.org/2000/svg"
 >
   <polyline
-    points="6 4 14 12 6 20"
+    points="7 4 15 12 7 20"
   />
   <polyline
-    points="19 4 19 20"
+    points="18 4 18 20"
   />
 </svg>
 `;
 
-exports[`Icon name = to_end default size 1`] = `
+exports[`Icon name = to_end custom title and desc 1`] = `
 <svg
   fill="none"
   height="24"
+  role="img"
   stroke="currentColor"
   stroke-linecap="round"
   stroke-linejoin="round"
@@ -544,10 +743,32 @@ exports[`Icon name = to_end default size 1`] = `
   xmlns="http://www.w3.org/2000/svg"
 >
   <polyline
-    points="6 4 14 12 6 20"
+    points="7 4 15 12 7 20"
   />
   <polyline
-    points="19 4 19 20"
+    points="18 4 18 20"
+  />
+</svg>
+`;
+
+exports[`Icon name = to_end default size 1`] = `
+<svg
+  fill="none"
+  height="24"
+  role="img"
+  stroke="currentColor"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+  stroke-width="2"
+  viewBox="0 0 24 24"
+  width="24"
+  xmlns="http://www.w3.org/2000/svg"
+>
+  <polyline
+    points="7 4 15 12 7 20"
+  />
+  <polyline
+    points="18 4 18 20"
   />
 </svg>
 `;
@@ -557,6 +778,7 @@ exports[`Icon name = to_start custom className 1`] = `
   class="test-class"
   fill="none"
   height="24"
+  role="img"
   stroke="currentColor"
   stroke-linecap="round"
   stroke-linejoin="round"
@@ -566,10 +788,10 @@ exports[`Icon name = to_start custom className 1`] = `
   xmlns="http://www.w3.org/2000/svg"
 >
   <polyline
-    points="18 4 10 12 18 20"
+    points="17 4 9 12 17 20"
   />
   <polyline
-    points="5 4 5 20"
+    points="6 4 6 20"
   />
 </svg>
 `;
@@ -578,6 +800,7 @@ exports[`Icon name = to_start custom size 1`] = `
 <svg
   fill="none"
   height="36"
+  role="img"
   stroke="currentColor"
   stroke-linecap="round"
   stroke-linejoin="round"
@@ -587,18 +810,19 @@ exports[`Icon name = to_start custom size 1`] = `
   xmlns="http://www.w3.org/2000/svg"
 >
   <polyline
-    points="18 4 10 12 18 20"
+    points="17 4 9 12 17 20"
   />
   <polyline
-    points="5 4 5 20"
+    points="6 4 6 20"
   />
 </svg>
 `;
 
-exports[`Icon name = to_start default size 1`] = `
+exports[`Icon name = to_start custom title and desc 1`] = `
 <svg
   fill="none"
   height="24"
+  role="img"
   stroke="currentColor"
   stroke-linecap="round"
   stroke-linejoin="round"
@@ -608,10 +832,32 @@ exports[`Icon name = to_start default size 1`] = `
   xmlns="http://www.w3.org/2000/svg"
 >
   <polyline
-    points="18 4 10 12 18 20"
+    points="17 4 9 12 17 20"
   />
   <polyline
-    points="5 4 5 20"
+    points="6 4 6 20"
+  />
+</svg>
+`;
+
+exports[`Icon name = to_start default size 1`] = `
+<svg
+  fill="none"
+  height="24"
+  role="img"
+  stroke="currentColor"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+  stroke-width="2"
+  viewBox="0 0 24 24"
+  width="24"
+  xmlns="http://www.w3.org/2000/svg"
+>
+  <polyline
+    points="17 4 9 12 17 20"
+  />
+  <polyline
+    points="6 4 6 20"
   />
 </svg>
 `;
@@ -621,6 +867,7 @@ exports[`Icon name = x custom className 1`] = `
   class="test-class"
   fill="none"
   height="24"
+  role="img"
   stroke="currentColor"
   stroke-linecap="round"
   stroke-linejoin="round"
@@ -648,6 +895,7 @@ exports[`Icon name = x custom size 1`] = `
 <svg
   fill="none"
   height="36"
+  role="img"
   stroke="currentColor"
   stroke-linecap="round"
   stroke-linejoin="round"
@@ -671,10 +919,39 @@ exports[`Icon name = x custom size 1`] = `
 </svg>
 `;
 
+exports[`Icon name = x custom title and desc 1`] = `
+<svg
+  fill="none"
+  height="24"
+  role="img"
+  stroke="currentColor"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+  stroke-width="2"
+  viewBox="0 0 24 24"
+  width="24"
+  xmlns="http://www.w3.org/2000/svg"
+>
+  <line
+    x1="18"
+    x2="6"
+    y1="6"
+    y2="18"
+  />
+  <line
+    x1="6"
+    x2="18"
+    y1="6"
+    y2="18"
+  />
+</svg>
+`;
+
 exports[`Icon name = x default size 1`] = `
 <svg
   fill="none"
   height="24"
+  role="img"
   stroke="currentColor"
   stroke-linecap="round"
   stroke-linejoin="round"
