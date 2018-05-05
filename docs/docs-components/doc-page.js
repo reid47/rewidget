@@ -7,11 +7,28 @@ const stripInitialNewLines = text => {
   return lines.map(line => line.trim()).join('\n');
 };
 
+const typeInfoToString = typeInfo => {
+  const { type } = typeInfo;
+  switch (type) {
+    case 'oneOf':
+      return `one of the following values: \n${typeInfo.possibleValues
+        .map(v => '- `' + v)
+        .join('`\n')}\``;
+
+    case 'oneOfType':
+      return `one of the following types: \n${typeInfo.possibleTypes
+        .map(v => '- `' + typeInfoToString(v))
+        .join('`\n')}\``;
+
+    default:
+      return '`' + type + '`';
+  }
+};
+
 export const DocPage = ({
   componentName,
   componentMetadata,
   description,
-  propList,
   examples
 }) => {
   return (
@@ -26,6 +43,10 @@ export const DocPage = ({
           />
         </div>
       )}
+      <section>
+        <h2 id="examples">Examples</h2>
+        {examples}
+      </section>
       <section>
         <h2 id="props">Props</h2>
         <table className="props-table">
@@ -42,16 +63,19 @@ export const DocPage = ({
               Object.keys(componentMetadata.props)
                 .sort()
                 .map(propName => {
-                  const {
-                    description,
-                    typeInfo: { type, required }
-                  } = componentMetadata.props[propName];
+                  const { description, typeInfo } = componentMetadata.props[
+                    propName
+                  ];
 
                   return (
                     <tr key={propName}>
                       <td>{propName}</td>
-                      <td>{type}</td>
-                      <td>{required ? 'yes' : 'no'}</td>
+                      <td
+                        dangerouslySetInnerHTML={{
+                          __html: md.render(typeInfoToString(typeInfo))
+                        }}
+                      />
+                      <td>{typeInfo.required ? 'yes' : 'no'}</td>
                       <td
                         dangerouslySetInnerHTML={{
                           __html: description
@@ -64,10 +88,6 @@ export const DocPage = ({
                 })}
           </tbody>
         </table>
-      </section>
-      <section>
-        <h2 id="examples">Examples</h2>
-        {examples}
       </section>
     </div>
   );

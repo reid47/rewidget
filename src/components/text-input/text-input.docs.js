@@ -55,7 +55,7 @@ const TextInputPage = () => {
               <TextInput />
             </Example>
             <Example {...{ title: 'Single-line text input with icon' }}>
-              <TextInput icon={<SearchIcon />} />
+              <TextInput icon={<Icon name="search" />} />
             </Example>
             <Example {...{ title: 'Password input' }}>
               <TextInput password />
@@ -69,15 +69,23 @@ const TextInputPage = () => {
               <TextInput size="lg" className="mt-1" />
             </Example>
             <Example {...{ title: 'Single-line text input sizes with icons' }}>
-              <TextInput size="sm" icon={<SearchIcon />} />
-              <TextInput size="md" icon={<SearchIcon />} className="mt-1" />
-              <TextInput size="lg" icon={<SearchIcon />} className="mt-1" />
+              <TextInput size="sm" icon={<Icon name="search" />} />
+              <TextInput
+                size="md"
+                icon={<Icon name="search" />}
+                className="mt-1"
+              />
+              <TextInput
+                size="lg"
+                icon={<Icon name="search" />}
+                className="mt-1"
+              />
             </Example>
             <Example {...{ title: 'Multi-line text input' }}>
               <TextInput multiline />
             </Example>
             <Example {...{ title: 'Multi-line text input with icon' }}>
-              <TextInput multiline icon={<SearchIcon />} />
+              <TextInput multiline icon={<Icon name="search" />} />
             </Example>
             <Example {...{ title: 'Multi-line text input sizes' }}>
               <TextInput multiline size="sm" />
