@@ -1,7 +1,6 @@
 import React from 'react';
 import localizedStrings from './strings';
 
-console.log({ React });
 const {
   Provider: LocalizationProvider,
   Consumer: LocalizationConsumer
@@ -11,7 +10,10 @@ const {
   setLocale: () => null
 });
 
-function localized({ id, locale = 'en', fallbackLocale = 'en', params = {} }) {
+function localized(
+  id,
+  { locale = 'en', fallbackLocale = 'en', params = {} } = {}
+) {
   const translation = (localizedStrings[locale] ||
     localizedStrings[fallbackLocale])[id];
 

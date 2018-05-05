@@ -1,12 +1,13 @@
 import React from 'react';
-import { Pagination } from './pagination';
+import Pagination from './pagination';
 import { DocPage, Example } from '../../../docs/components';
 
 export default class PaginationDocs extends React.Component {
   state = {
     ex1: 8,
     ex2: 12,
-    ex3: 1
+    ex3: 1,
+    ex4: 5
   };
 
   render() {
@@ -26,11 +27,19 @@ export default class PaginationDocs extends React.Component {
             onPageChange={ex2 => this.setState({ ex2 })}
           />
         </Example>
-        <Example {...{ title: 'Pagination without previous/next buttons' }}>
+        <Example {...{ title: 'Pagination without first/last buttons' }}>
           <Pagination
-            totalPages={8}
+            totalPages={10}
             currentPage={this.state.ex3}
             onPageChange={ex3 => this.setState({ ex3 })}
+            hideFirstLast
+          />
+        </Example>
+        <Example {...{ title: 'Pagination without previous/next buttons' }}>
+          <Pagination
+            totalPages={10}
+            currentPage={this.state.ex4}
+            onPageChange={ex4 => this.setState({ ex4 })}
             hidePrevNext
           />
         </Example>

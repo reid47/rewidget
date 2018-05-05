@@ -4,7 +4,7 @@ export { Chip } from './components/chip/chip';
 export { ChipInput } from './components/chip-input/chip-input';
 export { default as Icon } from './components/icon/icon';
 export { Modal } from './components/modal/modal';
-export { Pagination } from './components/pagination/pagination';
+export { default as Pagination } from './components/pagination/pagination';
 export { Radio } from './components/radio/radio';
 export { RadioGroup } from './components/radio-group/radio-group';
 export { Select } from './components/select/select';

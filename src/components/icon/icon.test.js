@@ -13,6 +13,12 @@ describe('Icon', () => {
         render(<Icon name="check" width="36" height="36" />)
       ).toMatchSnapshot();
     });
+
+    test('custom className', () => {
+      expect(
+        render(<Icon name="check" className="test-class" />)
+      ).toMatchSnapshot();
+    });
   });
 
   describe('name = chevron_down', () => {
@@ -23,6 +29,12 @@ describe('Icon', () => {
     test('custom size', () => {
       expect(
         render(<Icon name="chevron_down" width="36" height="36" />)
+      ).toMatchSnapshot();
+    });
+
+    test('custom className', () => {
+      expect(
+        render(<Icon name="chevron_down" className="test-class" />)
       ).toMatchSnapshot();
     });
   });
@@ -37,6 +49,12 @@ describe('Icon', () => {
         render(<Icon name="chevron_left" width="36" height="36" />)
       ).toMatchSnapshot();
     });
+
+    test('custom className', () => {
+      expect(
+        render(<Icon name="chevron_left" className="test-class" />)
+      ).toMatchSnapshot();
+    });
   });
 
   describe('name = chevron_right', () => {
@@ -47,6 +65,12 @@ describe('Icon', () => {
     test('custom size', () => {
       expect(
         render(<Icon name="chevron_right" width="36" height="36" />)
+      ).toMatchSnapshot();
+    });
+
+    test('custom className', () => {
+      expect(
+        render(<Icon name="chevron_right" className="test-class" />)
       ).toMatchSnapshot();
     });
   });
@@ -61,6 +85,12 @@ describe('Icon', () => {
         render(<Icon name="chevron_up" width="36" height="36" />)
       ).toMatchSnapshot();
     });
+
+    test('custom className', () => {
+      expect(
+        render(<Icon name="chevron_up" className="test-class" />)
+      ).toMatchSnapshot();
+    });
   });
 
   describe('name = chevron_up_down', () => {
@@ -71,6 +101,12 @@ describe('Icon', () => {
     test('custom size', () => {
       expect(
         render(<Icon name="chevron_up_down" width="36" height="36" />)
+      ).toMatchSnapshot();
+    });
+
+    test('custom className', () => {
+      expect(
+        render(<Icon name="chevron_up_down" className="test-class" />)
       ).toMatchSnapshot();
     });
   });
@@ -85,6 +121,12 @@ describe('Icon', () => {
         render(<Icon name="menu" width="36" height="36" />)
       ).toMatchSnapshot();
     });
+
+    test('custom className', () => {
+      expect(
+        render(<Icon name="menu" className="test-class" />)
+      ).toMatchSnapshot();
+    });
   });
 
   describe('name = search', () => {
@@ -97,6 +139,48 @@ describe('Icon', () => {
         render(<Icon name="search" width="36" height="36" />)
       ).toMatchSnapshot();
     });
+
+    test('custom className', () => {
+      expect(
+        render(<Icon name="search" className="test-class" />)
+      ).toMatchSnapshot();
+    });
+  });
+
+  describe('name = to_end', () => {
+    test('default size', () => {
+      expect(render(<Icon name="to_end" />)).toMatchSnapshot();
+    });
+
+    test('custom size', () => {
+      expect(
+        render(<Icon name="to_end" width="36" height="36" />)
+      ).toMatchSnapshot();
+    });
+
+    test('custom className', () => {
+      expect(
+        render(<Icon name="to_end" className="test-class" />)
+      ).toMatchSnapshot();
+    });
+  });
+
+  describe('name = to_start', () => {
+    test('default size', () => {
+      expect(render(<Icon name="to_start" />)).toMatchSnapshot();
+    });
+
+    test('custom size', () => {
+      expect(
+        render(<Icon name="to_start" width="36" height="36" />)
+      ).toMatchSnapshot();
+    });
+
+    test('custom className', () => {
+      expect(
+        render(<Icon name="to_start" className="test-class" />)
+      ).toMatchSnapshot();
+    });
   });
 
   describe('name = x', () => {
@@ -107,6 +191,12 @@ describe('Icon', () => {
     test('custom size', () => {
       expect(
         render(<Icon name="x" width="36" height="36" />)
+      ).toMatchSnapshot();
+    });
+
+    test('custom className', () => {
+      expect(
+        render(<Icon name="x" className="test-class" />)
       ).toMatchSnapshot();
     });
   });
