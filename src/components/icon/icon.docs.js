@@ -8,7 +8,7 @@ export default class IconDocs extends Component {
     return (
       <DocPage component={Icon}>
         {Object.keys(svgs).map(name => (
-          <Example key={name} title={name}>
+          <Example key={name} title={`${name} icon`}>
             <div
               style={{
                 display: 'flex',

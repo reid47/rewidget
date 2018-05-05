@@ -58,6 +58,21 @@ main {
   overflow-y: auto;
   max-width: 100%;
 
+  .left-nav-section-header {
+    background: lighten($color-dark, 10%);
+    color: $color-light;
+    font-weight: normal;
+    font-family: monospace;
+    letter-spacing: 0.2em;
+    padding: 16px;
+    font-size: 1.2em;
+    margin-bottom: 0;
+
+    &:first-child {
+      margin-top: 0;
+    }
+  }
+
   ul,
   li {
     padding: 0;
@@ -76,14 +91,16 @@ main {
     font-family: monospace;
     font-size: 1.5em;
 
-    &::before {
-      opacity: 0.4;
-      content: '<';
-    }
+    &.component-link {
+      &::before {
+        opacity: 0.4;
+        content: '<';
+      }
 
-    &::after {
-      opacity: 0.4;
-      content: '/>';
+      &::after {
+        opacity: 0.4;
+        content: '/>';
+      }
     }
 
     &:hover,

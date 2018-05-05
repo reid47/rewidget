@@ -29,13 +29,14 @@ export default class App extends React.Component {
       <BrowserRouter>
         <div>
           <nav className="left-nav">
+            <h3 className="left-nav-section-header">components</h3>
             <ul>
               {pages.map(({ linkPath, componentName }) => (
                 <li key={linkPath}>
                   <NavLink
                     to={linkPath}
-                    activeClassName="active"
-                    onClick={() => this.setState({ navOpen: false })}>
+                    className="component-link"
+                    activeClassName="active">
                     {componentName}
                   </NavLink>
                 </li>
