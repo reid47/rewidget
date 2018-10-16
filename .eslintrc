@@ -9,11 +9,7 @@
     "process": true
   },
   "plugins": ["react", "jsx-a11y", "jest"],
-  "extends": [
-    "eslint:recommended",
-    "plugin:react/recommended",
-    "plugin:jsx-a11y/recommended"
-  ],
+  "extends": ["eslint:recommended", "plugin:react/recommended", "plugin:jsx-a11y/recommended"],
   "rules": {
     "react/display-name": 0,
     "no-useless-constructor": 2

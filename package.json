@@ -9,8 +9,18 @@
     "type": "git",
     "url": "https://github.com/reid47/rewidget"
   },
-  "keywords": ["react", "component", "library", "widget"],
-  "files": ["dist/", "LICENSE.md", "README.md", "package.json"],
+  "keywords": [
+    "react",
+    "component",
+    "library",
+    "widget"
+  ],
+  "files": [
+    "dist/",
+    "LICENSE.md",
+    "README.md",
+    "package.json"
+  ],
   "scripts": {
     "test": "jest",
     "test-watch": "jest --watch",
@@ -20,30 +30,30 @@
     "lint": "eslint src --fix"
   },
   "dependencies": {
-    "prop-types": "^15.6.0"
+    "prop-types": "^15.6.2"
   },
   "devDependencies": {
-    "babel-core": "^6.26.0",
+    "@babel/core": "^7.0.0",
+    "@babel/plugin-external-helpers": "^7.0.0",
+    "@babel/plugin-proposal-class-properties": "^7.0.0",
+    "@babel/plugin-proposal-object-rest-spread": "^7.0.0",
+    "@babel/preset-env": "^7.0.0",
+    "@babel/preset-react": "^7.0.0",
+    "babel-core": "^7.0.0-bridge.0",
     "babel-eslint": "7",
     "babel-jest": "^22.1.0",
-    "babel-plugin-external-helpers": "^6.22.0",
-    "babel-plugin-transform-class-properties": "^6.24.1",
-    "babel-plugin-transform-object-rest-spread": "^6.26.0",
-    "babel-preset-env": "^1.6.1",
-    "babel-preset-react": "^6.24.1",
     "enzyme": "^3.3.0",
     "enzyme-adapter-react-16": "^1.1.1",
     "eslint": "^4.16.0",
     "eslint-plugin-jest": "^21.8.0",
     "eslint-plugin-jsx-a11y": "5.1.1",
     "eslint-plugin-react": "^7.5.1",
-    "gh-pages": "^1.1.0",
     "jest": "^22.1.4",
     "jest-enzyme": "^4.0.2",
     "react": "^16.3.2",
     "react-dom": "^16.3.2",
     "rollup": "^0.55.0",
-    "rollup-plugin-babel": "^3.0.3",
+    "rollup-plugin-babel": "^4.0.1",
     "rollup-plugin-commonjs": "^8.2.6",
     "rollup-plugin-filesize": "^1.5.0",
     "rollup-plugin-node-resolve": "^3.0.2",
@@ -55,9 +65,16 @@
     "react-dom": "^16.0.0"
   },
   "jest": {
-    "roots": ["src"],
+    "roots": [
+      "src"
+    ],
     "setupTestFrameworkScriptFile": "./test.config.js",
-    "collectCoverageFrom": ["src/**/*.js", "!src/**/*.docs.js"],
-    "coverageReporters": ["html"]
+    "collectCoverageFrom": [
+      "src/**/*.js",
+      "!src/**/*.docs.js"
+    ],
+    "coverageReporters": [
+      "html"
+    ]
   }
 }

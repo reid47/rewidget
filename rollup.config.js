@@ -17,7 +17,7 @@ export default {
     }),
     babel({
       exclude: 'node_modules/**/',
-      plugins: [ 'external-helpers' ]
+      plugins: ['external-helpers']
     }),
     resolve(),
     commonjs({
@@ -26,9 +26,5 @@ export default {
     uglify(),
     fileSize()
   ],
-  external: [
-    'react',
-    'react-dom',
-    'prop-types'
-  ]
+  external: ['react', 'react-dom', 'prop-types']
 };
